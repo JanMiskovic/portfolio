@@ -1,10 +1,13 @@
-import "../styles/globals.css";
+import { ThemeProvider } from "next-themes";
 import MainLayout from "../components/layouts/MainLayout";
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <MainLayout>
-            <Component {...pageProps} />
-        </MainLayout>
+        <ThemeProvider defaultTheme="system" attribute="class">
+            <MainLayout>
+                <Component {...pageProps} />
+            </MainLayout>
+        </ThemeProvider>
     );
 }
