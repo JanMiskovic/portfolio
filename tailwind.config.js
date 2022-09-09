@@ -6,7 +6,14 @@ module.exports = {
     ],
     darkMode: "class",
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                "border-light": "#B6B6B6",
+                "border-dark": "#272727",
+                "icon-light": "#747474",
+                "icon-dark": "#262626",
+            }
+        },
     },
     plugins: [],
     future: {
