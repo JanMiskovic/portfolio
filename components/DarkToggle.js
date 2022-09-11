@@ -14,7 +14,10 @@ export default function DarkToggle() {
     const currentTheme = (theme === "system") ? systemTheme : theme;
     const toggleTheme = () => setTheme(currentTheme === "dark" ? "light" : "dark");
 
-    const styles = "p-2 rounded-md border-2 border-border-light text-icon-light bg-[#F1EBFF] dark:border-border-dark dark:text-icon-dark dark:bg-[#FFE766]";
+    const styles = `
+        p-2 rounded-md border-2
+        border-border-light text-icon-light bg-[#F1EBFF]
+        dark:border-border-dark dark:text-[#FFE766] dark:bg-bg-dark`;
 
     return (
         mounted ?
