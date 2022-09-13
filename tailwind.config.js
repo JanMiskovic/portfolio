@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -6,6 +8,10 @@ module.exports = {
     ],
     darkMode: "class",
     theme: {
+        screens: {
+            "xs": "375px",
+            ...defaultTheme.screens,
+        },
         extend: {
             colors: {
                 "bg-light": "#FAFAFA",
@@ -14,7 +20,10 @@ module.exports = {
                 "border-dark": "#585858",
                 "icon-light": "#747474",
                 "icon-dark": "#262626",
-            }
+            },
+            transitionProperty: {
+                "background": "background-color, background, border",
+            },
         },
     },
     plugins: [],

@@ -4,7 +4,18 @@
 
 @layer base {
     html {
-        -webkit-tap-highlight-color: gray;
+        -webkit-tap-highlight-color: transparent;
         font-family: Space Grotesk, system-ui, sans-serif;
+    }
+
+    ::selection {
+        @apply bg-cyan-400 dark:bg-cyan-500 text-white;
+    }
+}
+
+@layer utilities {
+    .focus-ring {
+        @apply focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-0;
+        @apply focus-visible:outline-cyan-600 dark:focus-visible:outline-cyan-500;
     }
 }
