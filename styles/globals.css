@@ -18,4 +18,8 @@
         @apply focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-0;
         @apply focus-visible:outline-cyan-600 dark:focus-visible:outline-cyan-500;
     }
+
+    .my-border {
+        @apply border-2 border-border-light dark:border-border-dark transition-background;
+    }
 }

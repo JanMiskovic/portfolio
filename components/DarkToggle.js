@@ -15,11 +15,11 @@ export default function DarkToggle() {
     const toggleTheme = () => setTheme(currentTheme === "dark" ? "light" : "dark");
 
     const buttonStyles = `
-        focus-ring p-2 rounded-md border-2 transition-background
-        border-border-light text-icon-light bg-[#F1EBFF]
-        dark:border-border-dark dark:text-[#FFE766] dark:bg-bg-dark
+        focus-ring my-border p-2 rounded-md transition-background
+        text-icon-light bg-[#F1EBFF]
+        dark:text-[#FFE766] dark:bg-bg-dark
         hover:bg-[#e7dbff] active:bg-[#ddccff]
-        hover:dark:bg-border-dark active:dark:bg-[#696969]`;
+        hover:dark:bg-[#585858] active:dark:bg-[#696969]`;
     
     return (
         mounted ?

@@ -13,6 +13,9 @@ module.exports = {
             ...defaultTheme.screens,
         },
         extend: {
+            screens: {
+                "lg": "1084px",
+            },
             colors: {
                 "bg-light": "#FAFAFA",
                 "bg-dark": "#424242",
