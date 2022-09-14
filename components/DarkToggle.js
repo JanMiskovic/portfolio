@@ -19,7 +19,7 @@ export default function DarkToggle() {
         text-icon-light bg-[#F1EBFF]
         dark:text-[#FFE766] dark:bg-bg-dark
         hover:bg-[#e7dbff] active:bg-[#ddccff]
-        hover:dark:bg-[#585858] active:dark:bg-[#696969]`;
+        dark:hover:bg-[#585858] dark:active:bg-[#696969]`;
     
     return (
         mounted ?
