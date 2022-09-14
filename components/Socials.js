@@ -2,18 +2,18 @@ import { BsFacebook, BsGithub, BsLinkedin, BsSpotify } from "react-icons/bs";
 
 export default function Socials() {
     return (
-        <div className="flex justify-between xs:w-7/12 xs:max-w-[14.5rem]">
+        <div className="flex items-center gap-2">
             <a href="https://github.com/JanMiskovic" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="p-0.5 my-border rounded-full
                 bg-[#F6EBFF] hover:bg-[#efdbff] active:bg-[#e8ccff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
                 <BsGithub className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6
                     text-icon-light dark:text-[#B366FF] transition-colors"/>
             </a>
-
+            
             <a href="" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="p-0.5 my-border rounded-full
                 bg-[#EBFBFF] hover:bg-[#dbf8ff] active:bg-[#ccf5ff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -22,7 +22,7 @@ export default function Socials() {
             </a>
 
             <a href="https://www.facebook.com/mutualslump/" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="p-0.5 my-border rounded-full
                 bg-[#EAEEFF] hover:bg-[#dbe2ff] active:bg-[#ccd6ff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -31,7 +31,7 @@ export default function Socials() {
             </a>
 
             <a href="https://www.instagram.com/janiiscript/" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="p-0.5 my-border rounded-full
                 bg-[#FFEBFD] hover:bg-[#ffdbfb] active:bg-[#ffccf9]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -43,7 +43,7 @@ export default function Socials() {
             </a>
 
             <a href="https://open.spotify.com/user/kthen1337" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="p-0.5 my-border rounded-full
                 bg-[#EBFFED] hover:bg-[#dbffdf] active:bg-[#ccffd2]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 

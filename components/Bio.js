@@ -18,7 +18,7 @@ export default function Bio() {
                     className="inline-block"/>
             </div>
 
-            <div className="md:col-start-2 col-span-full md:self-start flex flex-col gap-5">
+            <div className="text-sm xs:text-base md:col-start-2 col-span-full md:self-start flex flex-col gap-5">
                 <p className="leading-relaxed">
                     Bachelor of Applied Informatics, currently freelancing in web development / design. <Mbr/>
                     Started with WordPress in 2021, then moved onto Next.js, React and Tailwind. <Mbr/>
@@ -26,10 +26,10 @@ export default function Bio() {
                     I&nbsp;love movies, video-games, and challenges&nbsp;- currently learning Japanese (*^▽^*)
                 </p>
 
-                <div className="flex flex-col xs:flex-row gap-3 xs:gap-2 w-56 xs:w-full">
+                <div className="flex gap-3 xs:gap-2">
                     <Link href="/contact">
                         <a className="focus-ring my-border rounded-md text-center
-                            py-1 xs:py-1.5 sm:py-2 px-1 md:px-7 xs:w-5/12 xs:max-w-[9rem]
+                            py-1 xs:py-1.5 sm:py-2 px-1 md:px-7
                             text-black bg-[#E9F7FF] hover:bg-[#dbf2ff] active:bg-[#ccecff]
                             dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]">
                             Message me
