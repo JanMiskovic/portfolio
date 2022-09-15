@@ -23,13 +23,14 @@ export default function Bio() {
                     Bachelor of Applied Informatics, currently freelancing in web development / design. <Mbr/>
                     Started with WordPress in 2021, then moved onto Next.js, React and Tailwind. <Mbr/>
                     Fan&nbsp;of functional programming and creative coding. Always looking to learn new things. <Mbr/>
-                    I&nbsp;love movies, video-games, and challenges&nbsp;- currently learning Japanese (*^▽^*)
+                    I&nbsp;love movies, video-games, and challenges&nbsp;- currently learning Japanese&nbsp;(*^▽^*)
                 </p>
 
-                <div className="flex gap-3 xs:gap-2">
+                <div className="flex gap-3 sm:gap-5">
                     <Link href="/contact">
-                        <a className="focus-ring my-border rounded-md text-center
-                            py-1 xs:py-1.5 sm:py-2 px-1 md:px-7
+                        <a className="focus-ring my-border rounded-md shrink-0
+                            py-1.5 sm:py-2 px-2 xs:px-3 sm:px-7
+                            text-sm xs:text-base
                             text-black bg-[#E9F7FF] hover:bg-[#dbf2ff] active:bg-[#ccecff]
                             dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]">
                             Message me
