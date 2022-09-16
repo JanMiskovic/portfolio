@@ -15,9 +15,8 @@ export default function DarkToggle() {
     const toggleTheme = () => setTheme(currentTheme === "dark" ? "light" : "dark");
 
     const buttonStyles = `
-        focus-ring my-border p-2 rounded-md transition-background
-        text-icon-light bg-[#F1EBFF]
-        dark:text-[#FFE766] dark:bg-bg-dark
+        focus-ring my-border p-2 rounded-md
+        bg-[#F1EBFF] dark:bg-bg-dark transition-colors
         hover:bg-[#e7dbff] active:bg-[#ddccff]
         dark:hover:bg-[#585858] dark:active:bg-[#696969]`;
     
@@ -25,11 +24,11 @@ export default function DarkToggle() {
         mounted ?
             <button onClick={toggleTheme} className={buttonStyles}>
                 {currentTheme === "dark" ? 
-                    <BsSunFill className="!w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/> :
-                    <BsMoonFill className="!w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/>}
+                    <BsSunFill className="dark:text-[#FFE766] !w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/> :
+                    <BsMoonFill className="text-icon-light !w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/>}
             </button> :
             <button className={buttonStyles}>
-                <BsSunFill className="!w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/>
+                <BsSunFill className="dark:text-[#FFE766] !w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/>
             </button>
     );
 }

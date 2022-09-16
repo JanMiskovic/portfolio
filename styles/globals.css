@@ -6,24 +6,52 @@
     html {
         -webkit-tap-highlight-color: transparent;
         font-family: Space Grotesk, system-ui, sans-serif;
+        overflow: overlay;
     }
 
     ::selection {
-        @apply bg-cyan-400 dark:bg-cyan-500 text-white;
+        @apply bg-[#0c69ff] dark:bg-[#00a3e4] text-white;
+    }
+
+    ::-webkit-scrollbar {
+  	    @apply w-3;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-[#cbcccd77] dark:bg-[#4b4e4e77];
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-[#97999b77] dark:bg-[#7d828277];
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-[#70737577] dark:bg-[#a4a8a877];
+    }
+}
+
+@layer utilities {
+    .focus-ring-loose {
+        @apply focus-visible:outline-offset-8;
     }
 }
 
 @layer components {
     .focus-ring {
-        @apply focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-[-2px];
-        @apply focus-visible:outline-cyan-600 dark:focus-visible:outline-cyan-500;
+        @apply focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-[-2px]
+            focus-visible:outline-[#0c69ff] dark:focus-visible:outline-[#66d4ff];
     }
 
     .my-border {
-        @apply border-2 border-border-light dark:border-border-dark transition-background;
+        @apply border-2 border-border-light dark:border-border-dark;
+    }
+
+    .link {
+        @apply hover:text-[#0c69ff] hover:dark:text-[#66d4ff]
+            active:text-[#0c69ff] active:dark:text-[#66d4ff]
     }
 
     .active-link {
-        @apply transition-colors text-[#434AFF] dark:text-[#66d4ff] underline underline-offset-8
+        @apply text-[#0c69ff] dark:text-[#66d4ff] underline underline-offset-8
     }
 }

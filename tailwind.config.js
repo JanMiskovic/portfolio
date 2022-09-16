@@ -27,9 +27,6 @@ module.exports = {
             fontSize: {
                 "2xs": "0.55rem",
             },
-            transitionProperty: {
-                "background": "background-color, background, border",
-            },
             dropShadow: {
                 "sharp": "4px 4px 0 rgba(0, 0, 0, 0.3)",
             }
