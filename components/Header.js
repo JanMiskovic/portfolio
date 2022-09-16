@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <header className="flex justify-between gap-2 flex-wrap items-center pb-5 sm:pb-9 md:pb-11">
+        <header className="flex justify-between gap-2 flex-wrap items-center pb-5 sm:pb-7 md:pb-11">
             <Link href="/">
                 <a className="focus-ring flex gap-1.5 xs:gap-2 items-center rounded-md
                     xs:text-xl sm:text-2xl underline underline-offset-4">

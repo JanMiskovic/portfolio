@@ -4,7 +4,7 @@ export default function Socials() {
     return (
         <div className="flex items-center gap-1.5 sm:gap-2.5 flex-wrap h-9 xs:h-10 sm:h-11 overflow-hidden">
             <a href="https://github.com/JanMiskovic" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="focus-ring my-border p-2 rounded-full
                 bg-[#F6EBFF] hover:bg-[#efdbff] active:bg-[#e8ccff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -13,7 +13,7 @@ export default function Socials() {
             </a>
             
             <a href="" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="focus-ring my-border p-2 rounded-full
                 bg-[#EBFBFF] hover:bg-[#dbf8ff] active:bg-[#ccf5ff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -22,7 +22,7 @@ export default function Socials() {
             </a>
 
             <a href="https://www.facebook.com/mutualslump/" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="focus-ring my-border p-2 rounded-full
                 bg-[#EAEEFF] hover:bg-[#dbe2ff] active:bg-[#ccd6ff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -31,7 +31,7 @@ export default function Socials() {
             </a>
 
             <a href="https://www.instagram.com/janiiscript/" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="focus-ring my-border p-2 rounded-full
                 bg-[#FFEBFD] hover:bg-[#ffdbfb] active:bg-[#ffccf9]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 
@@ -43,7 +43,7 @@ export default function Socials() {
             </a>
 
             <a href="https://open.spotify.com/user/kthen1337" target="_blank" rel="noreferrer"
-                className="p-2 my-border rounded-full
+                className="focus-ring my-border p-2 rounded-full
                 bg-[#EBFFED] hover:bg-[#dbffdf] active:bg-[#ccffd2]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
 

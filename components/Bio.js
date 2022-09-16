@@ -5,7 +5,9 @@ import Socials from "./Socials";
 
 export default function Bio() {
     return (
-        <div className="grid grid-cols-[auto_minmax(0,_1fr)] md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-4 items-center">
+        <div className="grid grid-cols-[auto_minmax(0,_1fr)] md:grid-cols-3 items-center
+            gap-x-5 gap-y-5 md:gap-y-4 pb-4 md:pb-10 lg:pb-16">
+
             <Image src="/profile-pic.jpg" width={300} height={300} alt="Profile picture of Ján" 
                 className="md:row-span-2 self-center rounded-full my-border
                 w-16 h-16 xs:w-20 xs:h-20 sm:w-32 sm:h-32 md:w-5/6 md:h-fit lg:w-72 lg:h-72"
@@ -36,8 +38,10 @@ export default function Bio() {
                             Message me
                         </a>
                     </Link>
+
                     <Socials />
                 </div>
+
             </div>
         </div>
     );
