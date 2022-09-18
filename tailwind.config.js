@@ -27,9 +27,10 @@ module.exports = {
             fontSize: {
                 "2xs": "0.55rem",
             },
-            dropShadow: {
+            boxShadow: {
                 "sharp": "4px 4px 0 rgba(0, 0, 0, 0.3)",
-            }
+                "sharp-dark": "4px 4px 0 rgba(0, 0, 0, 0.6)",
+            },
         },
     },
     plugins: [],

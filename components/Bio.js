@@ -23,7 +23,7 @@ export default function Bio() {
             <div className="text-sm xs:text-base md:col-start-2 col-span-full md:self-start flex flex-col gap-5">
                 <p className="leading-relaxed">
                     Bachelor of Applied Informatics, currently freelancing in web development / design. <Mbr/>
-                    Started with WordPress in 2021, then moved onto Next.js, React and Tailwind. <Mbr/>
+                    Started with WordPress in 2020, then moved onto Next.js, React and Tailwind. <Mbr/>
                     Fan&nbsp;of functional programming and creative coding. Always looking to learn new things. <Mbr/>
                     I&nbsp;love movies, video-games, and challenges&nbsp;- currently learning Japanese&nbsp;(*^▽^*)
                 </p>
