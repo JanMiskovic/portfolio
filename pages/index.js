@@ -1,11 +1,11 @@
 import Head from "next/head";
 import PortfolioItem from "../components/PortfolioItem";
 
-export default function Home() {
+export default function Index() {
     return (
         <>
             <Head>
-                <title>Ján Miškovič</title>
+                <title>Ján Miškovič - Portfolio</title>
             </Head>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 xs:gap-x-5

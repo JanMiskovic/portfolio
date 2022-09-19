@@ -19,7 +19,7 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
                     <Image src={img} width={640} height={360} alt={`Preview image of website ${name}`}/>
                 </motion.div>
             </div>
-            <h3 className="xs:text-lg sm:text-xl lg:text-2xl">{name}</h3>
+            <h2 className="xs:text-lg sm:text-xl lg:text-2xl">{name}</h2>
             <span className="text-2xs xs:text-xs md:text-sm lg:text-base">{stack}</span>
         </motion.a>
     );
