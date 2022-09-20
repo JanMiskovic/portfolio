@@ -9,7 +9,7 @@ export default function Document() {
                 />
             </Head>
             <body className="text-black bg-white
-                dark:bg-[#1E1E1E] dark:text-white transition-colors">
+                dark:bg-[#1E1E1E] dark:text-white !transition-colors">
 
                 <Main />
                 <NextScript />
