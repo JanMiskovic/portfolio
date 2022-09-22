@@ -34,6 +34,10 @@
     .focus-ring-loose {
         @apply focus-visible:outline-offset-8;
     }
+
+    .transition-hover {
+        @apply hover:transition-colors active:transition-colors;
+    }
 }
 
 @layer components {

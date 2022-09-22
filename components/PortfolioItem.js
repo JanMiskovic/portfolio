@@ -11,11 +11,10 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
         <motion.a whileHover="active" whileTap="active"
             href={href} target="_blank" rel="noreferrer"
             className="flex flex-col rounded-lg focus-ring focus-ring-loose">
-            <div className={`my-border rounded-lg p-[10%] mb-1.5 md:mb-2.5
-                transition-colors ${className}`}>
+            <div className={`my-border rounded-lg p-[10%] mb-1.5 md:mb-2.5 ${className}`}>
                 <motion.div variants={image}
-                    className="rounded-sm shadow-sharp dark:shadow-sharp-dark
-                    bg-neutral-200 dark:bg-neutral-500 transition-shadow">
+                    className="rounded-sm shadow-sharp dark:shadow-sharp-dark will-change-transform
+                        bg-neutral-200 dark:bg-neutral-500">
                     <Image src={img} width={640} height={360} alt={`Preview image of website ${name}`}/>
                 </motion.div>
             </div>
