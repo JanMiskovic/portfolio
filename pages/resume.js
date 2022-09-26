@@ -7,9 +7,9 @@ import { HiPrinter } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 
 export default function Resume() {
-    const resumeItems = {
-        initial: { opacity: 0, y: -20, scale: 0.9 },
-        animate: { opacity: 1, y: 0, scale: 1,
+    const resumeVariants = {
+        initial: { opacity: 0, y: -20 },
+        animate: { opacity: 1, y: 0, 
             transition: { 
                 duration: 0.3,
                 ease: "easeInOut"
@@ -23,13 +23,12 @@ export default function Resume() {
                 <title>Ján Miškovič - Resume</title>
             </Head>
 
-            <motion.div variants={{ animate: {transition: {staggerChildren: 0.07}}}}
-                className="grid gap-5 sm:grid-cols-2 lg:grid-cols-[6fr_5fr_5fr_6fr]
+            <motion.div variants={resumeVariants} initial="initial" animate="animate"
+                className="grid gap-5 sm:grid-cols-2 lg:grid-cols-[3fr_5fr_3fr]
                 text-sm xs:text-base leading-relaxed">
 
-                <motion.div variants={resumeItems}
-                    className="flex flex-col gap-5 p-4 sm:px-5 my-border rounded-lg will-change-transform
-                    bg-bg-light dark:bg-bg-dark lg:col-start-2 lg:col-end-4 lg:order-2">
+                <div className="flex flex-col gap-5 p-4 sm:px-5 my-border rounded-lg will-change-transform
+                    bg-bg-light dark:bg-bg-dark lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                             <IoMdBriefcase className="fill-[#339DFF] dark:fill-[#66C8FF]
@@ -45,11 +44,10 @@ export default function Resume() {
                             </p>
                         </div>
                     </div>
-                </motion.div>
+                </div>
 
-                <motion.div variants={resumeItems}
-                    className="flex flex-col gap-4 p-4 sm:px-5 my-border rounded-lg will-change-transform
-                    bg-bg-light dark:bg-bg-dark lg:col-start-2 lg:col-end-4 lg:order-3">
+                <div className="flex flex-col gap-4 p-4 sm:px-5 my-border rounded-lg will-change-transform
+                    bg-bg-light dark:bg-bg-dark lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                             <MdSchool className="fill-[#339DFF] dark:fill-[#66C8FF]
@@ -78,12 +76,11 @@ export default function Resume() {
                             Hlohovec, Slovak Republic
                         </p>
                     </div>
-                </motion.div>
+                </div>
 
-                <motion.div variants={resumeItems}
-                    className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5 p-4 sm:px-5 will-change-transform
-                    my-border rounded-lg bg-bg-light dark:bg-bg-dark sm:order-1 lg:order-3
-                    lg:col-start-4 lg:row-start-1 lg:row-end-3">
+                <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5 p-4 sm:px-5 will-change-transform
+                    my-border rounded-lg bg-bg-light dark:bg-bg-dark sm:order-4
+                    lg:col-start-3 lg:row-start-1 lg:row-end-3">
                     <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                         <BsTerminalFill className="fill-[#339DFF] dark:fill-[#66C8FF]
                         text-base"/>
@@ -118,11 +115,10 @@ export default function Resume() {
                             <li><span className="font-medium">GIMP</span> - Intermediate</li>
                         </ul>
                     </div>
-                </motion.div>
+                </div>
 
-                <motion.div variants={resumeItems}
-                    className="flex flex-col gap-4 p-4 sm:px-5 my-border rounded-lg will-change-transform
-                    bg-bg-light dark:bg-bg-dark lg:col-start-1 lg:row-start-1 lg:row-end-3 lg:order-1">
+                <div className="flex flex-col gap-4 p-4 sm:px-5 my-border rounded-lg will-change-transform
+                    bg-bg-light dark:bg-bg-dark lg:col-start-1 lg:row-start-1 lg:row-end-3">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                             <IoPerson className="fill-[#339DFF] dark:fill-[#66C8FF]
@@ -143,14 +139,16 @@ export default function Resume() {
                             Contact details
                         </h2>
                         <ul>
-                            <li className="font-medium link transition-hover">
-                                <a href="mailto:janmiskovicweb@gmail.com">
+                            <li>
+                                <a href="mailto:janmiskovicweb@gmail.com"
+                                    className="font-medium link focus-ring focus-ring-loose rounded-md transition-hover">
                                     janmiskovicweb@gmail.com
                                 </a>
                             </li>
-                            <li className="font-medium link transition-hover mb-2">
-                                <a href="tel:+421950594845">
-                                +421 950 594 845
+                            <li className="mb-2">
+                                <a href="tel:+421950594845"
+                                    className="font-medium link focus-ring focus-ring-loose rounded-md transition-hover">
+                                    +421 950 594 845
                                 </a>
                             </li>
                             <li className="text-sm lg:text-base">
@@ -194,8 +192,7 @@ export default function Resume() {
                             <HiPrinter className="text-icon-light dark:text-[#3e3e3e] w-5 sm:w-6 h-5 sm:h-6"/>
                         </a>
                     </div>
-                </motion.div>
-
+                </div>
             </motion.div>
         </>
     );

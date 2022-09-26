@@ -3,6 +3,12 @@ import PortfolioItem from "../components/PortfolioItem";
 import { motion } from "framer-motion";
 
 export default function Index() {
+    const portfolioVariants = {
+        animate: {
+            transition: { staggerChildren: 0.07 }
+        }
+    };
+
     const portfolioItems = {
         initial: { opacity: 0, y: -20, scale: 0.9 },
         animate: { opacity: 1, y: 0, scale: 1,
@@ -19,7 +25,7 @@ export default function Index() {
                 <title>Ján Miškovič - Portfolio</title>
             </Head>
             
-            <motion.div variants={{ animate: {transition: {staggerChildren: 0.07}}}}
+            <motion.div variants={portfolioVariants}
                 className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 xs:gap-x-5
                 gap-y-3.5 xs:gap-y-4 sm:gap-y-5">
 
