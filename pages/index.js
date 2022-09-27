@@ -26,7 +26,7 @@ export default function Index() {
             </Head>
             
             <motion.div variants={portfolioVariants}
-                className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 xs:gap-x-5
+                className="grid grid-cols-2 md:grid-cols-3 gap-x-4 xs:gap-x-5
                 gap-y-3.5 xs:gap-y-4 sm:gap-y-5">
 
                 <motion.div variants={portfolioItems} className="will-change-transform">

@@ -56,6 +56,6 @@
     }
 
     .active-link {
-        @apply text-[#0c69ff] dark:text-[#66d4ff] underline underline-offset-8
+        @apply text-[#0c69ff] dark:text-[#66d4ff]
     }
 }

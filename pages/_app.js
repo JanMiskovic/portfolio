@@ -1,13 +1,23 @@
-import { ThemeProvider } from "next-themes";
 import MainLayout from "../components/layouts/MainLayout";
+import { ThemeProvider } from "next-themes";
+import { IntlProvider } from "react-intl";
+import { useRouter } from "next/router";
 import "../styles/globals.css";
+import en from "../lang/en.json";
+import sk from "../lang/sk.json";
+
 
 export default function MyApp({ Component, pageProps }) {
+    const { locale } = useRouter();
+    const messages = {en, sk};
+    
     return (
-        <ThemeProvider defaultTheme="system" attribute="class">
-            <MainLayout>
-                <Component {...pageProps} />
-            </MainLayout>
-        </ThemeProvider>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+            <ThemeProvider defaultTheme="system" attribute="class">
+                <MainLayout>
+                    <Component {...pageProps} />
+                </MainLayout>
+            </ThemeProvider>
+        </IntlProvider>
     );
 }
