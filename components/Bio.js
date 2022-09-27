@@ -15,8 +15,12 @@ export default function Bio() {
             />
 
             <div className="col-start-2 col-span-full md:self-end">
-                <h1 className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">Ján Miškovič</h1>
-                <span className="mr-1.5 xs:text-lg sm:text-xl"><FormattedMessage id="bio.location" /></span>
+                <h1 className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">
+                    <FormattedMessage id="bio.name" />
+                </h1>
+                <span className="mr-1.5 xs:text-lg sm:text-xl">
+                    <FormattedMessage id="bio.location" />
+                </span>
                 <Image priority={true} src="/skflag.webp" width={20} height={20} alt="Flag of the Slovak Republic"
                     className="inline-block"/>
             </div>
