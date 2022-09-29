@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function Hobbies() {
     const intl = useIntl();
@@ -29,8 +29,8 @@ export default function Hobbies() {
                 h-32 md:h-44 lg:h-64 p-4 will-change-transform
                 my-border rounded-lg bg-bg-light dark:bg-bg-dark
                 text-center sm:text-lg md:text-xl leading-relaxed">
-                <span>Work in progress,&nbsp;</span>
-                <span>come back later! 🔧🦺</span>
+                <span><FormattedMessage id="wip.text.line.1"/></span>
+                <span><FormattedMessage id="wip.text.line.2"/></span>
             </motion.div>
         </>
     );

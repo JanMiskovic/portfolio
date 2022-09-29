@@ -69,5 +69,11 @@
 
     "contact.meta.title": "Contact",
 
-    "404.meta.title": "Page not found"
+
+    "404.meta.title": "Page not found",
+    "404.text": "This page was removed or doesn't exist.{br}Navigate to an existing page using the menu above!",
+
+
+    "wip.text.line.1": "Work in progress,\u00a0",
+    "wip.text.line.2": "come back later! 🔧🚨"
 }

@@ -1,7 +1,7 @@
 import { FormattedMessage } from "react-intl";
 import Image from "next/future/image";
 import Link from "next/link";
-import Mbr from "./Mbr";
+import Dbr from "./Dbr";
 import Socials from "./Socials";
 
 export default function Bio() {
@@ -27,9 +27,9 @@ export default function Bio() {
 
             <div className="text-sm xs:text-base md:col-start-2 col-span-full md:self-start flex flex-col gap-5">
                 <p className="leading-relaxed">
-                    <FormattedMessage id="bio.text.line.1"/><Mbr/>
-                    <FormattedMessage id="bio.text.line.2"/><Mbr/>
-                    <FormattedMessage id="bio.text.line.3"/><Mbr/>
+                    <FormattedMessage id="bio.text.line.1"/><Dbr/>
+                    <FormattedMessage id="bio.text.line.2"/><Dbr/>
+                    <FormattedMessage id="bio.text.line.3"/><Dbr/>
                     <FormattedMessage id="bio.text.line.4"/>
                 </p>
 
