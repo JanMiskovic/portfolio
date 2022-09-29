@@ -14,6 +14,10 @@
     "nav.contact": "Contact",
 
 
+    "portfolio.meta.title": "Portfolio",
+
+
+    "resume.meta.title": "Resume",
     "resume.work.title": "Work experience",
     "resume.work.date.1": "May 2020 - Present",
     "resume.work.name.1": "Freelance - Web Developer",
@@ -54,5 +58,16 @@
     "resume.other.title": "Other",
     "resume.other.driving": "Driving license",
 
-    "resume.download.btn": "Download resume"
+    "resume.download.btn": "Download resume",
+
+
+    "hobbies.meta.title": "Hobbies",
+
+
+    "media.meta.title": "Media",
+
+
+    "contact.meta.title": "Contact",
+
+    "404.meta.title": "Page not found"
 }

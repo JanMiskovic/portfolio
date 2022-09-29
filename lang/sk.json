@@ -13,7 +13,10 @@
     "nav.media": "Médiá",
     "nav.contact": "Kontakt",
 
+    "portfolio.meta.title": "Portfólio",
 
+
+    "resume.meta.title": "Životopis",
     "resume.work.title": "Pracovné skúsenosti",
     "resume.work.date.1": "Máj 2020 - Súčasnosť",
     "resume.work.name.1": "Freelance - Web Developer",
@@ -47,12 +50,24 @@
     
     "resume.languages.title": "Jazyky",
     "resume.languages.name.1": "Slovenčina",
-    "resume.languages.level.1": "Native",
+    "resume.languages.level.1": "Materinský",
     "resume.languages.name.2": "Angličtina",
     "resume.languages.level.2": "B2 (aktívne)",
 
     "resume.other.title": "Iné",
     "resume.other.driving": "Vodičský preukaz",
     
-    "resume.download.btn": "Stiahnúť životopis"
+    "resume.download.btn": "Stiahnúť životopis",
+
+
+    "hobbies.meta.title": "Hobby",
+
+
+    "media.meta.title": "Médiá",
+
+
+    "contact.meta.title": "Kontakt",
+
+
+    "404.meta.title": "Stránka neexistuje"
 }

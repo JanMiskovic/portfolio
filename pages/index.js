@@ -1,8 +1,11 @@
 import Head from "next/head";
 import PortfolioItem from "../components/PortfolioItem";
 import { motion } from "framer-motion";
+import { useIntl } from "react-intl";
 
 export default function Index() {
+    const intl = useIntl();
+
     const portfolioVariants = {
         animate: {
             transition: { staggerChildren: 0.07 }
@@ -22,7 +25,10 @@ export default function Index() {
     return (
         <>
             <Head>
-                <title>Ján Miškovič - Portfolio</title>
+                <title>Ján Miškovič - {intl.formatMessage({id: "portfolio.meta.title"})}</title>
+                <meta name="description" content=""/>
+                <meta name="keywords" content=""/>
+                <meta name="author" content="Ján Miškovič"/>
             </Head>
             
             <motion.div variants={portfolioVariants}

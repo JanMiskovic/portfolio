@@ -5,9 +5,11 @@ import { IoMdBriefcase } from "react-icons/io";
 import { BsChatQuoteFill, BsInfoCircleFill, BsTelephoneFill, BsTerminalFill } from "react-icons/bs";
 import { HiPrinter } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function Resume() {
+    const intl = useIntl();
+
     const resumeVariants = {
         initial: { opacity: 0, y: -20 },
         animate: { opacity: 1, y: 0, 
@@ -21,7 +23,10 @@ export default function Resume() {
     return (
         <>
             <Head>
-                <title>Ján Miškovič - Resume</title>
+                <title>Ján Miškovič - {intl.formatMessage({id: "resume.meta.title"})}</title>
+                <meta name="description" content=""/>
+                <meta name="keywords" content=""/>
+                <meta name="author" content="Ján Miškovič"/>
             </Head>
 
             <motion.div variants={resumeVariants} initial="initial" animate="animate"

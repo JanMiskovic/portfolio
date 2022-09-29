@@ -36,7 +36,7 @@ export default function Bio() {
                 <div className="flex gap-3 sm:gap-5">
                     <Link href="/contact">
                         <a className="focus-ring my-border transition-hover 
-                            rounded-md shrink-0 py-1.5 sm:py-2 w-24 xs:w-32 sm:w-40
+                            rounded-md shrink-0 py-1.5 sm:py-2 w-[6.5rem] xs:w-32 sm:w-40
                             text-sm xs:text-base text-center 
                             text-black bg-[#E9F7FF] hover:bg-[#dbf2ff] active:bg-[#ccecff]
                             dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]">
