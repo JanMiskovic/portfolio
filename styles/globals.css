@@ -5,7 +5,7 @@
 @layer base {
     html {
         -webkit-tap-highlight-color: transparent;
-        font-family: Space Grotesk, system-ui, sans-serif;
+        font-family: Space Grotesk, sans-serif;
         overflow: overlay;
     }
 

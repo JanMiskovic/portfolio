@@ -1,15 +1,58 @@
 {
-    "bio.name": "John Mouse",
     "bio.location": "Hlohovec, Slovakia",
-    "bio.text.line1": "Bachelor of Applied Informatics, currently freelancing in web development / design. ",
-    "bio.text.line2": "Started with WordPress in 2020, then moved onto Next.js, React and Tailwind. ",
-    "bio.text.line3": "Fan\u00a0of functional programming and creative coding. Always looking to learn new things. ",
-    "bio.text.line4": "I\u00a0love movies, video games, and\u00a0challenges\u00a0- currently\u00a0learning Japanese\u00a0(*^▽^*)",
+    "bio.text.line.1": "Bachelor of\u00a0Applied Informatics, currently freelancing in\u00a0web development\u00a0/ design. ",
+    "bio.text.line.2": "Started with WordPress in\u00a02020, then moved onto Next.js, React and\u00a0Tailwind. ",
+    "bio.text.line.3": "Fan\u00a0of functional programming and clean code. Always looking to\u00a0learn new things. ",
+    "bio.text.line.4": "I\u00a0love movies, video games, and\u00a0challenges\u00a0- currently\u00a0learning Japanese\u00a0(*^▽^*)",
     "bio.btn": "Message me",
+
 
     "nav.portfolio": "Portfolio",
     "nav.resume": "Resume",
     "nav.hobbies": "Hobbies",
     "nav.media": "Media",
-    "nav.contact": "Contact"
+    "nav.contact": "Contact",
+
+
+    "resume.work.title": "Work experience",
+    "resume.work.date.1": "May 2020 - Present",
+    "resume.work.name.1": "Freelance - Web Developer",
+    "resume.work.desc.1": "Design and complete implementation of several websites for small to medium sized companies.",
+
+    "resume.education.title": "Education",
+    "resume.education.date.1": "September 2019 - May 2022",
+    "resume.education.name.1": "Applied Informatics",
+    "resume.education.desc.1": "Faculty of Natural Sciences and Informatics, Constantine the Philosopher University in Nitra",
+    "resume.education.location.1": "Nitra, Slovak Republic",
+    "resume.education.bc.title": "Bachelor’s thesis",
+    "resume.education.bc.name": "Functional programming in\u00a0Python",
+    
+    "resume.education.date.2": "September 2011 - May 2019",
+    "resume.education.name.2": "Ivan Kupec Gymnasium",
+    "resume.education.desc.2": "8-year grammar school",
+    "resume.education.location.2": "Hlohovec, Slovak Republic",
+
+    "resume.stack.basic": "Basic",
+    "resume.stack.intermediate": "Intermediate",
+    "resume.stack.advanced": "Advanced",
+
+    "resume.personal.title": "Personal details",
+    "resume.personal.name": "Name",
+    "resume.personal.birth": "Date of birth",
+    "resume.personal.address": "Address",
+    "resume.personal.country": "Slovak Republic",
+
+    "resume.contact.title": "Contact details",
+    "resume.contact.msg": "Please send an e-mail or use{br}the contact form before calling.",
+    
+    "resume.languages.title": "Languages",
+    "resume.languages.name.1": "Slovak",
+    "resume.languages.level.1": "Native",
+    "resume.languages.name.2": "English",
+    "resume.languages.level.2": "B2 (active)",
+
+    "resume.other.title": "Other",
+    "resume.other.driving": "Driving license",
+
+    "resume.download.btn": "Download resume"
 }

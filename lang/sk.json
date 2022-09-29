@@ -1,15 +1,58 @@
 {
-    "bio.name": "Ján Miškovič",
     "bio.location": "Hlohovec, Slovensko",
-    "bio.text.line1": "Bachelor of Applied Informatics, currently freelancing in web development / design. ",
-    "bio.text.line2": "Started with WordPress in 2020, then moved onto Next.js, React and Tailwind. ",
-    "bio.text.line3": "Fan\u00a0of functional programming and creative coding. Always looking to learn new things. ",
-    "bio.text.line4": "I\u00a0love movies, video games, and\u00a0challenges\u00a0- currently\u00a0learning Japanese\u00a0(*^▽^*)",
+    "bio.text.line.1": "Bakalár aplikovanej informatiky, v\u00a0súčasnosti freelancujem ako web developer\u00a0/ dizajnér. ",
+    "bio.text.line.2": "Začal som s\u00a0WordPressom v\u00a0roku 2020, neskôr som prešiel na\u00a0Next.js, React a\u00a0Tailwind. ",
+    "bio.text.line.3": "Zaujíma ma funkcionálne programovanie a\u00a0čistý kód. Vždy sa snažím naučiť niečo nové. ",
+    "bio.text.line.4": "Mám rád filmy, videohry a\u00a0výzvy\u00a0- aktuálne sa\u00a0učím Japončinu\u00a0(*^▽^*)",
     "bio.btn": "Napíšte mi",
+
 
     "nav.portfolio": "Portfólio",
     "nav.resume": "Životopis",
     "nav.hobbies": "Hobby",
     "nav.media": "Médiá",
-    "nav.contact": "Kontakt"
+    "nav.contact": "Kontakt",
+
+
+    "resume.work.title": "Pracovné skúsenosti",
+    "resume.work.date.1": "Máj 2020 - Súčasnosť",
+    "resume.work.name.1": "Freelance - Web Developer",
+    "resume.work.desc.1": "Dizajn a kompletná implementácia niekoľkých webstránok pre malé až\u00a0stredne veľké spoločnosti.",
+
+    "resume.education.title": "Vzdelanie",
+    "resume.education.date.1": "September 2019 - Máj 2022",
+    "resume.education.name.1": "Aplikovaná Informatika",
+    "resume.education.desc.1": "Fakulta prírodných vied a informatiky, Univerzita Konštantína Filozofa v Nitre",
+    "resume.education.location.1": "Nitra, Slovenská republika",
+    "resume.education.bc.title": "Bakalárska práca",
+    "resume.education.bc.name": "Funkcionálne programovanie v\u00a0jazyku Python",
+    
+    "resume.education.date.2": "September 2011 - Máj 2019",
+    "resume.education.name.2": "Gymnázium Ivana Kupca",
+    "resume.education.desc.2": "8-ročné gymnázium",
+    "resume.education.location.2": "Hlohovec, Slovenská republika",
+
+    "resume.stack.basic": "Základy",
+    "resume.stack.intermediate": "Mier. pokročilý",
+    "resume.stack.advanced": "Pokročilý",
+
+    "resume.personal.title": "Osobné údaje",
+    "resume.personal.name": "Meno",
+    "resume.personal.birth": "Dátum narodenia",
+    "resume.personal.address": "Adresa",
+    "resume.personal.country": "Slovenská Republika",
+
+    "resume.contact.title": "Kontaktné údaje",
+    "resume.contact.msg": "Pred volaním prosím použite{br}e-mail, alebo kontaktný formulár.",
+    
+    "resume.languages.title": "Jazyky",
+    "resume.languages.name.1": "Slovenčina",
+    "resume.languages.level.1": "Native",
+    "resume.languages.name.2": "Angličtina",
+    "resume.languages.level.2": "B2 (aktívne)",
+
+    "resume.other.title": "Iné",
+    "resume.other.driving": "Vodičský preukaz",
+    
+    "resume.download.btn": "Stiahnúť životopis"
 }
