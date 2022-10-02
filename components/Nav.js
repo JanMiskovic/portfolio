@@ -2,10 +2,12 @@ import Link from "next/link";
 import { useIntl } from "react-intl";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { useIsMd } from "../hooks/useMediaQuery";
 
 export default function Nav() {
     const intl = useIntl();
     const { pathname } = useRouter();
+    const isMd = useIsMd();
 
     const navItems = [
         { name: intl.formatMessage({id: "nav.portfolio"}), href: "/" },
@@ -29,7 +31,10 @@ export default function Nav() {
                         {name}
                         {isActiveLink(href, pathname) && (
                             <motion.div
-                                layoutId="underline"
+                                layoutId={href === "/contact" && !isMd
+                                    ? ""
+                                    : "underline"
+                                }
                                 className="absolute bottom-1.5 lg:bottom-1 left-0
                                     w-full h-px sm:h-0.5 lg:h-[3px]
                                     bg-[#0c69ff] dark:bg-[#66d4ff] will-change-transform"
