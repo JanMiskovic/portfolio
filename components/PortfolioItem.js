@@ -11,9 +11,9 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
             href={href} target="_blank" rel="noreferrer"
             className="flex flex-col rounded-lg focus-ring focus-ring-loose">
             <div className={`my-border rounded-lg p-[10%] mb-1.5 md:mb-2.5 ${className}`}>
-                <motion.div variants={image}>
+                <motion.div variants={image} className="will-change-transform">
                     <Image src={img} placeholder="blur" alt={`Preview image of website ${name}`}
-                        className="rounded-sm shadow-sharp dark:shadow-sharp-dark will-change-transform
+                        className="rounded-sm shadow-sharp dark:shadow-sharp-dark
                         bg-neutral-200 dark:bg-neutral-500"
                     />
                 </motion.div>
