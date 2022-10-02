@@ -2,9 +2,8 @@ import Image from "next/future/image";
 import { motion } from "framer-motion";
 
 export default function PortfolioItem({ href, img, name, stack, className }) {
-
     const image = {
-        active: { rotate: -2, scale: 1.05}
+        active: { rotate: -2, scale: 1.05 }
     };
 
     return (
@@ -13,7 +12,7 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
             className="flex flex-col rounded-lg focus-ring focus-ring-loose">
             <div className={`my-border rounded-lg p-[10%] mb-1.5 md:mb-2.5 ${className}`}>
                 <motion.div variants={image}>
-                    <Image src={img} width={640} height={360} alt={`Preview image of website ${name}`}
+                    <Image src={img} placeholder="blur" alt={`Preview image of website ${name}`}
                         className="rounded-sm shadow-sharp dark:shadow-sharp-dark will-change-transform
                         bg-neutral-200 dark:bg-neutral-500"
                     />

@@ -3,6 +3,7 @@ import { BsFacebook, BsGithub, BsLinkedin, BsSpotify } from "react-icons/bs";
 export default function Socials() {
     return (
         <div className="flex items-center gap-1.5 sm:gap-2.5 flex-wrap h-9 xs:h-10 sm:h-11 overflow-hidden">
+        
             <a href="https://github.com/JanMiskovic" target="_blank" rel="noreferrer"
                 className="focus-ring my-border p-2 rounded-full transition-hover
                 bg-[#F6EBFF] hover:bg-[#efdbff] active:bg-[#e8ccff]

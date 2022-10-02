@@ -24,11 +24,11 @@ export default function DarkToggle() {
         mounted ?
             <button onClick={toggleTheme} className={buttonStyles}>
                 {currentTheme === "dark" ? 
-                    <BsSunFill className="dark:fill-[#FFE766] w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/> :
+                    <BsSunFill className="fill-[#FFE766] w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/> :
                     <BsMoonFill className="fill-icon-light w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/>}
             </button> :
             <button className={buttonStyles}>
-                <BsSunFill className="dark:fill-[#FFE766] w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/>
+                <BsMoonFill className="fill-icon-light w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/>
             </button>
     );
 }
