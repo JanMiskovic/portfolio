@@ -26,7 +26,7 @@ export default function MainLayout({ children }) {
             <Header />
             <Bio />
             <Nav />
-            <AnimatePresence mode="wait" initial={false} >
+            <AnimatePresence mode="wait" initial={false}>
                 <motion.main key={asPath} variants={pageTransition}
                     initial="initial" animate="animate" exit="exit">
                     {children}
