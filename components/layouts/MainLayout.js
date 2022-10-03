@@ -1,21 +1,25 @@
+import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Bio from "../Bio";
 import Footer from "../Footer";
 import Header from "../Header";
 import Nav from "../Nav";
+import React from "react";
 
 export default function MainLayout({ children }) {
     const { asPath } = useRouter();
+    const isSm = useIsSm();
+    const isMd = useIsMd();
 
     const pageTransition = {
         initial: {},
         animate: {},
         exit: { 
             opacity: 0,
-            y: 20,
+            y: 10,
             transition: { 
-                duration: 0.3,
+                duration: 0.2,
                 ease: "easeInOut"
             }
         }
@@ -29,7 +33,7 @@ export default function MainLayout({ children }) {
             <AnimatePresence mode="wait" initial={false}>
                 <motion.main key={asPath} variants={pageTransition}
                     initial="initial" animate="animate" exit="exit">
-                    {children}
+                    {React.cloneElement(children, { isSm: isSm, isMd: isMd })}
                 </motion.main>
             </AnimatePresence>
             <Footer />
