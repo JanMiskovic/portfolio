@@ -25,7 +25,7 @@ export default function DarkToggle() {
                 <AnimatePresence mode="popLayout" initial={false}>
                     {currentTheme === "dark"
                         ? <motion.div key="light"
-                            transition={{ type: "spring", mass: 0.5, stiffness: 150 }}
+                            transition={{ type: "spring", damping: 11.5, mass: 0.5, stiffness: 150 }}
                             initial={{ y: "200%" }}
                             animate={{ y: 0 }}
                             exit={{ y: "200%" }}>
@@ -33,7 +33,7 @@ export default function DarkToggle() {
                             <BsSunFill className="fill-[#FFE766] w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/>
                         </motion.div>
                         : <motion.div key="dark"
-                            transition={{ type: "spring", mass: 0.5, stiffness: 150 }}
+                            transition={{ type: "spring", damping: 11.5, mass: 0.5, stiffness: 150 }}
                             initial={{ y: "-200%" }}
                             animate={{ y: 0 }}
                             exit={{ y: "-200%" }}>
