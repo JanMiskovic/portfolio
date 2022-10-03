@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Logo() {
     const iconVariants = {
         hover: {
-            rotate: -12
+            rotate: -72,
         }
     };
 
@@ -16,9 +16,17 @@ export default function Logo() {
                     flex gap-1.5 xs:gap-2 items-center rounded-md
                     xs:text-xl sm:text-2xl underline underline-offset-4">
             
-                    <motion.div variants={iconVariants} className="origin-center mt-0.5 xs:mt-1.5">
+                    <motion.div
+                        variants={iconVariants}
+                        transition= {{
+                            type: "spring",
+                            damping: 11.5,
+                            mass: 0.7,
+                            stiffness: 170
+                        }}
+                        className="origin-center mt-0.5 xs:mt-1.5">
                         <FiStar className="fill-transparent group-hover:fill-current
-                            group-active:fill-current transition-[fill]
+                            group-active:fill-current
                             w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6"/>
                     </motion.div>
                     janmiskovic.com

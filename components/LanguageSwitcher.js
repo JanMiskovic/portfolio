@@ -12,13 +12,15 @@ export default function LanguageSwitcher() {
             rounded-md my-border bg-bg-light dark:bg-bg-dark">
             
             <Link href={pathname} locale="sk">
-                <a className="transition-transform hover:scale-110 active:scale-110">
+                <a className="focus-ring focus-ring-loose rounded-md will-change-transform
+                    transition-transform hover:scale-110 active:scale-110">
                     <Image src={SkFlagImg} alt="Flag icon of the Slovak Republic"
                         className="!w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/>
                 </a>
             </Link>
             <Link href={pathname} locale="en">
-                <a className="transition-transform hover:scale-110 active:scale-110">
+                <a className="focus-ring focus-ring-loose rounded-md will-change-transform
+                    transition-transform hover:scale-110 active:scale-110">
                     <Image src={GbFlagImg} alt="Flag icon of Great Britain"
                         className="!w-4 xs:!w-5 sm:!w-6 !h-4 xs:!h-5 sm:!h-6"/>
                 </a>
