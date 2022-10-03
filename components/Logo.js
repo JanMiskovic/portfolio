@@ -10,7 +10,7 @@ export default function Logo() {
     };
 
     return (
-        <motion.div whileHover="hover" className="group">
+        <motion.div whileHover="hover" whileTap="hover" className="group">
             <Link href="/">
                 <a className="focus-ring focus-ring-loose link transition-hover
                     flex gap-1.5 xs:gap-2 items-center rounded-md
