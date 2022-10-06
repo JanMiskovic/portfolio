@@ -26,17 +26,20 @@ export default function MainLayout({ children }) {
     };
 
     return (
-        <div className="mx-auto max-w-screen-lg p-5 sm:p-7 lg:py-9 2xl:py-[5vh]">
-            <Header />
-            <Bio />
-            <Nav />
-            <AnimatePresence mode="wait" initial={false}>
-                <motion.main key={asPath} variants={pageTransition}
-                    initial="initial" animate="animate" exit="exit">
-                    {React.cloneElement(children, { isSm: isSm, isMd: isMd })}
-                </motion.main>
-            </AnimatePresence>
-            <Footer />
-        </div>
+        <>
+            {/* <BackgroundBlobs/> */}
+            <div className="mx-auto max-w-screen-lg p-5 sm:p-7 lg:py-9 2xl:py-[5vh]">
+                <Header/>
+                <Bio/>
+                <Nav/>
+                <AnimatePresence mode="wait" initial={false}>
+                    <motion.main key={asPath} variants={pageTransition}
+                        initial="initial" animate="animate" exit="exit">
+                        {React.cloneElement(children, { isSm: isSm, isMd: isMd })}
+                    </motion.main>
+                </AnimatePresence>
+                <Footer/>
+            </div>
+        </>
     );
 }
