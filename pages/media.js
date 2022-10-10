@@ -19,9 +19,7 @@ export default function Media() {
         <>
             <Head>
                 <title>Ján Miškovič - {intl.formatMessage({id: "media.meta.title"})}</title>
-                <meta name="description" content=""/>
-                <meta name="keywords" content=""/>
-                <meta name="author" content="Ján Miškovič"/>
+                <meta property="og:title" content={`Ján Miškovič - ${intl.formatMessage({id: "media.meta.title"})}`}/>
             </Head>
 
             <motion.div variants={mediaVariants} initial="initial" animate="animate"

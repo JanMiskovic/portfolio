@@ -21,9 +21,7 @@ export default function Resume({ isSm, isMd }) {
         <>
             <Head>
                 <title>Ján Miškovič - {intl.formatMessage({id: "resume.meta.title"})}</title>
-                <meta name="description" content=""/>
-                <meta name="keywords" content=""/>
-                <meta name="author" content="Ján Miškovič"/>
+                <meta property="og:title" content={`Ján Miškovič - ${intl.formatMessage({id: "resume.meta.title"})}`}/>
             </Head>
 
             <motion.div initial="initial" animate="animate"

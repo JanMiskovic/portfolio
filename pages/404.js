@@ -19,9 +19,8 @@ export default function Custom404() {
         <>
             <Head>
                 <title>Ján Miškovič - {intl.formatMessage({id: "404.meta.title"})}</title>
-                <meta name="description" content=""/>
-                <meta name="keywords" content=""/>
-                <meta name="author" content="Ján Miškovič"/>
+                <meta property="og:title" content={`Ján Miškovič - ${intl.formatMessage({id: "404.meta.title"})}`}/>
+                <meta name="robots" content="noindex"/>
             </Head>
 
             <motion.div variants={custom404Variants} initial="initial" animate="animate"

@@ -1,4 +1,6 @@
 {
+    "general.meta.desc": "Bakalár aplikovanej informatiky; v súčasnosti freelancujem ako web developer. Rád sa učím nové veci. Mám rád filmy, videohry a výzvy.",
+
     "bio.location": "Hlohovec, Slovensko",
     "bio.text.line.1": "Bakalár aplikovanej informatiky; v\u00a0súčasnosti freelancujem ako web developer\u00a0/ dizajnér. ",
     "bio.text.line.2": "Začal som s\u00a0WordPressom v\u00a0roku 2020, neskôr som prešiel na\u00a0Next.js, React a\u00a0Tailwind. ",
@@ -15,7 +17,6 @@
 
 
     "portfolio.meta.title": "Portfólio",
-
 
     "resume.meta.title": "Životopis",
     "resume.work.title": "Pracovné skúsenosti",

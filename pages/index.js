@@ -32,9 +32,7 @@ export default function Index() {
         <>
             <Head>
                 <title>Ján Miškovič - {intl.formatMessage({id: "portfolio.meta.title"})}</title>
-                <meta name="description" content=""/>
-                <meta name="keywords" content=""/>
-                <meta name="author" content="Ján Miškovič"/>
+                <meta property="og:title" content={`Ján Miškovič - ${intl.formatMessage({id: "portfolio.meta.title"})}`}/>
             </Head>
             
             <motion.div variants={portfolioVariants}

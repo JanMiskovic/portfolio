@@ -1,4 +1,6 @@
 {
+    "general.meta.desc": "Bachelor of Applied Informatics, currently freelancing in web development. Always looking to learn new things. I love movies, video games, and challenges.", 
+
     "bio.location": "Hlohovec, Slovakia",
     "bio.text.line.1": "Bachelor of\u00a0Applied Informatics, currently freelancing in\u00a0web development\u00a0/ design. ",
     "bio.text.line.2": "Started with WordPress in\u00a02020, then moved onto Next.js, React and\u00a0Tailwind. ",
@@ -15,7 +17,6 @@
 
 
     "portfolio.meta.title": "Portfolio",
-
 
     "resume.meta.title": "Resume",
     "resume.work.title": "Work experience",
