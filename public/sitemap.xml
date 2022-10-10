@@ -10,7 +10,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk">
+               href="https://janmiskovic.com/sk"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/sk</loc>
@@ -21,7 +21,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk">
+               href="https://janmiskovic.com/sk"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/resume</loc>
@@ -32,7 +32,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/resume">
+               href="https://janmiskovic.com/sk/resume"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/sk/resume</loc>
@@ -43,7 +43,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/resume">
+               href="https://janmiskovic.com/sk/resume"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/hobby</loc>
@@ -54,7 +54,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/hobby">
+               href="https://janmiskovic.com/sk/hobby"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/sk/hobby</loc>
@@ -65,7 +65,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/hobby">
+               href="https://janmiskovic.com/sk/hobby"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/media</loc>
@@ -76,7 +76,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/media">
+               href="https://janmiskovic.com/sk/media"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/sk/media</loc>
@@ -87,7 +87,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/media">
+               href="https://janmiskovic.com/sk/media"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/contact</loc>
@@ -98,7 +98,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/contact">
+               href="https://janmiskovic.com/sk/contact"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/sk/contact</loc>
@@ -109,6 +109,6 @@
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/contact">
+               href="https://janmiskovic.com/sk/contact"/>
   </url>
 </urlset>
