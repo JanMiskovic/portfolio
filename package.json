@@ -3,12 +3,14 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "postbuild": "next-sitemap",
         "start": "next start",
         "lint": "next lint"
     },
     "dependencies": {
         "framer-motion": "^7.3.5",
         "next": "^12.3.0",
+        "next-sitemap": "^3.1.24",
         "next-themes": "^0.2.0",
         "react": "18.0.0",
         "react-dom": "18.0.0",
