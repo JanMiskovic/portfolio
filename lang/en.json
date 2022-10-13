@@ -1,6 +1,13 @@
 {
     "general.meta.desc": "Bachelor of Applied Informatics, currently freelancing in web development. Always looking to learn new things. I love movies, video games, and challenges.", 
 
+
+    "cookies.title": "Cookie consent",
+    "cookies.text": "This website uses analytic cookies to help better understand how people interact with it. If you wish to help improve the experience in the future, consider accepting\u00a0:)",
+    "cookies.accept": "Accept",
+    "cookies.deny": "Decline",
+
+
     "bio.location": "Hlohovec, Slovakia",
     "bio.text.line.1": "Bachelor of\u00a0Applied Informatics, currently freelancing in\u00a0web development\u00a0/ design. ",
     "bio.text.line.2": "Started with WordPress in\u00a02020, then moved onto Next.js, React and\u00a0Tailwind. ",
@@ -17,6 +24,7 @@
 
 
     "portfolio.meta.title": "Portfolio",
+
 
     "resume.meta.title": "Resume",
     "resume.work.title": "Work experience",
@@ -58,7 +66,6 @@
 
     "resume.other.title": "Other",
     "resume.other.driving": "Driving license",
-
     "resume.download.btn": "Download resume",
 
 
@@ -76,5 +83,8 @@
 
 
     "wip.text.line.1": "Work in progress,\u00a0",
-    "wip.text.line.2": "come back later! 🔧🚨"
+    "wip.text.line.2": "come back later! 🔧🚨",
+
+
+    "footer.manage.cookies": "Manage cookies"
 }

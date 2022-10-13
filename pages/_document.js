@@ -9,8 +9,8 @@ export default function Document() {
                 />
             </Head>
             <body className="bg-white dark:bg-[#1E1E1E]">
-                <Main />
-                <NextScript />
+                <Main/>
+                <NextScript/>
             </body>
         </Html>
     );

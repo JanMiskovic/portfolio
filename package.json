@@ -7,6 +7,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "cookies-next": "^2.1.1",
         "framer-motion": "^7.3.5",
         "next": "^12.3.0",
         "next-themes": "^0.2.0",

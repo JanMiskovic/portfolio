@@ -3,7 +3,7 @@ import Image from "next/future/image";
 import Link from "next/link";
 import Dbr from "./Dbr";
 import Socials from "./Socials";
-import ProfileImg from "../public/profile_pic.jpg";
+import ProfileImg from "../public/profile_pic.webp";
 import SkFlagImg from "../public/icons/skflag.webp";
 
 export default function Bio() {
@@ -12,8 +12,8 @@ export default function Bio() {
             gap-x-5 gap-y-5 md:gap-y-4 mb-4 md:mb-10 lg:mb-16">
 
             {/* Profile pic */}
-            <Image priority={true} src={ProfileImg} placeholder="blur" alt="Profile picture of Ján" 
-                className="md:row-span-2 self-center rounded-full my-border bg-neutral-200
+            <Image priority={true} src={ProfileImg} alt="Profile picture of Ján" 
+                className="md:row-span-2 self-center rounded-full my-border bg-bg-light dark:bg-bg-dark
                 w-16 h-16 xs:w-20 xs:h-20 sm:w-32 sm:h-32 md:w-5/6 md:h-fit lg:w-72 lg:h-72"
             />
 

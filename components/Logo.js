@@ -6,7 +6,7 @@ export default function Logo() {
     const iconVariants = {
         hover: {
             rotate: -72,
-        }
+        },
     };
 
     return (

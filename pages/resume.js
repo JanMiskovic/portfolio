@@ -11,8 +11,8 @@ export default function Resume({ isSm, isMd }) {
     const intl = useIntl();
 
     const resumeItems = {
-        initial: { opacity: 0,  scale: 0.9, y: -20 },
-        animate: { opacity: 1,  scale: 1, y: 0 }
+        initial: { opacity: 0, scale: 0.9, y: -20 },
+        animate: { opacity: 1, scale: 1, y: 0 }
     };
 
     const stagger = 0.07;

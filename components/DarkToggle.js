@@ -13,7 +13,10 @@ export default function DarkToggle() {
     }, []);
 
     const currentTheme = (theme === "system") ? systemTheme : theme;
-    const toggleTheme = () => setTheme(currentTheme === "dark" ? "light" : "dark");
+    const toggleTheme = () => {
+        setTheme(currentTheme === "dark" ? "light" : "dark");
+        window.gtag("event", "theme_toggle", { switched_to: currentTheme });
+    };    
 
     return (
         mounted
