@@ -3,7 +3,7 @@ import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { hasCookie } from "cookies-next";
-import GoogleTagManager from "../GoogleTagManager";
+import AnalyticsScripts from "../AnalyticsScripts";
 import MetaTags from "../MetaTags";
 import Favicon from "../Favicon";
 import CookieConsent from "../CookieConsent";
@@ -28,12 +28,12 @@ export default function MainLayout({ children }) {
     };
 
     useEffect(() => {
-        setShowCookieBanner(!hasCookie("cookieConsent"));
+        setShowCookieBanner(!hasCookie("localCookieConsent"));
     }, []);
 
     return (
         <>
-            <GoogleTagManager/>
+            <AnalyticsScripts/>
             <MetaTags/>
             <Favicon/>
             

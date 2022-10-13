@@ -1,5 +1,5 @@
 import { FormattedMessage } from "react-intl";
-import { setCookie } from "cookies-next";
+import { setCookie, getCookies, deleteCookie } from "cookies-next";
 import { CgClose } from "react-icons/cg";
 import { motion } from "framer-motion";
 
@@ -8,16 +8,15 @@ export default function CookieConsent({ setShowCookieBanner }) {
         setShowCookieBanner(false);
         setCookie("localCookieConsent", "true", { maxAge: 60 * 60 * 24 * 365 });
         window.gtag("consent", "update", {
-            ad_storage: "granted",
             analytics_storage: "granted",
         });
     }
 
     function denyCookies() {
         setShowCookieBanner(false);
+        Object.keys(getCookies()).forEach((name) => deleteCookie(name));
         setCookie("localCookieConsent", "false", { maxAge: 60 * 60 * 24 * 365 });
         window.gtag("consent", "update", {
-            ad_storage: "denied",
             analytics_storage: "denied",
         });
     }
