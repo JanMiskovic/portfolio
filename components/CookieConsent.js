@@ -7,18 +7,16 @@ export default function CookieConsent({ setShowCookieBanner }) {
     function acceptCookies() {
         setShowCookieBanner(false);
         setCookie("localCookieConsent", "true", { maxAge: 60 * 60 * 24 * 365 });
-        window.gtag("consent", "update", {
-            analytics_storage: "granted",
-        });
+        window.gtag("consent", "update", { analytics_storage: "granted" });
+        window.gtag("event", "cookie_consent", { consent: "granted" });
     }
 
     function denyCookies() {
         setShowCookieBanner(false);
         Object.keys(getCookies()).forEach((name) => deleteCookie(name));
         setCookie("localCookieConsent", "false", { maxAge: 60 * 60 * 24 * 365 });
-        window.gtag("consent", "update", {
-            analytics_storage: "denied",
-        });
+        window.gtag("event", "cookie_consent", { consent: "denied" });
+        window.gtag("consent", "update", { analytics_storage: "denied" });
     }
     
     const cookieVariants = {
