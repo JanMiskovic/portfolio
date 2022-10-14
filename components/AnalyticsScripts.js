@@ -19,7 +19,7 @@ export default function GoogleTagManager() {
                     
                     gtag('consent', 'default', {
                         'ad_storage': 'denied',
-                        'analytics_storage': 'denied'
+                        'analytics_storage': '${localCookieConsent === true ? "granted" : "denied"}'
                     });
 
                     gtag('js', new Date());
@@ -29,15 +29,6 @@ export default function GoogleTagManager() {
                 `}
             </Script>
 
-            {localCookieConsent === true && (
-                <Script id="consent_update" strategy="afterInteractive">
-                    {`
-                        gtag('consent', 'update', {
-                            'analytics_storage': 'granted'
-                        });
-                    `}
-                </Script>
-            )}
         </>
     );
 }
