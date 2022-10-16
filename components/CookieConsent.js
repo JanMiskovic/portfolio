@@ -4,10 +4,11 @@ import { CgClose } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 export default function CookieConsent({ setShowCookieBanner }) {
+    const currentConsent = getCookie("localCookieConsent");
+
     function acceptCookies() {
         setShowCookieBanner(false);
-        const localCookieConsent = getCookie("localCookieConsent");
-        if (localCookieConsent !== true) {
+        if (currentConsent !== true) {
             setCookie("localCookieConsent", "true", { maxAge: 60 * 60 * 24 * 365 });
             window.gtag("consent", "update", { analytics_storage: "granted" });
             window.gtag("event", "cookie_consent", { consent: "granted" });
@@ -16,12 +17,22 @@ export default function CookieConsent({ setShowCookieBanner }) {
 
     function denyCookies() {
         setShowCookieBanner(false);
-        const localCookieConsent = getCookie("localCookieConsent");
-        if (localCookieConsent !== false) {
+        if (currentConsent !== false) {
             window.gtag("event", "cookie_consent", { consent: "denied" });
             window.gtag("consent", "update", { analytics_storage: "denied" });
             Object.keys(getCookies()).forEach((name) => deleteCookie(name));
             setCookie("localCookieConsent", "false", { maxAge: 60 * 60 * 24 * 365 });
+        }
+    }
+
+    /* If cookies haven't been accepted or declined yet, 
+    set them as denied so the banner doesn't show up again,
+    otherwise just close the banner. */
+    function closeCookies() {
+        if (currentConsent === undefined) {
+            denyCookies();
+        } else {
+            setShowCookieBanner(false);
         }
     }
     
@@ -51,7 +62,7 @@ export default function CookieConsent({ setShowCookieBanner }) {
                 border-b-2 border-neutral-200 dark:border-border-dark xs:text-xl">
 
                 <h3><FormattedMessage id="cookies.title"/></h3>
-                <button onClick={denyCookies}
+                <button onClick={closeCookies}
                     className="transition-transform active:scale-90 
                     focus-ring focus-ring-loose rounded-lg">
 
@@ -59,30 +70,29 @@ export default function CookieConsent({ setShowCookieBanner }) {
                 </button>
             </div>
 
-            <p className="text-sm xs:text-base mb-4 px-4 sm:px-5">
-                <FormattedMessage id="cookies.text"/>
-            </p>
+            <div className="px-4 sm:px-5 pb-4">
+                <p className="text-sm xs:text-base mb-4">
+                    <FormattedMessage id="cookies.text"/>
+                </p>
 
-            <div className="flex w-full gap-3 xs:gap-4 sm:gap-3.5 px-4 sm:px-5 pb-4">
-                <button onClick={acceptCookies}
-                    className="focus-ring my-border transition-hover 
-                    basis-1/2 rounded-md py-1.5 sm:py-2
-                    text-sm xs:text-base text-center 
-                    text-black bg-[#e9ffee] hover:bg-[#dbffe4] active:bg-[#ccffd9]
-                    dark:bg-[#66ff6b] dark:hover:bg-[#85ff89] dark:active:bg-[#a3ffa6]">
-
-                    <FormattedMessage id="cookies.accept"/> 
-                </button>
-
-                <button onClick={denyCookies}
-                    className="focus-ring my-border transition-hover 
-                    basis-1/2 rounded-md py-1.5 sm:py-2
-                    text-sm xs:text-base text-center 
-                    text-black bg-[#ffe9f3] hover:bg-[#ffdbeb] active:bg-[#ffcce3]
-                    dark:bg-[#ff6666] dark:hover:bg-[#ff8585] dark:active:bg-[#ffa3a3]">
-
-                    <FormattedMessage id="cookies.deny"/> 
-                </button>
+                <div className="flex w-full gap-3 xs:gap-4 sm:gap-3.5">
+                    <button onClick={acceptCookies}
+                        className="focus-ring my-border transition-hover
+                        basis-1/2 rounded-md py-1.5 sm:py-2
+                        text-sm xs:text-base text-center
+                        text-black bg-[#e9ffee] hover:bg-[#dbffe4] active:bg-[#ccffd9]
+                        dark:bg-[#66ff6b] dark:hover:bg-[#85ff89] dark:active:bg-[#a3ffa6]">
+                        <FormattedMessage id="cookies.accept"/>
+                    </button>
+                    <button onClick={denyCookies}
+                        className="focus-ring my-border transition-hover
+                        basis-1/2 rounded-md py-1.5 sm:py-2
+                        text-sm xs:text-base text-center
+                        text-black bg-[#ffe9f3] hover:bg-[#ffdbeb] active:bg-[#ffcce3]
+                        dark:bg-[#ff6666] dark:hover:bg-[#ff8585] dark:active:bg-[#ffa3a3]">
+                        <FormattedMessage id="cookies.deny"/>
+                    </button>
+                </div>
             </div>
         </motion.div>
     );
