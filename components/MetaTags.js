@@ -8,7 +8,7 @@ export default function MetaTags() {
     
     return (
         <Head>
-            <meta name="author" content="Ján Miškovič"/>
+            <meta name="robots" content="nosnippet"/>
             <meta property="og:description" content={intl.formatMessage({id: "general.meta.desc"})}/>
             <meta property="og:image" content=""/>
             <meta property="og:url" content={`https://janmiskovic.com${locale === "sk" ? "/sk" : ""}${asPath}`}/>

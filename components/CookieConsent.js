@@ -51,7 +51,7 @@ export default function CookieConsent({ setShowCookieBanner }) {
                 border-b-2 border-neutral-200 dark:border-border-dark xs:text-xl">
 
                 <h3><FormattedMessage id="cookies.title"/></h3>
-                <button onClick={() => setShowCookieBanner(false)}
+                <button onClick={denyCookies}
                     className="transition-transform active:scale-90 
                     focus-ring focus-ring-loose rounded-lg">
 
