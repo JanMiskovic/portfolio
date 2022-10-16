@@ -25,6 +25,7 @@ export default function GoogleTagManager() {
                     gtag('js', new Date());
                     gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}', {
                         page_path: window.location.pathname,
+                        cookie_domain: 'none',
                     });
                 `}
             </Script>
