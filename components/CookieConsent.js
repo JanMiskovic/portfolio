@@ -1,22 +1,28 @@
+import { setCookie, getCookies, deleteCookie, getCookie } from "cookies-next";
 import { FormattedMessage } from "react-intl";
-import { setCookie, getCookies, deleteCookie } from "cookies-next";
 import { CgClose } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 export default function CookieConsent({ setShowCookieBanner }) {
     function acceptCookies() {
         setShowCookieBanner(false);
-        setCookie("localCookieConsent", "true", { maxAge: 60 * 60 * 24 * 365 });
-        window.gtag("consent", "update", { analytics_storage: "granted" });
-        window.gtag("event", "cookie_consent", { consent: "granted" });
+        const localCookieConsent = getCookie("localCookieConsent");
+        if (localCookieConsent !== true) {
+            setCookie("localCookieConsent", "true", { maxAge: 60 * 60 * 24 * 365 });
+            window.gtag("consent", "update", { analytics_storage: "granted" });
+            window.gtag("event", "cookie_consent", { consent: "granted" });
+        }
     }
 
     function denyCookies() {
         setShowCookieBanner(false);
-        Object.keys(getCookies()).forEach((name) => deleteCookie(name));
-        setCookie("localCookieConsent", "false", { maxAge: 60 * 60 * 24 * 365 });
-        window.gtag("event", "cookie_consent", { consent: "denied" });
-        window.gtag("consent", "update", { analytics_storage: "denied" });
+        const localCookieConsent = getCookie("localCookieConsent");
+        if (localCookieConsent !== false) {
+            window.gtag("event", "cookie_consent", { consent: "denied" });
+            window.gtag("consent", "update", { analytics_storage: "denied" });
+            Object.keys(getCookies()).forEach((name) => deleteCookie(name));
+            setCookie("localCookieConsent", "false", { maxAge: 60 * 60 * 24 * 365 });
+        }
     }
     
     const cookieVariants = {

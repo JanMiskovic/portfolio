@@ -46,26 +46,26 @@
                href="https://janmiskovic.com/sk/resume"/>
   </url>
   <url>
-    <loc>https://janmiskovic.com/hobby</loc>
+    <loc>https://janmiskovic.com/hobbies</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
-               href="https://janmiskovic.com/hobby"/>
+               href="https://janmiskovic.com/hobbies"/>
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/hobby"/>
+               href="https://janmiskovic.com/sk/hobbies"/>
   </url>
   <url>
-    <loc>https://janmiskovic.com/sk/hobby</loc>
+    <loc>https://janmiskovic.com/sk/hobbies</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
-               href="https://janmiskovic.com/hobby"/>
+               href="https://janmiskovic.com/hobbies"/>
     <xhtml:link
                rel="alternate"
                hreflang="sk"
-               href="https://janmiskovic.com/sk/hobby"/>
+               href="https://janmiskovic.com/sk/hobbies"/>
   </url>
   <url>
     <loc>https://janmiskovic.com/media</loc>
