@@ -18,13 +18,20 @@ export default function MainLayout({ children }) {
     const isSm = useIsSm();
     const isMd = useIsMd();
 
-    const pageTransition = {
+    const initialLoadVariants = {
         initial: {},
         animate: {},
-        exit: { opacity: 0, y: 10, transition: { 
-            duration: 0.2,
-            ease: "easeInOut"
-        }}
+    };
+
+    const pageTransitionVariants = {
+        exit: {
+            opacity: 0,
+            y: 10,
+            transition: {
+                duration: 0.2,
+                ease: "easeInOut",
+            },
+        },
     };
 
     useEffect(() => {
@@ -33,30 +40,41 @@ export default function MainLayout({ children }) {
 
     return (
         <>
-            <AnalyticsScripts/>
-            <MetaTags/>
-            <Favicon/>
-            
+            <AnalyticsScripts />
+            <MetaTags />
+            <Favicon />
+
             <AnimatePresence>
                 {showCookieBanner && (
-                    <CookieConsent setShowCookieBanner={setShowCookieBanner}/>
+                    <CookieConsent setShowCookieBanner={setShowCookieBanner} />
                 )}
             </AnimatePresence>
 
-            <div className="mx-auto max-w-screen-lg p-5 sm:p-7 lg:py-9 2xl:py-[5vh]">
-                <Header/>
-                <Bio/>
-                <Nav/>
+            <motion.div
+                variants={initialLoadVariants}
+                initial="initial"
+                animate="animate"
+                className="mx-auto max-w-screen-lg p-5 sm:p-7 lg:py-9 2xl:py-[5vh]">
+                <Header />
+                <Bio />
+                <Nav />
 
                 <AnimatePresence mode="wait" initial={false}>
-                    <motion.main key={asPath} variants={pageTransition}
-                        initial="initial" animate="animate" exit="exit">
-                        {React.cloneElement(children, { isSm: isSm, isMd: isMd })}
+                    <motion.main
+                        key={asPath}
+                        variants={pageTransitionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit">
+                        {React.cloneElement(children, {
+                            isSm: isSm,
+                            isMd: isMd,
+                        })}
                     </motion.main>
                 </AnimatePresence>
-                
-                <Footer setShowCookieBanner={setShowCookieBanner}/>
-            </div>
+
+                <Footer setShowCookieBanner={setShowCookieBanner} />
+            </motion.div>
         </>
     );
 }

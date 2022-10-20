@@ -4,17 +4,17 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}"
+        "./components/**/*.{js,ts,jsx,tsx}",
     ],
     darkMode: "class",
     theme: {
         screens: {
-            "xs": "375px",
+            xs: "375px",
             ...defaultTheme.screens,
         },
         extend: {
             screens: {
-                "lg": "1084px",
+                lg: "1084px",
             },
             colors: {
                 "bg-light": "#FAFAFA",
@@ -28,7 +28,7 @@ module.exports = {
                 "2xs": "0.55rem",
             },
             boxShadow: {
-                "sharp": "4px 4px 0 rgba(0, 0, 0, 0.3)",
+                sharp: "4px 4px 0 rgba(0, 0, 0, 0.3)",
                 "sharp-dark": "4px 4px 0 rgba(0, 0, 0, 0.6)",
             },
         },
@@ -36,5 +36,5 @@ module.exports = {
     plugins: [],
     future: {
         hoverOnlyWhenSupported: true,
-    }
+    },
 };

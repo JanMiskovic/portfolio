@@ -1,12 +1,10 @@
 {
     "general.meta.desc": "Bakalár aplikovanej informatiky; v súčasnosti freelancujem ako web developer. Rád sa učím nové veci. Mám rád filmy, videohry a výzvy.",
 
-
     "cookies.title": "Súhlas s cookies",
     "cookies.text": "Táto stránka používa analytické cookies, pre lepšie porozumenie ako ju návštevníci používajú. Ak si želáte pomôct stránku v\u00a0budúcnosti vylepšiť, zvážte ich prijatie\u00a0:)",
     "cookies.accept": "Prijať",
     "cookies.deny": "Odmietnuť",
-
 
     "bio.location": "Hlohovec, Slovensko",
     "bio.text.line.1": "Bakalár aplikovanej informatiky; v\u00a0súčasnosti freelancujem ako web developer\u00a0/ dizajnér. ",
@@ -15,16 +13,13 @@
     "bio.text.line.4": "Mám rád filmy, videohry a\u00a0výzvy\u00a0- aktuálne sa\u00a0učím Japončinu\u00a0(*^▽^*)",
     "bio.btn": "Napíšte mi",
 
-
     "nav.portfolio": "Portfólio",
     "nav.resume": "Životopis",
     "nav.hobbies": "Hobby",
     "nav.media": "Médiá",
     "nav.contact": "Kontakt",
 
-
     "portfolio.meta.title": "Portfólio",
-
 
     "resume.meta.title": "Životopis",
     "resume.work.title": "Pracovné skúsenosti",
@@ -39,7 +34,7 @@
     "resume.education.location.1": "Nitra, Slovenská republika",
     "resume.education.bc.title": "Bakalárska práca",
     "resume.education.bc.name": "Funkcionálne programovanie v\u00a0jazyku Python",
-    
+
     "resume.education.date.2": "September 2011 - Máj 2019",
     "resume.education.name.2": "Gymnázium Ivana Kupca",
     "resume.education.desc.2": "8-ročné gymnázium",
@@ -57,7 +52,7 @@
 
     "resume.contact.title": "Kontaktné údaje",
     "resume.contact.msg": "Pred volaním prosím použite{br}e-mail, alebo kontaktný formulár.",
-    
+
     "resume.languages.title": "Jazyky",
     "resume.languages.name.1": "Slovenčina",
     "resume.languages.level.1": "Rodný",
@@ -68,23 +63,17 @@
     "resume.other.driving": "Vodičský preukaz",
     "resume.download.btn": "Stiahnúť životopis",
 
-
     "hobbies.meta.title": "Hobby",
-
 
     "media.meta.title": "Médiá",
 
-
     "contact.meta.title": "Kontakt",
-
 
     "404.meta.title": "Stránka neexistuje",
     "404.text": "Táto stránka bola odstránená, alebo neexistuje.{br}Vráťte sa na existujúcu stránku pomocou menu!",
 
-
     "wip.text.line.1": "Stránka sa pripravuje,\u00a0",
     "wip.text.line.2": "vráťte sa neskôr! 🔧🚨",
-
 
     "footer.manage.cookies": "Správa cookies"
 }

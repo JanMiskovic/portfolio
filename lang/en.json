@@ -1,12 +1,10 @@
 {
-    "general.meta.desc": "Bachelor of Applied Informatics, currently freelancing in web development. Always looking to learn new things. I love movies, video games, and challenges.", 
-
+    "general.meta.desc": "Bachelor of Applied Informatics, currently freelancing in web development. Always looking to learn new things. I love movies, video games, and challenges.",
 
     "cookies.title": "Cookie consent",
     "cookies.text": "This website uses analytic cookies to help understand how people interact with it. If\u00a0you wish to help improve the experience in the future, consider accepting\u00a0:)",
     "cookies.accept": "Accept",
     "cookies.deny": "Decline",
-
 
     "bio.location": "Hlohovec, Slovakia",
     "bio.text.line.1": "Bachelor of\u00a0Applied Informatics, currently freelancing in\u00a0web development\u00a0/ design. ",
@@ -15,16 +13,13 @@
     "bio.text.line.4": "I\u00a0love movies, video games, and\u00a0challenges\u00a0- currently\u00a0learning Japanese\u00a0(*^▽^*)",
     "bio.btn": "Message me",
 
-
     "nav.portfolio": "Portfolio",
     "nav.resume": "Resume",
     "nav.hobbies": "Hobbies",
     "nav.media": "Media",
     "nav.contact": "Contact",
 
-
     "portfolio.meta.title": "Portfolio",
-
 
     "resume.meta.title": "Resume",
     "resume.work.title": "Work experience",
@@ -39,7 +34,7 @@
     "resume.education.location.1": "Nitra, Slovak Republic",
     "resume.education.bc.title": "Bachelor’s thesis",
     "resume.education.bc.name": "Functional programming in\u00a0Python",
-    
+
     "resume.education.date.2": "September 2011 - May 2019",
     "resume.education.name.2": "Ivan Kupec Gymnasium",
     "resume.education.desc.2": "8-year grammar school",
@@ -57,7 +52,7 @@
 
     "resume.contact.title": "Contact details",
     "resume.contact.msg": "Please send an e-mail or use{br}the contact form before calling.",
-    
+
     "resume.languages.title": "Languages",
     "resume.languages.name.1": "Slovak",
     "resume.languages.level.1": "Native",
@@ -68,23 +63,17 @@
     "resume.other.driving": "Driving license",
     "resume.download.btn": "Download resume",
 
-
     "hobbies.meta.title": "Hobbies",
-
 
     "media.meta.title": "Media",
 
-
     "contact.meta.title": "Contact",
-
 
     "404.meta.title": "Page not found",
     "404.text": "This page was removed or doesn't exist.{br}Navigate to an existing page using the menu above!",
 
-
     "wip.text.line.1": "Work in progress,\u00a0",
     "wip.text.line.2": "come back later! 🔧🚨",
-
 
     "footer.manage.cookies": "Manage cookies"
 }
