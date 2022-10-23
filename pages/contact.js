@@ -21,7 +21,7 @@ export default function Contact() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič -{" "}
+                    Ján Miškovič{" - "}
                     {intl.formatMessage({ id: "contact.meta.title" })}
                 </title>
                 <meta

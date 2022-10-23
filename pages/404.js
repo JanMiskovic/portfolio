@@ -21,7 +21,7 @@ export default function Custom404() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič -{" "}
+                    Ján Miškovič{" - "}
                     {intl.formatMessage({ id: "404.meta.title" })}
                 </title>
                 <meta

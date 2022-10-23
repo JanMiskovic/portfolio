@@ -26,7 +26,7 @@ export default function Resume({ isSm, isMd }) {
         <>
             <Head>
                 <title>
-                    Ján Miškovič -{" "}
+                    Ján Miškovič{" - "}
                     {intl.formatMessage({ id: "resume.meta.title" })}
                 </title>
                 <meta
@@ -109,7 +109,7 @@ export default function Resume({ isSm, isMd }) {
                                 <span className="font-medium">
                                     <FormattedMessage id="resume.education.bc.title" />
                                 </span>
-                                &nbsp;-{" "}
+                                {" - "}
                                 <FormattedMessage id="resume.education.bc.name" />
                             </span>
                         </div>
@@ -143,7 +143,7 @@ export default function Resume({ isSm, isMd }) {
                     <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                         <BsTerminalFill
                             className="fill-[#339DFF] dark:fill-[#66C8FF]
-                        text-base"
+                            text-lg"
                         />
                         Stack
                     </h2>
@@ -152,85 +152,100 @@ export default function Resume({ isSm, isMd }) {
                         md:grid md:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] lg:flex">
                         <ul className="md:order-1 lg:order-none">
                             <li>
-                                <span className="font-medium">Next.js</span> -{" "}
+                                <span className="font-medium">Next.js</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">React</span> -{" "}
+                                <span className="font-medium">React</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
                                 <span className="font-medium">
                                     Tailwind CSS
-                                </span>{" "}
-                                -{" "}
+                                </span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li>
                                 <span className="font-medium">
                                     Framer Motion
-                                </span>{" "}
-                                - <FormattedMessage id="resume.stack.basic" />
+                                </span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.basic" />
                             </li>
                         </ul>
                         <ul className="md:order-5 lg:order-none">
                             <li>
-                                <span className="font-medium">HTML</span> -{" "}
+                                <span className="font-medium">HTML</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li>
-                                <span className="font-medium">CSS</span> -{" "}
+                                <span className="font-medium">CSS</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.advanced" />
                             </li>
                         </ul>
                         <ul className="md:order-2 lg:order-none">
                             <li>
-                                <span className="font-medium">Laravel</span> -{" "}
+                                <span className="font-medium">Laravel</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.basic" />
                             </li>
                             <li>
-                                <span className="font-medium">WordPress</span> -{" "}
+                                <span className="font-medium">WordPress</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">SQL</span> -{" "}
+                                <span className="font-medium">SQL</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">PHP</span> -{" "}
+                                <span className="font-medium">PHP</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.basic" />
                             </li>
                         </ul>
                         <ul className="md:order-3 lg:order-none">
                             <li>
-                                <span className="font-medium">Java</span> -{" "}
+                                <span className="font-medium">Java</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">Python</span> -{" "}
+                                <span className="font-medium">Python</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li>
-                                <span className="font-medium">JavaScript</span>{" "}
-                                -{" "}
+                                <span className="font-medium">JavaScript</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">TypeScript</span>{" "}
-                                - <FormattedMessage id="resume.stack.basic" />
+                                <span className="font-medium">TypeScript</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.basic" />
                             </li>
                         </ul>
                         <ul className="md:order-4 lg:order-none">
                             <li>
-                                <span className="font-medium">Git</span> -{" "}
+                                <span className="font-medium">Git</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">Figma</span> -{" "}
+                                <span className="font-medium">Figma</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">GIMP</span> -{" "}
+                                <span className="font-medium">GIMP</span>
+                                {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                         </ul>
@@ -288,16 +303,16 @@ export default function Resume({ isSm, isMd }) {
                         <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                             <BsTelephoneFill
                                 className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            text-base"
+                                text-lg"
                             />
                             <FormattedMessage id="resume.contact.title" />
                         </h2>
                         <ul>
                             <li>
                                 <a
-                                    href="mailto:janmiskovicweb@gmail.com"
+                                    href="mailto:jan@janmiskovic.com"
                                     className="font-medium link focus-ring focus-ring-loose rounded-md transition-hover">
-                                    janmiskovicweb@gmail.com
+                                    jan@janmiskovic.com
                                 </a>
                             </li>
                             <li className="mb-2">
@@ -321,7 +336,7 @@ export default function Resume({ isSm, isMd }) {
                         <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                             <BsChatQuoteFill
                                 className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            text-base"
+                            text-lg"
                             />
                             <FormattedMessage id="resume.languages.title" />
                         </h2>
@@ -330,14 +345,14 @@ export default function Resume({ isSm, isMd }) {
                                 <span className="font-medium">
                                     <FormattedMessage id="resume.languages.name.1" />
                                 </span>
-                                &nbsp;-{" "}
+                                {" - "}
                                 <FormattedMessage id="resume.languages.level.1" />
                             </li>
                             <li>
                                 <span className="font-medium">
                                     <FormattedMessage id="resume.languages.name.2" />
                                 </span>
-                                &nbsp;-{" "}
+                                {" - "}
                                 <FormattedMessage id="resume.languages.level.2" />
                             </li>
                         </ul>
@@ -348,7 +363,7 @@ export default function Resume({ isSm, isMd }) {
                         <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
                             <BsInfoCircleFill
                                 className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            text-base"
+                            text-lg"
                             />
                             <FormattedMessage id="resume.other.title" />
                         </h2>

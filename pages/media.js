@@ -21,7 +21,7 @@ export default function Media() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič -{" "}
+                    Ján Miškovič{" - "}
                     {intl.formatMessage({ id: "media.meta.title" })}
                 </title>
                 <meta

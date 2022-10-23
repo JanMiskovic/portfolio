@@ -35,7 +35,7 @@ export default function Index() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič -{" "}
+                    Ján Miškovič{" - "}
                     {intl.formatMessage({ id: "portfolio.meta.title" })}
                 </title>
                 <meta
