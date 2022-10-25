@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function PortfolioItem({ href, img, name, stack, className }) {
     const image = {
-        active: { rotate: -2, scale: 1.05 }
+        active: { rotate: -1.5, scale: 1.05 }
     };
 
     return (
