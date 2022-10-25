@@ -14,7 +14,7 @@
     }
 
     ::-webkit-scrollbar {
-  	    @apply w-3;
+        @apply w-3;
     }
 
     ::-webkit-scrollbar-track {
@@ -52,10 +52,10 @@
 
     .link {
         @apply hover:text-[#0c69ff] hover:dark:text-[#66d4ff]
-            active:text-[#0c69ff] active:dark:text-[#66d4ff]
+            active:text-[#0c69ff] active:dark:text-[#66d4ff];
     }
 
     .active-link {
-        @apply text-[#0c69ff] dark:text-[#66d4ff]
+        @apply text-[#0c69ff] dark:text-[#66d4ff];
     }
 }

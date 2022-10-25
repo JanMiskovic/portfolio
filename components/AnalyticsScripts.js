@@ -3,9 +3,9 @@ import { getCookie } from "cookies-next";
 
 export default function GoogleTagManager() {
     const localCookieConsent = getCookie("localCookieConsent");
-    
+
     return (
-        <>  
+        <>
             <Script
                 id="gtag"
                 strategy="afterInteractive"
@@ -19,16 +19,18 @@ export default function GoogleTagManager() {
                     
                     gtag('consent', 'default', {
                         'ad_storage': 'denied',
-                        'analytics_storage': '${localCookieConsent === true ? "granted" : "denied"}'
+                        'analytics_storage': '${
+                            localCookieConsent === true ? "granted" : "denied"
+                        }'
                     });
 
                     gtag('js', new Date());
                     gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}', {
                         page_path: window.location.pathname,
+                        cookie_domain: 'none',
                     });
                 `}
             </Script>
-
         </>
     );
 }
