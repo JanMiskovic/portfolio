@@ -155,107 +155,109 @@ export default function Resume({ isSm, isMd }) {
                         />
                         <FormattedMessage id="resume.stack.title" />
                     </h2>
-                    <h3>
-                        <FormattedMessage id="resume.stack.regular" />
-                    </h3>
-                    <ul>
-                        <li>
-                            <span className="font-medium">Next.js</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">React</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">Tailwind CSS</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.advanced" />
-                        </li>
-                        <li className="mb-1.5">
-                            <span className="font-medium">Framer Motion</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.basic" />
-                        </li>
-                        <li>
-                            <span className="font-medium">HTML</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.advanced" />
-                        </li>
-                        <li>
-                            <span className="font-medium">CSS</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.advanced" />
-                        </li>
-                        <li className="mb-1.5">
-                            <span className="font-medium">MySQL</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">Python</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.advanced" />
-                        </li>
-                        <li className="mb-1.5">
-                            <span className="font-medium">JavaScript</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">Git</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">Figma</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">GIMP</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">Sony Vegas</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                    </ul>
-
-                    <h3>
-                        <FormattedMessage id="resume.stack.before" />
-                    </h3>
-                    <ul>
-                        <li>
-                            <span className="font-medium">Java</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li className="mb-1.5">
-                            <span className="font-medium">Android Studio</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.basic" />
-                        </li>
-                        <li>
-                            <span className="font-medium">WordPress</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.intermediate" />
-                        </li>
-                        <li>
-                            <span className="font-medium">Laravel</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.basic" />
-                        </li>
-                        <li>
-                            <span className="font-medium">PHP</span>
-                            {" - "}
-                            <FormattedMessage id="resume.stack.basic" />
-                        </li>
-                    </ul>
+                    <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5 flex-wrap
+                        content-start md:gap-x-16 md:max-h-96 lg:max-h-min">
+                        <h3>
+                            <FormattedMessage id="resume.stack.regular" />
+                        </h3>
+                        <ul>
+                            <li>
+                                <span className="font-medium">Next.js</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">React</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">Tailwind CSS</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.advanced" />
+                            </li>
+                            <li className="mb-1.5">
+                                <span className="font-medium">Framer Motion</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.basic" />
+                            </li>
+                            <li>
+                                <span className="font-medium">HTML</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.advanced" />
+                            </li>
+                            <li>
+                                <span className="font-medium">CSS</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.advanced" />
+                            </li>
+                            <li className="mb-1.5">
+                                <span className="font-medium">MySQL</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">Python</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.advanced" />
+                            </li>
+                            <li className="mb-1.5">
+                                <span className="font-medium">JavaScript</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">Git</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">Figma</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">GIMP</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">Sony Vegas</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                        </ul>
+                        <h3>
+                            <FormattedMessage id="resume.stack.before" />
+                        </h3>
+                        <ul>
+                            <li>
+                                <span className="font-medium">Java</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li className="mb-1.5">
+                                <span className="font-medium">Android Studio</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.basic" />
+                            </li>
+                            <li>
+                                <span className="font-medium">WordPress</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.intermediate" />
+                            </li>
+                            <li>
+                                <span className="font-medium">Laravel</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.basic" />
+                            </li>
+                            <li>
+                                <span className="font-medium">PHP</span>
+                                {" - "}
+                                <FormattedMessage id="resume.stack.basic" />
+                            </li>
+                        </ul>
+                    </div>
                 </motion.div>
 
                 {/* Personal details -> Others section */}
