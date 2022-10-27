@@ -11,6 +11,7 @@ import { IoPerson } from "react-icons/io5";
 import { HiPrinter } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Resume({ isSm, isMd }) {
     const intl = useIntl();
@@ -71,6 +72,13 @@ export default function Resume({ isSm, isMd }) {
                             <p>
                                 <FormattedMessage id="resume.work.desc.1" />
                             </p>
+                            <Link href="/">
+                                <a
+                                    className="font-medium link focus-ring focus-ring-loose
+                                    rounded-md transition-hover w-fit">
+                                    <FormattedMessage id="resume.work.portfolio" />
+                                </a>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>
@@ -145,111 +153,109 @@ export default function Resume({ isSm, isMd }) {
                             className="fill-[#339DFF] dark:fill-[#66C8FF]
                             text-lg"
                         />
-                        Stack
+                        <FormattedMessage id="resume.stack.title" />
                     </h2>
-                    <div
-                        className="flex flex-col gap-y-4 gap-x-5
-                        md:grid md:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] lg:flex">
-                        <ul className="md:order-1 lg:order-none">
-                            <li>
-                                <span className="font-medium">Next.js</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">React</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">
-                                    Tailwind CSS
-                                </span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.advanced" />
-                            </li>
-                            <li>
-                                <span className="font-medium">
-                                    Framer Motion
-                                </span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.basic" />
-                            </li>
-                        </ul>
-                        <ul className="md:order-5 lg:order-none">
-                            <li>
-                                <span className="font-medium">HTML</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.advanced" />
-                            </li>
-                            <li>
-                                <span className="font-medium">CSS</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.advanced" />
-                            </li>
-                        </ul>
-                        <ul className="md:order-2 lg:order-none">
-                            <li>
-                                <span className="font-medium">Laravel</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.basic" />
-                            </li>
-                            <li>
-                                <span className="font-medium">WordPress</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">SQL</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">PHP</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.basic" />
-                            </li>
-                        </ul>
-                        <ul className="md:order-3 lg:order-none">
-                            <li>
-                                <span className="font-medium">Java</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">Python</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.advanced" />
-                            </li>
-                            <li>
-                                <span className="font-medium">JavaScript</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">TypeScript</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.basic" />
-                            </li>
-                        </ul>
-                        <ul className="md:order-4 lg:order-none">
-                            <li>
-                                <span className="font-medium">Git</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">Figma</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                            <li>
-                                <span className="font-medium">GIMP</span>
-                                {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
-                            </li>
-                        </ul>
-                    </div>
+                    <h3>
+                        <FormattedMessage id="resume.stack.regular" />
+                    </h3>
+                    <ul>
+                        <li>
+                            <span className="font-medium">Next.js</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">React</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">Tailwind CSS</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.advanced" />
+                        </li>
+                        <li className="mb-1.5">
+                            <span className="font-medium">Framer Motion</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.basic" />
+                        </li>
+                        <li>
+                            <span className="font-medium">HTML</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.advanced" />
+                        </li>
+                        <li>
+                            <span className="font-medium">CSS</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.advanced" />
+                        </li>
+                        <li className="mb-1.5">
+                            <span className="font-medium">MySQL</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">Python</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.advanced" />
+                        </li>
+                        <li className="mb-1.5">
+                            <span className="font-medium">JavaScript</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">Git</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">Figma</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">GIMP</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">Sony Vegas</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                    </ul>
+
+                    <h3>
+                        <FormattedMessage id="resume.stack.before" />
+                    </h3>
+                    <ul>
+                        <li>
+                            <span className="font-medium">Java</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li className="mb-1.5">
+                            <span className="font-medium">Android Studio</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.basic" />
+                        </li>
+                        <li>
+                            <span className="font-medium">WordPress</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.intermediate" />
+                        </li>
+                        <li>
+                            <span className="font-medium">Laravel</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.basic" />
+                        </li>
+                        <li>
+                            <span className="font-medium">PHP</span>
+                            {" - "}
+                            <FormattedMessage id="resume.stack.basic" />
+                        </li>
+                    </ul>
                 </motion.div>
 
                 {/* Personal details -> Others section */}
@@ -260,7 +266,7 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? 0 : isSm ? stagger * 2 : stagger * 3,
                     }}
-                    className="flex flex-col gap-4 p-4 sm:px-5 will-change-transform
+                    className="flex flex-col sm:justify-between lg:justify-start gap-4 p-4 sm:px-5 will-change-transform
                     bg-bg-light dark:bg-bg-dark my-border rounded-lg 
                     sm:row-start-2 md:row-start-1 md:row-end-3
                     lg:col-start-1 lg:row-start-1 lg:row-end-3">

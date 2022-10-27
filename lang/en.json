@@ -26,6 +26,7 @@
     "resume.work.date.1": "May 2020 - Present",
     "resume.work.name.1": "Freelance - Web Developer",
     "resume.work.desc.1": "Design and complete implementation of several websites for small to medium sized companies.",
+    "resume.work.portfolio": "Portfolio 🡒",
 
     "resume.education.title": "Education",
     "resume.education.date.1": "September 2019 - May 2022",
@@ -40,9 +41,12 @@
     "resume.education.desc.2": "8-year grammar school",
     "resume.education.location.2": "Hlohovec, Slovak Republic",
 
+    "resume.stack.title": "Technologies",
     "resume.stack.basic": "Basic",
     "resume.stack.intermediate": "Intermediate",
     "resume.stack.advanced": "Advanced",
+    "resume.stack.regular": "That I use regularly:",
+    "resume.stack.before": "That I've used before:",
 
     "resume.personal.title": "Personal details",
     "resume.personal.name": "Name",
