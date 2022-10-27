@@ -62,7 +62,7 @@ export default function Index() {
                         img={StavbyTrnkaImg}
                         name="Stavby Trnka"
                         stack="Next.js (React)"
-                        className="bg-[#E2EEFF] dark:bg-[#354350]"
+                        className="bg-[#E2EEFF] dark:bg-[#22262A]"
                     />
                 </motion.div>
 
@@ -74,7 +74,7 @@ export default function Index() {
                         img={ErvaarImg}
                         name="Ervaar"
                         stack="WordPress (Elementor)"
-                        className="bg-[#F0F0F0] dark:bg-[#424242]"
+                        className="bg-[#F0F0F0] dark:bg-[#262626]"
                     />
                 </motion.div>
 
@@ -86,7 +86,7 @@ export default function Index() {
                         img={ADDetailingImg}
                         name="AD Detailing"
                         stack="WordPress (Elementor)"
-                        className="bg-[#FFDEDE] dark:bg-[#503535]"
+                        className="bg-[#FFDEDE] dark:bg-[#2a2222]"
                     />
                 </motion.div>
 
@@ -98,7 +98,7 @@ export default function Index() {
                         img={SlezocoachingImg}
                         name="Slezocoaching"
                         stack="WordPress (Elementor)"
-                        className="bg-[#F0F0FF] dark:bg-[#353550]"
+                        className="bg-[#F0F0FF] dark:bg-[#22222A]"
                     />
                 </motion.div>
 
@@ -110,7 +110,7 @@ export default function Index() {
                         img={LinkvisticaImg}
                         name="Linkvistica"
                         stack="WordPress (Elementor)"
-                        className="bg-[#FFEFE0] dark:bg-[#504235]"
+                        className="bg-[#FFEFE0] dark:bg-[#2A2622]"
                     />
                 </motion.div>
 
@@ -122,7 +122,7 @@ export default function Index() {
                         img={MajdovanImg}
                         name="Majdovan"
                         stack="WordPress (Elementor)"
-                        className="bg-[#E0EDFF] dark:bg-[#354050]"
+                        className="bg-[#E0EDFF] dark:bg-[#22252A]"
                     />
                 </motion.div>
             </motion.div>
