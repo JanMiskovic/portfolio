@@ -19,8 +19,8 @@ export default function MainLayout({ children }) {
     const isMd = useIsMd();
 
     const initialLoadVariants = {
-        initial: {},
-        animate: {},
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
     };
 
     const pageTransitionVariants = {

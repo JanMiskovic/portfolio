@@ -1,4 +1,5 @@
 import { FormattedMessage } from "react-intl";
+import { motion } from "framer-motion";
 import Image from "next/future/image";
 import Link from "next/link";
 import Dbr from "./Dbr";
@@ -22,17 +23,29 @@ export default function Bio() {
 
             {/* Name and location */}
             <div className="col-span-full col-start-2 md:self-end">
-                <h1 className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">
-                    Ján Miškovič
-                </h1>
-                <span className="flex items-center gap-1.5 xs:text-lg sm:text-xl">
-                    <FormattedMessage id="bio.location" />
-                    <Image
-                        src={SkFlagImg}
-                        alt="Flag icon of the Slovak Republic"
-                        className="mt-1 h-4 w-4 xs:h-5 xs:w-5"
-                    />
-                </span>
+                <motion.div className="overflow-hidden">
+                    <motion.h1
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">
+                        Ján Miškovič
+                    </motion.h1>
+                </motion.div>
+                <div className="overflow-hidden">
+                    <motion.span
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="flex items-center gap-1.5 xs:text-lg sm:text-xl">
+                        <FormattedMessage id="bio.location" />
+                        <Image
+                            src={SkFlagImg}
+                            alt="Flag icon of the Slovak Republic"
+                            className="mt-1 h-4 w-4 xs:h-5 xs:w-5"
+                        />
+                    </motion.span>
+                </div>
             </div>
 
             {/* Bio text */}
