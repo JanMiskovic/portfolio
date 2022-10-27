@@ -157,7 +157,7 @@ export default function Resume({ isSm, isMd }) {
                     </h2>
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5 flex-wrap
                         content-start md:gap-x-16 md:max-h-96 lg:max-h-min">
-                        <h3>
+                        <h3 className="underline underline-offset-2">
                             <FormattedMessage id="resume.stack.regular" />
                         </h3>
                         <ul>
@@ -227,7 +227,7 @@ export default function Resume({ isSm, isMd }) {
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                         </ul>
-                        <h3>
+                        <h3 className="underline underline-offset-2">
                             <FormattedMessage id="resume.stack.before" />
                         </h3>
                         <ul>
