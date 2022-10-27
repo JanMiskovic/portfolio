@@ -9,19 +9,19 @@ import SkFlagImg from "../public/icons/skflag.webp";
 export default function Bio() {
     return (
         <div
-            className="grid grid-cols-[auto_minmax(0,_1fr)] md:grid-cols-3 items-center
-            gap-x-5 gap-y-5 md:gap-y-4 mb-4 md:mb-10 lg:mb-16">
+            className="mb-4 grid grid-cols-[auto_minmax(0,_1fr)] items-center
+            gap-x-5 gap-y-5 md:mb-10 md:grid-cols-3 md:gap-y-4 lg:mb-16">
             {/* Profile pic */}
             <Image
                 priority={true}
                 src={ProfileImg}
                 alt="Profile picture of Ján"
-                className="md:row-span-2 self-center rounded-full my-border bg-bg-light dark:bg-bg-dark
-                w-16 h-16 xs:w-20 xs:h-20 sm:w-32 sm:h-32 md:w-5/6 md:h-fit lg:w-72 lg:h-72"
+                className="my-border h-16 w-16 self-center rounded-full bg-bg-light
+                dark:bg-bg-dark xs:h-20 xs:w-20 sm:h-32 sm:w-32 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
             />
 
             {/* Name and location */}
-            <div className="col-start-2 col-span-full md:self-end">
+            <div className="col-span-full col-start-2 md:self-end">
                 <h1 className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">
                     Ján Miškovič
                 </h1>
@@ -30,13 +30,13 @@ export default function Bio() {
                     <Image
                         src={SkFlagImg}
                         alt="Flag icon of the Slovak Republic"
-                        className="mt-1 w-4 h-4 xs:w-5 xs:h-5"
+                        className="mt-1 h-4 w-4 xs:h-5 xs:w-5"
                     />
                 </span>
             </div>
 
             {/* Bio text */}
-            <div className="text-sm xs:text-base md:col-start-2 col-span-full md:self-start flex flex-col gap-5">
+            <div className="col-span-full flex flex-col gap-5 text-sm xs:text-base md:col-start-2 md:self-start">
                 <p className="leading-relaxed">
                     <FormattedMessage id="bio.text.line.1" />
                     <Dbr />
@@ -52,10 +52,10 @@ export default function Bio() {
                     <Link href="/contact">
                         <a
                             className="focus-ring my-border transition-hover 
-                            rounded-md shrink-0 py-1.5 sm:py-2 w-[6.5rem] xs:w-32 sm:w-40
-                            text-sm xs:text-base text-center 
-                            text-black bg-[#E9F7FF] hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]">
+                            w-[6.5rem] shrink-0 rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm
+                            text-black hover:bg-[#dbf2ff] active:bg-[#ccecff] 
+                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:w-32
+                            xs:text-base sm:w-40 sm:py-2">
                             <FormattedMessage id="bio.btn" />
                         </a>
                     </Link>

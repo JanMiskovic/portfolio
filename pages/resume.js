@@ -42,8 +42,8 @@ export default function Resume({ isSm, isMd }) {
             <motion.div
                 initial="initial"
                 animate="animate"
-                className="grid gap-5 sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]
-                text-sm xs:text-base leading-relaxed">
+                className="grid gap-5 text-sm leading-relaxed xs:text-base
+                sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]">
                 {/* Work experience section */}
                 <motion.div
                     variants={resumeItems}
@@ -52,13 +52,13 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? stagger : 0,
                     }}
-                    className="flex flex-col gap-5 p-4 sm:px-5 my-border rounded-lg will-change-transform
-                    bg-bg-light dark:bg-bg-dark md:col-start-2 lg:col-start-2">
+                    className="my-border flex flex-col gap-5 rounded-lg bg-bg-light 
+                    p-4 will-change-transform dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                        <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoMdBriefcase
-                                className="fill-[#339DFF] dark:fill-[#66C8FF]
-                                text-lg xs:text-xl"
+                                className="fill-[#339DFF] text-lg
+                                dark:fill-[#66C8FF] xs:text-xl"
                             />
                             <FormattedMessage id="resume.work.title" />
                         </h2>
@@ -74,8 +74,8 @@ export default function Resume({ isSm, isMd }) {
                             </p>
                             <Link href="/">
                                 <a
-                                    className="font-medium link focus-ring focus-ring-loose
-                                    rounded-md transition-hover w-fit">
+                                    className="link focus-ring focus-ring-loose transition-hover
+                                    w-fit rounded-md font-medium">
                                     <FormattedMessage id="resume.work.portfolio" />
                                 </a>
                             </Link>
@@ -91,13 +91,13 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? stagger * 2 : stagger,
                     }}
-                    className="flex flex-col gap-4 p-4 sm:px-5 my-border rounded-lg will-change-transform
-                    bg-bg-light dark:bg-bg-dark lg:col-start-2">
+                    className="my-border flex flex-col gap-4 rounded-lg bg-bg-light
+                    p-4 will-change-transform dark:bg-bg-dark sm:px-5 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                        <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <MdSchool
-                                className="fill-[#339DFF] dark:fill-[#66C8FF]
-                                text-xl xs:text-2xl"
+                                className="fill-[#339DFF] text-xl
+                                dark:fill-[#66C8FF] xs:text-2xl"
                             />
                             <FormattedMessage id="resume.education.title" />
                         </h2>
@@ -145,13 +145,13 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isSm ? stagger * 3 : stagger * 2,
                     }}
-                    className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5 p-4 sm:px-5 will-change-transform
-                    my-border rounded-lg bg-bg-light dark:bg-bg-dark
+                    className="my-border flex flex-col gap-1.5 rounded-lg bg-bg-light
+                    p-4 will-change-transform dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5
                     md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
-                    <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                    <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <BsTerminalFill
-                            className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            text-lg"
+                            className="fill-[#339DFF] text-lg
+                            dark:fill-[#66C8FF]"
                         />
                         <FormattedMessage id="resume.stack.title" />
                     </h2>
@@ -266,16 +266,16 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? 0 : isSm ? stagger * 2 : stagger * 3,
                     }}
-                    className="flex flex-col sm:justify-between lg:justify-start gap-4 p-4 sm:px-5 will-change-transform
-                    bg-bg-light dark:bg-bg-dark my-border rounded-lg 
-                    sm:row-start-2 md:row-start-1 md:row-end-3
-                    lg:col-start-1 lg:row-start-1 lg:row-end-3">
+                    className="my-border flex flex-col gap-4 rounded-lg bg-bg-light
+                    p-4 will-change-transform dark:bg-bg-dark sm:row-start-2 sm:justify-between sm:px-5 
+                    md:row-start-1 md:row-end-3 lg:col-start-1
+                    lg:row-start-1 lg:row-end-3 lg:justify-start">
                     {/* Personal details */}
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                        <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoPerson
-                                className="fill-[#339DFF] dark:fill-[#66C8FF]
-                                text-lg xs:text-xl"
+                                className="fill-[#339DFF] text-lg
+                                dark:fill-[#66C8FF] xs:text-xl"
                             />
                             <FormattedMessage id="resume.personal.title" />
                         </h2>
@@ -306,10 +306,12 @@ export default function Resume({ isSm, isMd }) {
 
                     {/* Contact details */}
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                        <h2
+                            className="flex items-center gap-2 text-base
+                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsTelephoneFill
-                                className="fill-[#339DFF] dark:fill-[#66C8FF]
-                                text-lg"
+                                className="fill-[#339DFF] text-lg
+                                dark:fill-[#66C8FF]"
                             />
                             <FormattedMessage id="resume.contact.title" />
                         </h2>
@@ -317,14 +319,16 @@ export default function Resume({ isSm, isMd }) {
                             <li>
                                 <a
                                     href="mailto:jan@janmiskovic.com"
-                                    className="font-medium link focus-ring focus-ring-loose rounded-md transition-hover">
+                                    className="link focus-ring focus-ring-loose 
+                                    transition-hover rounded-md font-medium">
                                     jan@janmiskovic.com
                                 </a>
                             </li>
                             <li className="mb-2">
                                 <a
                                     href="tel:+421950594845"
-                                    className="font-medium link focus-ring focus-ring-loose rounded-md transition-hover">
+                                    className="link focus-ring focus-ring-loose
+                                    transition-hover rounded-md font-medium">
                                     +421 950 594 845
                                 </a>
                             </li>
@@ -339,10 +343,12 @@ export default function Resume({ isSm, isMd }) {
 
                     {/* Languages */}
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                        <h2
+                            className="flex items-center gap-2 text-base
+                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsChatQuoteFill
-                                className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            text-lg"
+                                className="fill-[#339DFF] text-lg
+                            dark:fill-[#66C8FF]"
                             />
                             <FormattedMessage id="resume.languages.title" />
                         </h2>
@@ -366,10 +372,12 @@ export default function Resume({ isSm, isMd }) {
 
                     {/* Other */}
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 lg:gap-3 text-base xs:text-lg sm:text-xl lg:text-2xl">
+                        <h2
+                            className="flex items-center gap-2 text-base
+                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsInfoCircleFill
-                                className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            text-lg"
+                                className="fill-[#339DFF] text-lg
+                            dark:fill-[#66C8FF]"
                             />
                             <FormattedMessage id="resume.other.title" />
                         </h2>
@@ -386,18 +394,18 @@ export default function Resume({ isSm, isMd }) {
                     {/* Resume download */}
                     <div className="flex gap-2">
                         <a
-                            className="focus-ring my-border rounded-md transition-hover
-                            py-1.5 sm:py-2 w-[10.5rem] lg:flex-grow text-sm xs:text-base text-center
-                            text-black bg-[#E9F7FF] hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]">
+                            className="focus-ring my-border transition-hover w-[10.5rem]
+                            rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm text-black hover:bg-[#dbf2ff]
+                            active:bg-[#ccecff] dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
+                            xs:text-base sm:py-2 lg:flex-grow">
                             <FormattedMessage id="resume.download.btn" />
                         </a>
                         <a
-                            className="focus-ring my-border rounded-md transition-hover 
-                            p-1.5 xs:p-2 flex items-center
-                            bg-[#E9F7FF] hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]">
-                            <HiPrinter className="w-5 sm:w-6 h-5 sm:h-6 fill-icon-light dark:fill-[#3e3e3e]" />
+                            className="focus-ring my-border transition-hover flex 
+                            items-center rounded-md bg-[#E9F7FF] p-1.5
+                            hover:bg-[#dbf2ff] active:bg-[#ccecff] dark:bg-[#66C8FF]
+                            dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:p-2">
+                            <HiPrinter className="h-5 w-5 fill-icon-light dark:fill-[#3e3e3e] sm:h-6 sm:w-6" />
                         </a>
                     </div>
                 </motion.div>

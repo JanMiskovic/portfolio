@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function BackgroundBlobs() {
     return (
-        <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+        <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden">
             <motion.div
                 animate={{ y: "-90vh", rotate: 150 }}
                 transition={{

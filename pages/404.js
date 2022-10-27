@@ -37,10 +37,10 @@ export default function Custom404() {
                 variants={custom404Variants}
                 initial="initial"
                 animate="animate"
-                className="flex items-center justify-center
-                h-32 md:h-44 lg:h-64 p-4 will-change-transform
-                my-border rounded-lg bg-bg-light dark:bg-bg-dark
-                text-center sm:text-lg md:text-xl leading-relaxed">
+                className="my-border flex h-32
+                items-center justify-center rounded-lg bg-bg-light p-4
+                text-center leading-relaxed will-change-transform dark:bg-bg-dark
+                sm:text-lg md:h-44 md:text-xl lg:h-64">
                 <FormattedMessage id="404.text" values={{ br: <br /> }} />
             </motion.div>
         </>

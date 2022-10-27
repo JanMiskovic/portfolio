@@ -4,16 +4,15 @@ import { FormattedMessage } from "react-intl";
 export default function Footer({ setShowCookieBanner }) {
     return (
         <footer
-            className="flex justify-between pt-3 mt-6 sm:mt-7 text-sm
-            text-neutral-500 dark:text-neutral-400
-            border-neutral-400 dark:border-neutral-500 border-t sm:border-t-0">
+            className="mt-6 flex justify-between border-t border-neutral-400 pt-3
+            text-sm text-neutral-500 dark:border-neutral-500 dark:text-neutral-400 sm:mt-7 sm:border-t-0">
             <button
                 onClick={() => {
                     setShowCookieBanner(true);
                     window.gtag("event", "manage_cookies");
                 }}
-                className="flex items-center gap-1.5 focus-ring focus-ring-loose rounded-md
-                transition-hover hover:text-neutral-600 active:text-neutral-600
+                className="focus-ring focus-ring-loose transition-hover flex items-center gap-1.5
+                rounded-md hover:text-neutral-600 active:text-neutral-600
                 hover:dark:text-neutral-300 active:dark:text-neutral-300">
                 <FormattedMessage id="footer.manage.cookies" />
                 <FaCookieBite />

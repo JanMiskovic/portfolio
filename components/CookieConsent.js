@@ -67,26 +67,28 @@ export default function CookieConsent({ setShowCookieBanner }) {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed bottom-5 inset-x-5 z-20 
-            sm:bottom-7 sm:right-7 xl:bottom-6 xl:right-6 sm:left-auto sm:w-96
-            flex flex-col justify-between will-change-transform
-            my-border rounded-lg bg-bg-light dark:bg-bg-dark">
+            className="my-border fixed inset-x-5 bottom-5 
+            z-20 flex flex-col justify-between rounded-lg bg-bg-light
+            will-change-transform dark:bg-bg-dark sm:bottom-7 sm:right-7
+            sm:left-auto sm:w-96 xl:bottom-6 xl:right-6">
             <div
-                className="flex justify-between items-center mb-2 xs:mb-3 pt-4 pb-2 sm:pb-3 px-4 sm:px-5
-                border-b-2 border-neutral-200 dark:border-border-dark xs:text-xl">
+                className="mb-2 flex items-center justify-between
+                border-b-2 border-neutral-200 
+                px-4 pt-4 pb-2 dark:border-border-dark
+                xs:mb-3 xs:text-xl sm:px-5 sm:pb-3">
                 <h3>
                     <FormattedMessage id="cookies.title" />
                 </h3>
                 <button
                     onClick={closeCookies}
-                    className="transition-transform active:scale-90 
-                    focus-ring focus-ring-loose rounded-lg">
+                    className="focus-ring focus-ring-loose 
+                    rounded-lg transition-transform active:scale-90">
                     <CgClose />
                 </button>
             </div>
 
-            <div className="px-4 sm:px-5 pb-4">
-                <p className="text-sm xs:text-base mb-4">
+            <div className="px-4 pb-4 sm:px-5">
+                <p className="mb-4 text-sm xs:text-base">
                     <FormattedMessage id="cookies.text" />
                 </p>
 
@@ -94,19 +96,21 @@ export default function CookieConsent({ setShowCookieBanner }) {
                     <button
                         onClick={acceptCookies}
                         className="focus-ring my-border transition-hover
-                        basis-1/2 rounded-md py-1.5 sm:py-2
-                        text-sm xs:text-base text-center
-                        text-black bg-[#e9ffee] hover:bg-[#dbffe4] active:bg-[#ccffd9]
-                        dark:bg-[#66ff6b] dark:hover:bg-[#85ff89] dark:active:bg-[#a3ffa6]">
+                        basis-1/2 rounded-md bg-[#e9ffee] py-1.5
+                        text-center text-sm text-black
+                        hover:bg-[#dbffe4] active:bg-[#ccffd9] 
+                        dark:bg-[#66ff6b] dark:hover:bg-[#85ff89]
+                        dark:active:bg-[#a3ffa6] xs:text-base sm:py-2">
                         <FormattedMessage id="cookies.accept" />
                     </button>
                     <button
                         onClick={denyCookies}
                         className="focus-ring my-border transition-hover
-                        basis-1/2 rounded-md py-1.5 sm:py-2
-                        text-sm xs:text-base text-center
-                        text-black bg-[#ffe9f3] hover:bg-[#ffdbeb] active:bg-[#ffcce3]
-                        dark:bg-[#ff6666] dark:hover:bg-[#ff8585] dark:active:bg-[#ffa3a3]">
+                        basis-1/2 rounded-md bg-[#ffe9f3] py-1.5
+                        text-center text-sm text-black
+                        hover:bg-[#ffdbeb] active:bg-[#ffcce3]
+                        dark:bg-[#ff6666] dark:hover:bg-[#ff8585]
+                        dark:active:bg-[#ffa3a3] xs:text-base sm:py-2">
                         <FormattedMessage id="cookies.deny" />
                     </button>
                 </div>
