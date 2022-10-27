@@ -27,7 +27,7 @@ export default function Bio() {
                     <motion.h1
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
-                        transition={{ delay: 0.2 }}
+                        transition={{ delay: 0.35 }}
                         className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">
                         Ján Miškovič
                     </motion.h1>
@@ -36,7 +36,7 @@ export default function Bio() {
                     <motion.span
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.45 }}
                         className="flex items-center gap-1.5 xs:text-lg sm:text-xl">
                         <FormattedMessage id="bio.location" />
                         <Image
