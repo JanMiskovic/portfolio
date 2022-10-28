@@ -26,7 +26,7 @@
     "resume.work.date.1": "Máj 2020 - Súčasnosť",
     "resume.work.name.1": "Freelance - Web Developer",
     "resume.work.desc.1": "Dizajn a kompletná implementácia niekoľkých webstránok pre malé až\u00a0stredne veľké spoločnosti.",
-    "resume.work.portfolio": "Portfólio 🡒",
+    "resume.work.portfolio": "Portfólio",
 
     "resume.education.title": "Vzdelanie",
     "resume.education.date.1": "September 2019 - Máj 2022",
@@ -46,7 +46,7 @@
     "resume.stack.intermediate": "Mier. pokročilý",
     "resume.stack.advanced": "Pokročilý",
     "resume.stack.regular": "Ktoré používam pravidelne:",
-    "resume.stack.before": "Ktoré som už používal:",
+    "resume.stack.before": "Ktoré poznám:",
 
     "resume.personal.title": "Osobné údaje",
     "resume.personal.name": "Meno",

@@ -1,16 +1,17 @@
-import Head from "next/head";
-import { FormattedMessage, useIntl } from "react-intl";
 import {
-    BsChatQuoteFill,
+    BsChatFill,
     BsInfoCircleFill,
     BsTelephoneFill,
     BsTerminalFill,
 } from "react-icons/bs";
+import { FormattedMessage, useIntl } from "react-intl";
 import { IoMdBriefcase } from "react-icons/io";
 import { IoPerson } from "react-icons/io5";
+import { TbArrowNarrowRight } from "react-icons/tb";
 import { HiPrinter } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import Link from "next/link";
 
 export default function Resume({ isSm, isMd }) {
@@ -74,9 +75,11 @@ export default function Resume({ isSm, isMd }) {
                             </p>
                             <Link href="/">
                                 <a
-                                    className="link focus-ring focus-ring-loose transition-hover
-                                    w-fit rounded-md font-medium">
+                                    className="link focus-ring focus-ring-loose
+                                    transition-hover flex w-fit items-center
+                                    gap-1 rounded-md font-medium">
                                     <FormattedMessage id="resume.work.portfolio" />
+                                    <TbArrowNarrowRight size={18} />
                                 </a>
                             </Link>
                         </div>
@@ -150,13 +153,14 @@ export default function Resume({ isSm, isMd }) {
                     md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
                     <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <BsTerminalFill
-                            className="fill-[#339DFF] text-lg
+                            className="fill-[#339DFF] xs:text-lg
                             dark:fill-[#66C8FF]"
                         />
                         <FormattedMessage id="resume.stack.title" />
                     </h2>
-                    <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5 flex-wrap
-                        content-start md:gap-x-16 md:max-h-96 lg:max-h-min">
+                    <div
+                        className="flex flex-col flex-wrap content-start gap-1.5 xs:gap-2
+                        sm:gap-2.5 md:max-h-96 md:gap-x-16 lg:max-h-min">
                         <h3 className="underline underline-offset-2">
                             <FormattedMessage id="resume.stack.regular" />
                         </h3>
@@ -172,12 +176,16 @@ export default function Resume({ isSm, isMd }) {
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">Tailwind CSS</span>
+                                <span className="font-medium">
+                                    Tailwind CSS
+                                </span>
                                 {" - "}
                                 <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li className="mb-1.5">
-                                <span className="font-medium">Framer Motion</span>
+                                <span className="font-medium">
+                                    Framer Motion
+                                </span>
                                 {" - "}
                                 <FormattedMessage id="resume.stack.basic" />
                             </li>
@@ -237,7 +245,9 @@ export default function Resume({ isSm, isMd }) {
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li className="mb-1.5">
-                                <span className="font-medium">Android Studio</span>
+                                <span className="font-medium">
+                                    Android Studio
+                                </span>
                                 {" - "}
                                 <FormattedMessage id="resume.stack.basic" />
                             </li>
@@ -348,9 +358,9 @@ export default function Resume({ isSm, isMd }) {
                         <h2
                             className="flex items-center gap-2 text-base
                             xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
-                            <BsChatQuoteFill
+                            <BsChatFill
                                 className="fill-[#339DFF] text-lg
-                            dark:fill-[#66C8FF]"
+                                dark:fill-[#66C8FF]"
                             />
                             <FormattedMessage id="resume.languages.title" />
                         </h2>
@@ -378,8 +388,8 @@ export default function Resume({ isSm, isMd }) {
                             className="flex items-center gap-2 text-base
                             xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsInfoCircleFill
-                                className="fill-[#339DFF] text-lg
-                            dark:fill-[#66C8FF]"
+                                className="fill-[#339DFF] text-lg 
+                                dark:fill-[#66C8FF]"
                             />
                             <FormattedMessage id="resume.other.title" />
                         </h2>
@@ -388,7 +398,7 @@ export default function Resume({ isSm, isMd }) {
                                 <span className="font-medium">
                                     <FormattedMessage id="resume.other.driving" />
                                 </span>
-                                &nbsp;- B
+                                {" - B"}
                             </li>
                         </ul>
                     </div>
