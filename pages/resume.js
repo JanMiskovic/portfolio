@@ -153,18 +153,18 @@ export default function Resume({ isSm, isMd }) {
                     md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
                     <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <BsTerminalFill
-                            className="fill-[#339DFF] xs:text-lg
-                            dark:fill-[#66C8FF]"
+                            className="fill-[#339DFF] dark:fill-[#66C8FF]
+                            xs:text-lg"
                         />
                         <FormattedMessage id="resume.stack.title" />
                     </h2>
-                    <div
-                        className="flex flex-col flex-wrap content-start gap-1.5 xs:gap-2
-                        sm:gap-2.5 md:max-h-96 md:gap-x-16 lg:max-h-min">
-                        <h3 className="underline underline-offset-2">
+                    <div className="grid gap-2">
+                        <h3
+                            className="md:max-lg:col-start-1 md:max-lg:row-start-1 
+                            underline underline-offset-2">
                             <FormattedMessage id="resume.stack.regular" />
                         </h3>
-                        <ul>
+                        <ul className="md:max-lg:col-start-1">
                             <li>
                                 <span className="font-medium">Next.js</span>
                                 {" - "}
@@ -199,11 +199,13 @@ export default function Resume({ isSm, isMd }) {
                                 {" - "}
                                 <FormattedMessage id="resume.stack.advanced" />
                             </li>
-                            <li className="mb-1.5">
+                            <li className="-mb-0.5">
                                 <span className="font-medium">MySQL</span>
                                 {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
+                        </ul>
+                        <ul>
                             <li>
                                 <span className="font-medium">Python</span>
                                 {" - "}
@@ -235,10 +237,12 @@ export default function Resume({ isSm, isMd }) {
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                         </ul>
-                        <h3 className="underline underline-offset-2">
+                        <h3
+                            className="md:max-lg:col-start-3 md:max-lg:row-start-1
+                            underline underline-offset-2">
                             <FormattedMessage id="resume.stack.before" />
                         </h3>
-                        <ul>
+                        <ul className="md:max-lg:col-start-3 md:max-lg:row-start-2">
                             <li>
                                 <span className="font-medium">Java</span>
                                 {" - "}
