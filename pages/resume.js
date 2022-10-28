@@ -73,7 +73,7 @@ export default function Resume({ isSm, isMd }) {
                             <p>
                                 <FormattedMessage id="resume.work.desc.1" />
                             </p>
-                            <Link href="/">
+                            <Link href="/" scroll={false}>
                                 <a
                                     className="link focus-ring focus-ring-loose
                                     transition-hover flex w-fit items-center
