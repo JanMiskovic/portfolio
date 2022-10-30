@@ -40,9 +40,7 @@ export default function Resume({ isSm, isMd }) {
                 <meta name="robots" content="nosnippet" />
             </Head>
 
-            <motion.div
-                initial="initial"
-                animate="animate"
+            <div
                 className="grid gap-5 text-sm leading-relaxed xs:text-base
                 sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]">
                 {/* Work experience section */}
@@ -160,8 +158,8 @@ export default function Resume({ isSm, isMd }) {
                     </h2>
                     <div className="grid gap-2">
                         <h3
-                            className="md:max-lg:col-start-1 md:max-lg:row-start-1 
-                            underline underline-offset-2">
+                            className="underline underline-offset-2 
+                            md:max-lg:col-start-1 md:max-lg:row-start-1">
                             <FormattedMessage id="resume.stack.regular" />
                         </h3>
                         <ul className="md:max-lg:col-start-1">
@@ -238,8 +236,8 @@ export default function Resume({ isSm, isMd }) {
                             </li>
                         </ul>
                         <h3
-                            className="md:max-lg:col-start-3 md:max-lg:row-start-1
-                            underline underline-offset-2">
+                            className="underline underline-offset-2
+                            md:max-lg:col-start-3 md:max-lg:row-start-1">
                             <FormattedMessage id="resume.stack.before" />
                         </h3>
                         <ul className="md:max-lg:col-start-3 md:max-lg:row-start-2">
@@ -425,7 +423,7 @@ export default function Resume({ isSm, isMd }) {
                         </a>
                     </div>
                 </motion.div>
-            </motion.div>
+            </div>
         </>
     );
 }

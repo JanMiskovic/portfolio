@@ -7,6 +7,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@sendgrid/mail": "^7.7.0",
         "cookies-next": "^2.1.1",
         "framer-motion": "^7.3.5",
         "next": "^12.3.0",
