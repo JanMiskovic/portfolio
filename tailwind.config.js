@@ -17,6 +17,8 @@ module.exports = {
                 lg: "1084px",
             },
             colors: {
+                "body-light": "#FFF",
+                "body-dark": "#1A1A1A",
                 "bg-light": "#FAFAFA",
                 "bg-dark": "#313131",
                 "border-light": "#B6B6B6",
