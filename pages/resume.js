@@ -226,7 +226,7 @@ export default function Resume({ isSm, isMd }) {
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
                             <li>
-                                <span className="font-medium">Sony Vegas</span>
+                                <span className="font-medium">Vegas</span>
                                 {" - "}
                                 <FormattedMessage id="resume.stack.intermediate" />
                             </li>
