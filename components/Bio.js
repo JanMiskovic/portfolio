@@ -18,12 +18,12 @@ export default function Bio() {
                 src={ProfileImg}
                 alt="Profile picture of Ján"
                 className="my-border h-16 w-16 self-center rounded-full bg-bg-light
-                dark:bg-bg-dark xs:h-20 xs:w-20 sm:h-32 sm:w-32 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
+                    dark:bg-bg-dark xs:h-20 xs:w-20 sm:h-32 sm:w-32 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
             />
 
             {/* Name and location */}
             <div className="col-span-full col-start-2 md:self-end">
-                <motion.div className="overflow-hidden">
+                <div className="overflow-hidden">
                     <motion.h1
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
@@ -31,7 +31,7 @@ export default function Bio() {
                         className="text-3xl xs:text-4xl sm:text-6xl md:mb-1 lg:mb-1.5">
                         Ján Miškovič
                     </motion.h1>
-                </motion.div>
+                </div>
                 <div className="overflow-hidden">
                     <motion.span
                         initial={{ y: "100%" }}
