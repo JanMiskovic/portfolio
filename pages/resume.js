@@ -1,15 +1,11 @@
-import {
-    BsChatFill,
-    BsInfoCircleFill,
-    BsTelephoneFill,
-    BsTerminalFill,
-} from "react-icons/bs";
+import { BsChatFill, BsInfoCircleFill, BsTerminalFill } from "react-icons/bs";
 import { FormattedMessage, useIntl } from "react-intl";
 import { IoMdBriefcase } from "react-icons/io";
 import { IoPerson } from "react-icons/io5";
 import { TbArrowNarrowRight } from "react-icons/tb";
 import { HiPrinter } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
+import { FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
@@ -52,7 +48,7 @@ export default function Resume({ isSm, isMd }) {
                         delay: isMd ? stagger : 0,
                     }}
                     className="my-border flex flex-col gap-5 rounded-lg bg-bg-light 
-                    p-4 will-change-transform dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
+                    p-4 dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoMdBriefcase
@@ -93,7 +89,7 @@ export default function Resume({ isSm, isMd }) {
                         delay: isMd ? stagger * 2 : stagger,
                     }}
                     className="my-border flex flex-col gap-4 rounded-lg bg-bg-light
-                    p-4 will-change-transform dark:bg-bg-dark sm:px-5 lg:col-start-2">
+                    p-4 dark:bg-bg-dark sm:px-5 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <MdSchool
@@ -147,7 +143,7 @@ export default function Resume({ isSm, isMd }) {
                         delay: isSm ? stagger * 3 : stagger * 2,
                     }}
                     className="my-border flex flex-col gap-1.5 rounded-lg bg-bg-light
-                    p-4 will-change-transform dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5
+                    p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5
                     md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
                     <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <BsTerminalFill
@@ -281,7 +277,7 @@ export default function Resume({ isSm, isMd }) {
                         delay: isMd ? 0 : isSm ? stagger * 2 : stagger * 3,
                     }}
                     className="my-border flex flex-col gap-4 rounded-lg bg-bg-light
-                    p-4 will-change-transform dark:bg-bg-dark sm:row-start-2 sm:justify-between sm:px-5 
+                    p-4 dark:bg-bg-dark sm:row-start-2 sm:justify-between sm:px-5 
                     md:row-start-1 md:row-end-3 lg:col-start-1
                     lg:row-start-1 lg:row-end-3 lg:justify-start">
                     {/* Personal details */}
@@ -323,9 +319,9 @@ export default function Resume({ isSm, isMd }) {
                         <h2
                             className="flex items-center gap-2 text-base
                             xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
-                            <BsTelephoneFill
-                                className="fill-[#339DFF] text-lg
-                                dark:fill-[#66C8FF]"
+                            <FaEnvelope
+                                className="fill-[#339DFF] dark:fill-[#66C8FF]
+                                xs:text-lg"
                             />
                             <FormattedMessage id="resume.contact.title" />
                         </h2>
@@ -338,7 +334,7 @@ export default function Resume({ isSm, isMd }) {
                                     jan@janmiskovic.com
                                 </a>
                             </li>
-                            <li className="mb-2">
+                            <li>
                                 <a
                                     href="tel:+421950594845"
                                     className="link focus-ring focus-ring-loose
@@ -346,13 +342,13 @@ export default function Resume({ isSm, isMd }) {
                                     +421 950 594 845
                                 </a>
                             </li>
-                            <li>
-                                <FormattedMessage
-                                    id="resume.contact.msg"
-                                    values={{ br: <br /> }}
-                                />
-                            </li>
                         </ul>
+                        <p>
+                            <FormattedMessage
+                                id="resume.contact.msg"
+                                values={{ br: <br /> }}
+                            />
+                        </p>
                     </div>
 
                     {/* Languages */}
@@ -361,8 +357,8 @@ export default function Resume({ isSm, isMd }) {
                             className="flex items-center gap-2 text-base
                             xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsChatFill
-                                className="fill-[#339DFF] text-lg
-                                dark:fill-[#66C8FF]"
+                                className="fill-[#339DFF] dark:fill-[#66C8FF]
+                                xs:text-lg"
                             />
                             <FormattedMessage id="resume.languages.title" />
                         </h2>
@@ -390,8 +386,8 @@ export default function Resume({ isSm, isMd }) {
                             className="flex items-center gap-2 text-base
                             xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsInfoCircleFill
-                                className="fill-[#339DFF] text-lg 
-                                dark:fill-[#66C8FF]"
+                                className="fill-[#339DFF] dark:fill-[#66C8FF] 
+                                xs:text-lg"
                             />
                             <FormattedMessage id="resume.other.title" />
                         </h2>
