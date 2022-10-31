@@ -20,7 +20,7 @@ export default function LanguageSwitcher() {
                             });
                     }}
                     className="focus-ring focus-ring-loose rounded-md transition-transform
-                    will-change-transform hover:scale-110 active:scale-110">
+                    duration-200 will-change-transform hover:scale-110 active:scale-110">
                     <Image
                         src={SkFlagImg}
                         alt="Flag icon of the Slovak Republic"
@@ -38,7 +38,7 @@ export default function LanguageSwitcher() {
                             });
                     }}
                     className="focus-ring focus-ring-loose rounded-md transition-transform
-                    will-change-transform hover:scale-110 active:scale-110">
+                    duration-200 will-change-transform hover:scale-110 active:scale-110">
                     <Image
                         src={GbFlagImg}
                         alt="Flag icon of Great Britain"

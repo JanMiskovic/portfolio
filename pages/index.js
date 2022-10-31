@@ -54,9 +54,7 @@ export default function Index() {
                 variants={portfolioVariants}
                 className="grid grid-cols-2 gap-x-4 gap-y-3.5 xs:gap-x-5
                 xs:gap-y-4 sm:gap-y-5 md:grid-cols-3">
-                <motion.div
-                    variants={portfolioItems}
-                    className="will-change-transform">
+                <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://stavbytrnka.sk"
                         img={StavbyTrnkaImg}
@@ -66,9 +64,7 @@ export default function Index() {
                     />
                 </motion.div>
 
-                <motion.div
-                    variants={portfolioItems}
-                    className="will-change-transform">
+                <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://ervaar.eu"
                         img={ErvaarImg}
@@ -78,9 +74,7 @@ export default function Index() {
                     />
                 </motion.div>
 
-                <motion.div
-                    variants={portfolioItems}
-                    className="will-change-transform">
+                <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://addetailing.sk"
                         img={ADDetailingImg}
@@ -90,9 +84,7 @@ export default function Index() {
                     />
                 </motion.div>
 
-                <motion.div
-                    variants={portfolioItems}
-                    className="will-change-transform">
+                <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://slezocoaching.sk"
                         img={SlezocoachingImg}
@@ -102,9 +94,7 @@ export default function Index() {
                     />
                 </motion.div>
 
-                <motion.div
-                    variants={portfolioItems}
-                    className="will-change-transform">
+                <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://linkvistica.com"
                         img={LinkvisticaImg}
@@ -114,9 +104,7 @@ export default function Index() {
                     />
                 </motion.div>
 
-                <motion.div
-                    variants={portfolioItems}
-                    className="will-change-transform">
+                <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://majdovan.com"
                         img={MajdovanImg}

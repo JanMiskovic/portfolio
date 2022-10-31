@@ -69,7 +69,7 @@ export default function CookieConsent({ setShowCookieBanner }) {
             exit="exit"
             className="my-border fixed inset-x-5 bottom-5 
             z-20 flex flex-col justify-between rounded-lg bg-bg-light
-            will-change-transform dark:bg-bg-dark sm:bottom-7 sm:right-7
+        dark:bg-bg-dark sm:bottom-7 sm:right-7
             sm:left-auto sm:w-96 xl:bottom-6 xl:right-6">
             <div
                 className="mb-2 flex items-center justify-between
