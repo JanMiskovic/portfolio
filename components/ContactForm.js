@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoSend } from "react-icons/io5";
 
 export default function ContactForm() {
     const [name, setName] = useState("");
@@ -17,7 +18,7 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        setSendStatus("sending");
+        /* setSendStatus("sending");
 
         const res = await fetch("/api/sendgrid", {
             body: JSON.stringify({
@@ -33,15 +34,12 @@ export default function ContactForm() {
         const { error } = await res.json();
 
         setSendStatus(error ? "failure" : "success");
-        resetFields();
+        resetFields(); */
     };
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div
-                className="    
-                flex flex-col gap-4
-                lg:flex-row">
+            <div className="flex flex-col gap-4 lg:flex-row">
                 <input
                     required
                     minLength={2}
@@ -51,11 +49,9 @@ export default function ContactForm() {
                     placeholder="Vaše meno*"
                     type="text"
                     name="name"
-                    className="
-                        rounded-sm bg-gray-100 px-4
-                        py-4 text-black placeholder-gray-700
-                        focus:outline-none
-                        lg:w-1/2"
+                    className="my-border rounded-md bg-body-light px-3 py-3
+                    placeholder-neutral-700 focus:outline-none dark:bg-[#1f1f1f]
+                    dark:placeholder-neutral-300 lg:w-1/2"
                 />
 
                 <input
@@ -67,11 +63,9 @@ export default function ContactForm() {
                     placeholder="Váš e-mail*"
                     type="email"
                     name="email"
-                    className="
-                        rounded-sm bg-gray-100 px-4
-                        py-4 text-black placeholder-gray-700 
-                        focus:outline-none
-                        lg:w-1/2"
+                    className="my-border rounded-md bg-body-light px-3 py-3
+                    placeholder-neutral-700 focus:outline-none dark:bg-[#1f1f1f] 
+                    dark:placeholder-neutral-300 lg:w-1/2"
                 />
             </div>
 
@@ -84,46 +78,35 @@ export default function ContactForm() {
                 placeholder="Predmet správy*"
                 type="text"
                 name="subject"
-                className="
-                    rounded-sm bg-gray-100 px-4
-                    py-4 text-black placeholder-gray-700
-                    focus:outline-none"
+                className="my-border rounded-md bg-body-light px-3 py-3
+                placeholder-neutral-700 focus:outline-none dark:bg-[#1f1f1f]
+                dark:placeholder-neutral-300"
             />
 
-            <textarea
-                required
-                minLength={5}
-                maxLength={500}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Text správy*"
-                name="message"
-                className="
-                    h-48 rounded-sm bg-gray-100
-                    px-4 py-4 text-black placeholder-gray-700
-                    focus:outline-none
-                    lg:h-40"
-            />
-
-            <button
-                type="submit"
-                className="
-                flex flex-row items-center justify-center
-                gap-3 rounded-sm border-2 border-[#9E0000]
-                bg-[#ff3434] px-4 py-4
-                font-medium text-white
-                hover:bg-[#fd1e1e]
-                active:bg-[#fd1e1e]">
-                {sendStatus === "sending" ? (
-                    "Odosielam..."
-                ) : sendStatus === "success" ? (
-                    <>
-                        Odoslané<strong>✓</strong>
-                    </>
-                ) : (
-                    "Odoslať správu"
-                )}
-            </button>
+            <div className="relative flex">
+                <textarea
+                    required
+                    minLength={5}
+                    maxLength={500}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Text správy*"
+                    name="message"
+                    className="my-border min-h-[10rem] w-full
+                    rounded-md bg-body-light px-3 py-3 placeholder-neutral-700
+                    focus:outline-none dark:bg-[#1f1f1f] dark:placeholder-neutral-300
+                    [&::-webkit-scrollbar]:w-2"
+                />
+                <button
+                    type="submit"
+                    className="focus-ring my-border transition-hover absolute bottom-4 right-4 flex w-[6.5rem] items-center
+                            justify-center gap-2 rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm
+                            text-black hover:bg-[#dbf2ff] active:bg-[#ccecff] 
+                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:w-32
+                            xs:text-base sm:w-40 sm:py-2">
+                    Send <IoSend className="" />
+                </button>
+            </div>
 
             {sendStatus === "success" && (
                 <p className="text-white">

@@ -1,8 +1,10 @@
-import { motion } from "framer-motion";
-import { FormattedMessage, useIntl } from "react-intl";
-import { BsTelephoneFill } from "react-icons/bs";
-import Head from "next/head";
 import ContactForm from "../components/ContactForm";
+import Head from "next/head";
+import { FormattedMessage, useIntl } from "react-intl";
+import { FaDiscord, FaEnvelope, FaEnvelopeOpenText } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
+import { ImFacebook } from "react-icons/im";
+import { motion } from "framer-motion";
 
 export default function Contact() {
     const intl = useIntl();
@@ -41,18 +43,19 @@ export default function Contact() {
                 variants={contactVariants}
                 initial="initial"
                 animate="animate"
-                className="grid grid-cols-[1fr_2fr] items-start gap-5
-                text-sm leading-relaxed xs:text-base">
+                className="grid items-start gap-5 text-sm leading-relaxed
+                xs:text-base sm:grid-cols-[3fr_4fr] md:grid-cols-[2fr_3fr]
+                lg:grid-cols-[1fr_2fr]">
                 <motion.div
                     variants={contactVariants}
                     className="my-border flex flex-col gap-1.5 rounded-lg bg-bg-light
-                    p-4 will-change-transform dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
+                    p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
                     <h2
                         className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
-                        <BsTelephoneFill
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        <FaEnvelope
                             className="fill-[#339DFF] text-lg
-                                dark:fill-[#66C8FF]"
+                            dark:fill-[#66C8FF]"
                         />
                         <FormattedMessage id="resume.contact.title" />
                     </h2>
@@ -61,23 +64,48 @@ export default function Contact() {
                             <a
                                 href="mailto:jan@janmiskovic.com"
                                 className="link focus-ring focus-ring-loose 
-                                    transition-hover rounded-md font-medium">
+                                transition-hover rounded-md font-medium">
                                 jan@janmiskovic.com
                             </a>
                         </li>
-                        <li className="mb-2">
+                        <li>
                             <a
                                 href="tel:+421950594845"
                                 className="link focus-ring focus-ring-loose
-                                    transition-hover rounded-md font-medium">
+                                transition-hover rounded-md font-medium">
                                 +421 950 594 845
                             </a>
                         </li>
+                    </ul>
+                    <p>
+                        <FormattedMessage
+                            id="resume.contact.msg"
+                            values={{ br: <br /> }}
+                        />
+                    </p>
+                    <p>
+                        Or if you just wish to chat with me, add me on social
+                        media / discord! :)
+                    </p>
+                    <ul>
                         <li>
-                            <FormattedMessage
-                                id="resume.contact.msg"
-                                values={{ br: <br /> }}
-                            />
+                            <a
+                                href="https://www.facebook.com/mutualslump/"
+                                className="link focus-ring focus-ring-loose transition-hover
+                                inline-flex items-center gap-2 rounded-md font-medium">
+                                <ImFacebook /> Ján Miškovič
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/janiiscript/"
+                                className="link focus-ring focus-ring-loose transition-hover
+                                inline-flex items-center gap-2 rounded-md font-medium">
+                                <RiInstagramFill /> @janiiscript
+                            </a>
+                        </li>
+                        <li className="flex items-center gap-2 font-medium">
+                            <FaDiscord /> losi#8025
                         </li>
                     </ul>
                 </motion.div>
@@ -85,15 +113,15 @@ export default function Contact() {
                 <motion.div
                     variants={contactVariants}
                     className="my-border flex flex-col gap-1.5 rounded-lg bg-bg-light
-                    p-4 will-change-transform dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
+                    p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
                     <h2
                         className="flex items-center gap-2 text-base
                             xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
-                        <BsTelephoneFill
+                        <FaEnvelopeOpenText
                             className="fill-[#339DFF] text-lg
                                 dark:fill-[#66C8FF]"
                         />
-                        <FormattedMessage id="resume.contact.title" />
+                        Contact form
                     </h2>
                     <ContactForm />
                 </motion.div>
