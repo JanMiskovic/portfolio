@@ -55,7 +55,7 @@
     "resume.personal.country": "Slovenská Republika",
 
     "resume.contact.title": "Kontaktné údaje",
-    "resume.contact.msg": "Pred volaním prosím použite{br}e-mail, alebo kontaktný formulár.",
+    "resume.contact.msg": "Pred volaním prosím použite e\u2011mail, alebo kontaktný formulár.",
 
     "resume.languages.title": "Jazyky",
     "resume.languages.name.1": "Slovenčina",
@@ -72,6 +72,7 @@
     "media.meta.title": "Médiá",
 
     "contact.meta.title": "Kontakt",
+    "contact.chat": "Ak si chcete, pridajte si ma na sociálnych sieťach / discorde\u00a0:)",
 
     "404.meta.title": "Stránka neexistuje",
     "404.text": "Táto stránka bola odstránená, alebo neexistuje.{br}Vráťte sa na existujúcu stránku pomocou menu!",

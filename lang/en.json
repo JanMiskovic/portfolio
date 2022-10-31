@@ -55,7 +55,7 @@
     "resume.personal.country": "Slovak Republic",
 
     "resume.contact.title": "Contact details",
-    "resume.contact.msg": "Please send an e-mail or use{br}the contact form before calling.",
+    "resume.contact.msg": "Please send an e-mail or use the\u00a0contact form before calling.",
 
     "resume.languages.title": "Languages",
     "resume.languages.name.1": "Slovak",
@@ -72,6 +72,7 @@
     "media.meta.title": "Media",
 
     "contact.meta.title": "Contact",
+    "contact.chat": "If you just want to chat with me, add me on social media / discord!\u00a0:)",
 
     "404.meta.title": "Page not found",
     "404.text": "This page was removed or doesn't exist.{br}Navigate to an existing page using the menu above!",

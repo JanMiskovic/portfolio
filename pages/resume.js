@@ -50,7 +50,9 @@ export default function Resume({ isSm, isMd }) {
                     className="my-border flex flex-col gap-5 rounded-lg bg-bg-light 
                     p-4 dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        <h2
+                            className="flex items-center gap-2 text-base xs:text-lg
+                            sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoMdBriefcase
                                 className="fill-[#339DFF] text-lg
                                 dark:fill-[#66C8FF] xs:text-xl"
@@ -64,7 +66,7 @@ export default function Resume({ isSm, isMd }) {
                             <h3 className="font-medium">
                                 <FormattedMessage id="resume.work.name.1" />
                             </h3>
-                            <p>
+                            <p className="max-w-[25rem]">
                                 <FormattedMessage id="resume.work.desc.1" />
                             </p>
                             <Link href="/" scroll={false}>
@@ -105,12 +107,12 @@ export default function Resume({ isSm, isMd }) {
                             <h3 className="font-medium">
                                 <FormattedMessage id="resume.education.name.1" />
                             </h3>
-                            <p className="mb-2">
+                            <p className="mb-2 max-w-[24rem]">
                                 <FormattedMessage id="resume.education.desc.1" />
                                 <br />
                                 <FormattedMessage id="resume.education.location.1" />
                             </p>
-                            <span>
+                            <span className="max-w-[16rem]">
                                 <span className="font-medium">
                                     <FormattedMessage id="resume.education.bc.title" />
                                 </span>
@@ -154,8 +156,8 @@ export default function Resume({ isSm, isMd }) {
                     </h2>
                     <div className="grid gap-2">
                         <h3
-                            className="underline underline-offset-2 
-                            md:max-lg:col-start-1 md:max-lg:row-start-1">
+                            className="md:max-lg:col-start-1 md:max-lg:row-start-1 
+                            underline underline-offset-2">
                             <FormattedMessage id="resume.stack.regular" />
                         </h3>
                         <ul className="md:max-lg:col-start-1">
@@ -232,8 +234,8 @@ export default function Resume({ isSm, isMd }) {
                             </li>
                         </ul>
                         <h3
-                            className="underline underline-offset-2
-                            md:max-lg:col-start-3 md:max-lg:row-start-1">
+                            className="md:max-lg:col-start-3 md:max-lg:row-start-1
+                            underline underline-offset-2">
                             <FormattedMessage id="resume.stack.before" />
                         </h3>
                         <ul className="md:max-lg:col-start-3 md:max-lg:row-start-2">
@@ -343,11 +345,8 @@ export default function Resume({ isSm, isMd }) {
                                 </a>
                             </li>
                         </ul>
-                        <p>
-                            <FormattedMessage
-                                id="resume.contact.msg"
-                                values={{ br: <br /> }}
-                            />
+                        <p className="max-w-[16rem]">
+                            <FormattedMessage id="resume.contact.msg" />
                         </p>
                     </div>
 

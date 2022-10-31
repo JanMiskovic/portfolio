@@ -77,15 +77,11 @@ export default function Contact() {
                             </a>
                         </li>
                     </ul>
-                    <p>
-                        <FormattedMessage
-                            id="resume.contact.msg"
-                            values={{ br: <br /> }}
-                        />
+                    <p className="max-w-[16rem]">
+                        <FormattedMessage id="resume.contact.msg" />
                     </p>
-                    <p>
-                        Or if you just wish to chat with me, add me on social
-                        media / discord! :)
+                    <p className="max-w-[17rem]">
+                        <FormattedMessage id="contact.chat" />
                     </p>
                     <ul>
                         <li>
