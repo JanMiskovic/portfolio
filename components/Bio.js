@@ -62,7 +62,7 @@ export default function Bio() {
 
                 {/* Contact button and socials */}
                 <div className="flex gap-3 sm:gap-5">
-                    <Link href="/contact">
+                    <Link href="/contact" scroll={false}>
                         <a
                             className="focus-ring my-border transition-hover 
                             w-[6.5rem] shrink-0 rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm

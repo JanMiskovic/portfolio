@@ -35,7 +35,10 @@ export default function MainLayout({ children }) {
     };
 
     useEffect(() => {
-        setShowCookieBanner(!hasCookie("localCookieConsent"));
+        setTimeout(
+            () => setShowCookieBanner(!hasCookie("localCookieConsent")),
+            650
+        );
     }, []);
 
     return (
