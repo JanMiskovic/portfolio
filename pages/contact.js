@@ -140,7 +140,7 @@ export default function Contact() {
 
                 <motion.div
                     variants={contactVariants}
-                    className="my-border flex flex-col gap-1.5 rounded-lg bg-bg-light
+                    className="my-border flex flex-col gap-2 rounded-lg bg-bg-light
                     p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
                     <h2
                         className="flex items-center gap-2 text-base

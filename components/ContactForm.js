@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -15,6 +16,19 @@ export default function ContactForm() {
         setEmail("");
         setSubject("");
         setMessage("");
+    };
+
+    // Persisting filled out form through refresh / page change
+    const saveFormData = () => {
+        window.localStorage.setItem(
+            "formData",
+            JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+            })
+        );
     };
 
     const handleSubmit = async (e) => {
@@ -39,6 +53,17 @@ export default function ContactForm() {
         resetFields(); */
     };
 
+    // Persisting filled out form through refresh / page change
+    useEffect(() => {
+        const formData = JSON.parse(window.localStorage.getItem("formData"));
+        if (formData) {
+            setName(formData.name);
+            setEmail(formData.email);
+            setSubject(formData.subject);
+            setMessage(formData.message);
+        }
+    }, []);
+
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-4 lg:flex-row">
@@ -48,14 +73,15 @@ export default function ContactForm() {
                     maxLength={30}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    onBlur={saveFormData}
                     placeholder={intl.formatMessage({
                         id: "contact.form.name",
                     })}
                     type="text"
                     name="name"
-                    className="my-border rounded-md bg-body-light px-3 py-3
-                    placeholder-neutral-700 focus:outline-none dark:bg-[#1f1f1f]
-                    dark:placeholder-neutral-300 lg:w-1/2"
+                    className="my-border rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700
+                    focus:outline-none dark:bg-[#1f1f1f] dark:placeholder-neutral-300
+                    xs:py-3 lg:w-1/2"
                 />
 
                 <input
@@ -64,14 +90,15 @@ export default function ContactForm() {
                     maxLength={40}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    onBlur={saveFormData}
                     placeholder={intl.formatMessage({
                         id: "contact.form.email",
                     })}
                     type="email"
                     name="email"
-                    className="my-border rounded-md bg-body-light px-3 py-3
-                    placeholder-neutral-700 focus:outline-none dark:bg-[#1f1f1f] 
-                    dark:placeholder-neutral-300 lg:w-1/2"
+                    className="my-border rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700
+                    focus:outline-none dark:bg-[#1f1f1f] dark:placeholder-neutral-300 
+                    xs:py-3 lg:w-1/2"
                 />
             </div>
 
@@ -81,12 +108,13 @@ export default function ContactForm() {
                 maxLength={30}
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
+                onBlur={saveFormData}
                 placeholder={intl.formatMessage({ id: "contact.form.subject" })}
                 type="text"
                 name="subject"
-                className="my-border rounded-md bg-body-light px-3 py-3
-                placeholder-neutral-700 focus:outline-none dark:bg-[#1f1f1f]
-                dark:placeholder-neutral-300"
+                className="my-border rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700
+                focus:outline-none dark:bg-[#1f1f1f] dark:placeholder-neutral-300
+                xs:py-3"
             />
 
             <div className="relative flex">
@@ -96,13 +124,14 @@ export default function ContactForm() {
                     maxLength={500}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    onBlur={saveFormData}
                     placeholder={intl.formatMessage({
                         id: "contact.form.text",
                     })}
                     name="message"
                     className="my-border min-h-[10rem] w-full
-                    rounded-md bg-body-light px-3 py-3 placeholder-neutral-700
-                    focus:outline-none dark:bg-[#1f1f1f] dark:placeholder-neutral-300
+                    rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700 focus:outline-none
+                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300 xs:py-3
                     [&::-webkit-scrollbar]:w-2"
                 />
                 <button
