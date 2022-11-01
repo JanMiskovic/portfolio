@@ -4,10 +4,12 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { FaDiscord, FaEnvelope, FaEnvelopeOpenText } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { ImFacebook } from "react-icons/im";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Contact() {
     const intl = useIntl();
+    const [copiedDiscord, setCopiedDiscord] = useState(false);
 
     const contactVariants = {
         initial: { opacity: 0, scale: 0.9, y: -20 },
@@ -87,6 +89,8 @@ export default function Contact() {
                         <li>
                             <a
                                 href="https://www.facebook.com/mutualslump/"
+                                target="_blank"
+                                rel="noreferrer"
                                 className="link focus-ring focus-ring-loose transition-hover
                                 inline-flex items-center gap-2 rounded-md font-medium">
                                 <ImFacebook /> Ján Miškovič
@@ -95,13 +99,38 @@ export default function Contact() {
                         <li>
                             <a
                                 href="https://www.instagram.com/janiiscript/"
+                                target="_blank"
+                                rel="noreferrer"
                                 className="link focus-ring focus-ring-loose transition-hover
                                 inline-flex items-center gap-2 rounded-md font-medium">
                                 <RiInstagramFill /> @janiiscript
                             </a>
                         </li>
-                        <li className="flex items-center gap-2 font-medium">
-                            <FaDiscord /> losi#8025
+                        <li className="flex items-center gap-2">
+                            <span
+                                onClick={() => {
+                                    navigator.clipboard.writeText("losi#8025");
+                                    setCopiedDiscord(true);
+                                    setTimeout(
+                                        () => setCopiedDiscord(false),
+                                        2000
+                                    );
+                                }}
+                                className="link focus-ring focus-ring-loose transition-hover
+                                inline-flex cursor-pointer items-center gap-2 font-medium">
+                                <FaDiscord /> losi#8025
+                            </span>
+                            <AnimatePresence>
+                                {copiedDiscord && (
+                                    <motion.span
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.15 }}>
+                                        Copied!
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
                         </li>
                     </ul>
                 </motion.div>
