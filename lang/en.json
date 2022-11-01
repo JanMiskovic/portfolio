@@ -73,6 +73,13 @@
 
     "contact.meta.title": "Contact",
     "contact.chat": "If you just want to chat with me, add me on social media / discord!\u00a0:)",
+    "contact.copied": "Copied!",
+    "contact.form.title": "Contact form",
+    "contact.form.name": "Your name*",
+    "contact.form.email": "Your e-mail*",
+    "contact.form.subject": "Subject*",
+    "contact.form.text": "Your message*",
+    "contact.form.send": "Send",
 
     "404.meta.title": "Page not found",
     "404.text": "This page was removed or doesn't exist.{br}Navigate to an existing page using the menu above!",

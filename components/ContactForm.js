@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function ContactForm() {
+    const intl = useIntl();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
@@ -46,7 +48,9 @@ export default function ContactForm() {
                     maxLength={30}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Vaše meno*"
+                    placeholder={intl.formatMessage({
+                        id: "contact.form.name",
+                    })}
                     type="text"
                     name="name"
                     className="my-border rounded-md bg-body-light px-3 py-3
@@ -60,7 +64,9 @@ export default function ContactForm() {
                     maxLength={40}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Váš e-mail*"
+                    placeholder={intl.formatMessage({
+                        id: "contact.form.email",
+                    })}
                     type="email"
                     name="email"
                     className="my-border rounded-md bg-body-light px-3 py-3
@@ -75,7 +81,7 @@ export default function ContactForm() {
                 maxLength={30}
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                placeholder="Predmet správy*"
+                placeholder={intl.formatMessage({ id: "contact.form.subject" })}
                 type="text"
                 name="subject"
                 className="my-border rounded-md bg-body-light px-3 py-3
@@ -90,7 +96,9 @@ export default function ContactForm() {
                     maxLength={500}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Text správy*"
+                    placeholder={intl.formatMessage({
+                        id: "contact.form.text",
+                    })}
                     name="message"
                     className="my-border min-h-[10rem] w-full
                     rounded-md bg-body-light px-3 py-3 placeholder-neutral-700
@@ -104,7 +112,8 @@ export default function ContactForm() {
                             text-black hover:bg-[#dbf2ff] active:bg-[#ccecff] 
                             dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:w-32
                             xs:text-base sm:w-40 sm:py-2">
-                    Send <IoSend className="" />
+                    <FormattedMessage id="contact.form.send" />{" "}
+                    <IoSend className="" />
                 </button>
             </div>
 

@@ -72,7 +72,14 @@
     "media.meta.title": "Médiá",
 
     "contact.meta.title": "Kontakt",
-    "contact.chat": "Ak si chcete, pridajte si ma na sociálnych sieťach / discorde\u00a0:)",
+    "contact.chat": "Ak chcete len chatovať, pridajte si ma na sociálnej sieti / discorde\u00a0:)",
+    "contact.copied": "Skopírované!",
+    "contact.form.title": "Kontaktný formulár",
+    "contact.form.name": "Vaše meno*",
+    "contact.form.email": "Váš e-mail*",
+    "contact.form.subject": "Predmet správy*",
+    "contact.form.text": "Vaša správa*",
+    "contact.form.send": "Odoslať",
 
     "404.meta.title": "Stránka neexistuje",
     "404.text": "Táto stránka bola odstránená, alebo neexistuje.{br}Vráťte sa na existujúcu stránku pomocou menu!",

@@ -1,15 +1,17 @@
 import ContactForm from "../components/ContactForm";
 import Head from "next/head";
 import { FormattedMessage, useIntl } from "react-intl";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { FaDiscord, FaEnvelope, FaEnvelopeOpenText } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { ImFacebook } from "react-icons/im";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useRef } from "react";
 
 export default function Contact() {
     const intl = useIntl();
     const [copiedDiscord, setCopiedDiscord] = useState(false);
+    const copiedTimeoutId = useRef(null);
 
     const contactVariants = {
         initial: { opacity: 0, scale: 0.9, y: -20 },
@@ -107,19 +109,20 @@ export default function Contact() {
                             </a>
                         </li>
                         <li className="flex items-center gap-2">
-                            <span
+                            <button
                                 onClick={() => {
                                     navigator.clipboard.writeText("losi#8025");
                                     setCopiedDiscord(true);
-                                    setTimeout(
+                                    clearTimeout(copiedTimeoutId.current);
+                                    copiedTimeoutId.current = setTimeout(
                                         () => setCopiedDiscord(false),
                                         2000
                                     );
                                 }}
                                 className="link focus-ring focus-ring-loose transition-hover
-                                inline-flex cursor-pointer items-center gap-2 font-medium">
+                                inline-flex items-center gap-2 rounded-md font-medium">
                                 <FaDiscord /> losi#8025
-                            </span>
+                            </button>
                             <AnimatePresence>
                                 {copiedDiscord && (
                                     <motion.span
@@ -127,7 +130,7 @@ export default function Contact() {
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
                                         transition={{ duration: 0.15 }}>
-                                        Copied!
+                                        <FormattedMessage id="contact.copied" />
                                     </motion.span>
                                 )}
                             </AnimatePresence>
@@ -141,12 +144,12 @@ export default function Contact() {
                     p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
                     <h2
                         className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <FaEnvelopeOpenText
                             className="fill-[#339DFF] text-lg
-                                dark:fill-[#66C8FF]"
+                            dark:fill-[#66C8FF]"
                         />
-                        Contact form
+                        <FormattedMessage id="contact.form.title" />
                     </h2>
                     <ContactForm />
                 </motion.div>
