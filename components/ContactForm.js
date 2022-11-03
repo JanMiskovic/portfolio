@@ -1,7 +1,7 @@
+import { FormattedMessage, useIntl } from "react-intl";
 import { useEffect } from "react";
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
-import { FormattedMessage, useIntl } from "react-intl";
 
 export default function ContactForm() {
     const intl = useIntl();
@@ -16,19 +16,6 @@ export default function ContactForm() {
         setEmail("");
         setSubject("");
         setMessage("");
-    };
-
-    // Persisting filled out form through refresh / page change
-    const saveFormData = () => {
-        window.localStorage.setItem(
-            "formData",
-            JSON.stringify({
-                name: name,
-                email: email,
-                subject: subject,
-                message: message,
-            })
-        );
     };
 
     const handleSubmit = async (e) => {
@@ -63,6 +50,18 @@ export default function ContactForm() {
             setMessage(formData.message);
         }
     }, []);
+
+    const saveFormData = () => {
+        window.localStorage.setItem(
+            "formData",
+            JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+            })
+        );
+    };
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -129,10 +128,10 @@ export default function ContactForm() {
                         id: "contact.form.text",
                     })}
                     name="message"
-                    className="my-border min-h-[10rem] w-full
+                    className="my-border min-h-[10.625rem] w-full
                     rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300 xs:py-3
-                    [&::-webkit-scrollbar]:w-2"
+                    [&::-webkit-scrollbar]:w-0"
                 />
                 <button
                     type="submit"

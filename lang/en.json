@@ -72,6 +72,9 @@
     "media.meta.title": "Media",
 
     "contact.meta.title": "Contact",
+    "contact.title": "Contact details",
+    "contact.msg": "Please send an e-mail or use the\u00a0contact form before calling.",
+    "contact.reply": "I will do my best to always reply as soon as possible (same day).",
     "contact.chat": "If you just want to chat with me, add me on social media / discord\u00a0:)",
     "contact.copied": "Copied!",
     "contact.form.title": "Contact form",

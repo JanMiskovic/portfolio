@@ -61,7 +61,7 @@ export default function Contact() {
                             className="fill-[#339DFF] text-lg
                             dark:fill-[#66C8FF]"
                         />
-                        <FormattedMessage id="resume.contact.title" />
+                        <FormattedMessage id="contact.title" />
                     </h2>
                     <ul>
                         <li>
@@ -82,7 +82,10 @@ export default function Contact() {
                         </li>
                     </ul>
                     <p className="max-w-[16rem]">
-                        <FormattedMessage id="resume.contact.msg" />
+                        <FormattedMessage id="contact.msg" />
+                    </p>
+                    <p className="max-w-[16rem]">
+                        <FormattedMessage id="contact.reply" />
                     </p>
                     <p className="max-w-[17rem]">
                         <FormattedMessage id="contact.chat" />
@@ -140,8 +143,8 @@ export default function Contact() {
 
                 <motion.div
                     variants={contactVariants}
-                    className="my-border flex flex-col gap-2 rounded-lg bg-bg-light
-                    p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
+                    className="my-border flex flex-col gap-3.5 rounded-lg bg-bg-light
+                    p-4 dark:bg-bg-dark sm:px-5">
                     <h2
                         className="flex items-center gap-2 text-base
                         xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
