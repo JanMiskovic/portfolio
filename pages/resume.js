@@ -107,7 +107,7 @@ export default function Resume({ isSm, isMd }) {
                             <h3 className="font-medium">
                                 <FormattedMessage id="resume.education.name.1" />
                             </h3>
-                            <p className="mb-2 max-w-[24rem]">
+                            <p className="mb-2 max-w-[23rem]">
                                 <FormattedMessage id="resume.education.desc.1" />
                                 <br />
                                 <FormattedMessage id="resume.education.location.1" />
