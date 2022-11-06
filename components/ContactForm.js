@@ -2,6 +2,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { useEffect } from "react";
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
+import TextareaAutosize from "react-textarea-autosize";
 
 export default function ContactForm() {
     const intl = useIntl();
@@ -21,7 +22,7 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        /* setSendStatus("sending");
+        setSendStatus("sending");
 
         const res = await fetch("/api/sendgrid", {
             body: JSON.stringify({
@@ -36,8 +37,12 @@ export default function ContactForm() {
 
         const { error } = await res.json();
 
-        setSendStatus(error ? "failure" : "success");
-        resetFields(); */
+        if (error) {
+            setSendStatus("failure");
+        } else {
+            setSendStatus("success");
+            resetFields();
+        }
     };
 
     // Persisting filled out form through refresh / page change
@@ -68,7 +73,6 @@ export default function ContactForm() {
             <div className="flex flex-col gap-4 lg:flex-row">
                 <input
                     required
-                    minLength={2}
                     maxLength={30}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -84,9 +88,7 @@ export default function ContactForm() {
                 />
 
                 <input
-                    required
-                    minLength={5}
-                    maxLength={40}
+                    maxLength={60}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     onBlur={saveFormData}
@@ -103,8 +105,7 @@ export default function ContactForm() {
 
             <input
                 required
-                minLength={2}
-                maxLength={30}
+                maxLength={100}
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 onBlur={saveFormData}
@@ -117,10 +118,9 @@ export default function ContactForm() {
             />
 
             <div className="relative flex">
-                <textarea
+                <TextareaAutosize
                     required
-                    minLength={5}
-                    maxLength={500}
+                    maxLength={2000}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     onBlur={saveFormData}
@@ -129,9 +129,9 @@ export default function ContactForm() {
                     })}
                     name="message"
                     className="my-border min-h-[10.625rem] w-full
-                    rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700 focus:outline-none
-                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300 xs:py-3
-                    [&::-webkit-scrollbar]:w-0"
+                    rounded-md bg-body-light px-3 pt-2.5 pb-14 placeholder-neutral-700 focus:outline-none
+                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300 xs:pt-3 xs:pb-16
+                    overflow-hidden resize-none"
                 />
                 <button
                     type="submit"

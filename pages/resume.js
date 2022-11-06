@@ -210,7 +210,7 @@ export default function Resume({ isSm, isMd }) {
                             <li className="mb-1.5">
                                 <span className="font-medium">JavaScript</span>
                                 {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
+                                <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li>
                                 <span className="font-medium">Git</span>
