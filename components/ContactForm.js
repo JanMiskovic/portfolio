@@ -1,16 +1,16 @@
 import { FormattedMessage, useIntl } from "react-intl";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { VscDebugRestart } from "react-icons/vsc";
 import TextareaAutosize from "react-textarea-autosize";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function ContactForm() {
     const intl = useIntl();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
-    const [message, setMessage] = useState("");
+    const [name, setName] = useLocalStorage("name", "");
+    const [email, setEmail] = useLocalStorage("email", "");
+    const [subject, setSubject] = useLocalStorage("subject", "");
+    const [message, setMessage] = useLocalStorage("message", "");
     const [sendStatus, setSendStatus] = useState("");
 
     const resetFields = () => {
@@ -46,29 +46,6 @@ export default function ContactForm() {
         }
     };
 
-    // Persisting filled out form through refresh / page change
-    useEffect(() => {
-        const formData = JSON.parse(window.localStorage.getItem("formData"));
-        if (formData) {
-            setName(formData.name);
-            setEmail(formData.email);
-            setSubject(formData.subject);
-            setMessage(formData.message);
-        }
-    }, []);
-
-    const saveFormData = () => {
-        window.localStorage.setItem(
-            "formData",
-            JSON.stringify({
-                name: name,
-                email: email,
-                subject: subject,
-                message: message,
-            })
-        );
-    };
-
     return (
         <form onSubmit={handleSubmit} className="grid gap-4">
             <input
@@ -76,7 +53,6 @@ export default function ContactForm() {
                 maxLength={30}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                onBlur={saveFormData}
                 placeholder={intl.formatMessage({
                     id: "contact.form.name",
                 })}
@@ -91,8 +67,7 @@ export default function ContactForm() {
             <input
                 maxLength={60}
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onBlur={saveFormData}
+                onChange={(e) => setEmail(() => e.target.value)}
                 placeholder={intl.formatMessage({
                     id: "contact.form.email",
                 })}
@@ -109,7 +84,6 @@ export default function ContactForm() {
                 maxLength={100}
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                onBlur={saveFormData}
                 placeholder={intl.formatMessage({ id: "contact.form.subject" })}
                 type="text"
                 name="subject"
@@ -125,7 +99,7 @@ export default function ContactForm() {
                     maxLength={2000}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    onBlur={saveFormData}
+
                     placeholder={intl.formatMessage({
                         id: "contact.form.text",
                     })}
@@ -140,10 +114,7 @@ export default function ContactForm() {
                 <div className="absolute bottom-4 right-4 flex gap-2 xs:gap-2.5">
                     <button
                         type="reset"
-                        onClick={() => {
-                            resetFields();
-                            saveFormData();
-                        }}
+                        onClick={resetFields}
                         className="focus-ring my-border transition-hover rounded-md
                         bg-[#E9F7FF] py-1.5 px-2 text-center text-base
                         hover:bg-[#dbf2ff] active:bg-[#ccecff]
