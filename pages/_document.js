@@ -9,7 +9,9 @@ export default function Document() {
                     rel="stylesheet"
                 />
             </Head>
-            <body className="bg-body-light dark:bg-body-dark">
+            <body
+                className="bg-body-light bg-[url('../public/BG.svg')] bg-cover bg-fixed 
+                dark:bg-body-dark dark:bg-[url('../public/BGdark.svg')]">
                 <Main />
                 <NextScript />
             </body>
