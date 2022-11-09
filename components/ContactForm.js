@@ -1,5 +1,6 @@
 import { FormattedMessage, useIntl } from "react-intl";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { IoSend } from "react-icons/io5";
 import { VscDebugRestart } from "react-icons/vsc";
 import TextareaAutosize from "react-textarea-autosize";
@@ -12,6 +13,7 @@ export default function ContactForm() {
     const [subject, setSubject] = useLocalStorage("subject", "");
     const [message, setMessage] = useLocalStorage("message", "");
     const [sendStatus, setSendStatus] = useState("");
+    const [showResetConfirm, setShowResetConfirm] = useState(false);
 
     const resetFields = () => {
         setName("");
@@ -58,12 +60,11 @@ export default function ContactForm() {
                 })}
                 type="text"
                 name="name"
-                className="my-border rounded-md bg-body-light px-3 py-2.5 
-                    placeholder-neutral-700 focus:outline-none
-                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300
-                    lg:col-start-1 lg:py-3"
+                className="my-border rounded-md bg-body-light px-3 py-2.5
+                placeholder-neutral-700 focus:outline-none
+                dark:bg-[#1f1f1f] dark:placeholder-neutral-300
+                lg:col-start-1 lg:py-3"
             />
-
             <input
                 maxLength={60}
                 value={email}
@@ -74,11 +75,10 @@ export default function ContactForm() {
                 type="email"
                 name="email"
                 className="my-border rounded-md bg-body-light px-3 py-2.5
-                    placeholder-neutral-700 focus:outline-none
-                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300 
-                    lg:col-start-2 lg:py-3"
+                placeholder-neutral-700 focus:outline-none
+                dark:bg-[#1f1f1f] dark:placeholder-neutral-300
+                lg:col-start-2 lg:py-3"
             />
-
             <input
                 required
                 maxLength={100}
@@ -92,36 +92,54 @@ export default function ContactForm() {
                 dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                 lg:col-span-2 lg:py-3"
             />
-
             <div className="relative flex lg:col-span-2">
                 <TextareaAutosize
                     required
                     maxLength={2000}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-
                     placeholder={intl.formatMessage({
                         id: "contact.form.text",
                     })}
                     name="message"
                     className="my-border min-h-[10.625rem] w-full
                     resize-none overflow-hidden rounded-md bg-body-light px-3 pt-2.5 pb-14
-                    placeholder-neutral-700 focus:outline-none 
+                    placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     xs:pt-3 xs:pb-16"
                 />
-
                 <div className="absolute bottom-4 right-4 flex gap-2 xs:gap-2.5">
-                    <button
-                        type="reset"
-                        onClick={resetFields}
-                        className="focus-ring my-border transition-hover rounded-md
-                        bg-[#E9F7FF] py-1.5 px-2 text-center text-base
-                        hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                        dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
-                        xs:text-xl sm:py-2 sm:px-2.5">
-                        <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
-                    </button>
+                    <div className="relative">
+                        <button
+                            type="button"
+                            onClick={() => setShowResetConfirm(true)}
+                            className="focus-ring my-border transition-hover h-full rounded-md
+                            bg-[#E9F7FF] py-1.5 px-2 text-center text-base
+                            hover:bg-[#dbf2ff] active:bg-[#ccecff]
+                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
+                            xs:text-xl sm:py-2 sm:px-2.5">
+                            <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
+                        </button>
+                        {showResetConfirm && (
+                            <div
+                                className="my-border absolute left-1/2 mt-3 flex -translate-x-1/2
+                                gap-3 rounded-md bg-bg-light py-3 px-4 dark:bg-bg-dark">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowResetConfirm(false)}>
+                                    No
+                                </button>
+                                <button
+                                    type="reset"
+                                    onClick={() => {
+                                        setShowResetConfirm(false);
+                                        resetFields();
+                                    }}>
+                                    Yes
+                                </button>
+                            </div>
+                        )}
+                    </div>
                     <button
                         type="submit"
                         className="focus-ring my-border transition-hover
@@ -146,16 +164,17 @@ export default function ContactForm() {
                     </span>
                 </p>
             )}
-
             {sendStatus === "failure" && (
-                <p className="text-white">
-                    <span className="inline-block">
-                        Vyskytla sa chyba :/&nbsp;
-                    </span>
-                    <span className="inline-block">
-                        Kontaktujte nás prosím na našom e-maile.
-                    </span>
-                </p>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="">
+                    <p className="text-white">
+                        <span className="inline-block">
+                            Vyskytla sa chyba :/&nbsp;
+                        </span>
+                    </p>
+                </motion.div>
             )}
         </form>
     );
