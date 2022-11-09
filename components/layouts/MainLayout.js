@@ -3,6 +3,7 @@ import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { hasCookie } from "cookies-next";
+import SmoothResize from "../SmoothResize";
 import AnalyticsScripts from "../AnalyticsScripts";
 import MetaTags from "../MetaTags";
 import Favicon from "../Favicon";
@@ -62,19 +63,21 @@ export default function MainLayout({ children }) {
                 <Bio />
                 <Nav />
 
-                <AnimatePresence mode="wait" initial={false}>
-                    <motion.main
-                        key={asPath}
-                        variants={pageTransitionVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit">
-                        {React.cloneElement(children, {
-                            isSm: isSm,
-                            isMd: isMd,
-                        })}
-                    </motion.main>
-                </AnimatePresence>
+                <SmoothResize>
+                    <AnimatePresence mode="wait" initial={false}>
+                        <motion.main
+                            key={asPath}
+                            variants={pageTransitionVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit">
+                            {React.cloneElement(children, {
+                                isSm: isSm,
+                                isMd: isMd,
+                            })}
+                        </motion.main>
+                    </AnimatePresence>
+                </SmoothResize>
 
                 <Footer setShowCookieBanner={setShowCookieBanner} />
             </motion.div>
