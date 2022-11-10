@@ -29,6 +29,7 @@ export default function ContactForm() {
 
         const res = await fetch("/api/sendgrid", {
             body: JSON.stringify({
+                locale: intl.locale,
                 email: email,
                 name: name,
                 subject: subject,
@@ -41,7 +42,7 @@ export default function ContactForm() {
         const { error } = await res.json();
 
         setSendStatus(error ? "failure" : "success");
-        setTimeout(() => setSendStatus(""), 5000);
+        setTimeout(() => setSendStatus(""), 10000);
     };
 
     return (
@@ -158,18 +159,19 @@ export default function ContactForm() {
             </form>
 
             <AnimatePresence>
-                {sendStatus === "success" || sendStatus === "failure" && (
-                    <motion.div
-                        variants={resultVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit">
-                        <p className="pt-4">
-                            Vyskytla sa chyba :/ Kontaktujte ma prosím priamo
-                            cez e-mail.
-                        </p>
-                    </motion.div>
-                )}
+                {sendStatus === "success" ||
+                    (sendStatus === "failure" && (
+                        <motion.div
+                            variants={resultVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit">
+                            <p className="pt-4">
+                                Vyskytla sa chyba :/ Kontaktujte ma prosím
+                                priamo cez e-mail.
+                            </p>
+                        </motion.div>
+                    ))}
             </AnimatePresence>
         </div>
     );
