@@ -7,8 +7,9 @@ export default async function sendEmail(req, res) {
         await sendgrid.send({
             to: "jan@janmiskovic.com",
             from: { email: "formular@janmiskovic.com", name: "Ján Miškovič" },
-            subject: `Formulár: ${req.body.subject}`,
             replyTo: { email: "jan@janmiskovic.com", name: "Ján Miškovič" },
+            cc: { email: req.body.email, name: req.body.name },
+            subject: `Formulár: ${req.body.subject}`,
             html: `<!DOCTYPE html>
                 <html lang="sk" style="box-sizing: border-box; margin: 0; padding: 0;">
                 <head>
