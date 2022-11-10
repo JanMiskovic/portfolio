@@ -8,7 +8,7 @@ export default async function sendEmail(req, res) {
             to: "jan@janmiskovic.com",
             from: { email: "formular@janmiskovic.com", name: "Ján Miškovič" },
             replyTo: { email: "jan@janmiskovic.com", name: "Ján Miškovič" },
-            cc: { email: req.body.email, name: req.body.name },
+            cc: req.body.email,
             subject: `Formulár: ${req.body.subject}`,
             html: `<!DOCTYPE html>
                 <html lang="sk" style="box-sizing: border-box; margin: 0; padding: 0;">
