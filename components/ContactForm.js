@@ -63,6 +63,7 @@ export default function ContactForm() {
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     lg:col-start-1 lg:py-3"
                 />
+
                 <input
                     maxLength={60}
                     value={email}
@@ -77,6 +78,7 @@ export default function ContactForm() {
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     lg:col-start-2 lg:py-3"
                 />
+
                 <input
                     required
                     maxLength={100}
@@ -92,6 +94,7 @@ export default function ContactForm() {
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     lg:col-span-2 lg:py-3"
                 />
+
                 <div className="relative flex lg:col-span-2">
                     <TextareaAutosize
                         required
@@ -120,27 +123,7 @@ export default function ContactForm() {
                                 xs:text-xl sm:py-2 sm:px-2.5">
                                 <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
                             </button>
-                            {showResetConfirm && (
-                                <div
-                                    className="my-border absolute left-1/2 mt-3 flex -translate-x-1/2
-                                    gap-3 rounded-md bg-bg-light py-3 px-4 dark:bg-bg-dark">
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            setShowResetConfirm(false)
-                                        }>
-                                        No
-                                    </button>
-                                    <button
-                                        type="reset"
-                                        onClick={() => {
-                                            setShowResetConfirm(false);
-                                            resetFields();
-                                        }}>
-                                        Yes
-                                    </button>
-                                </div>
-                            )}
+                            {showResetConfirm && <ResetConfirm />}
                         </div>
                         <button
                             type="submit"
@@ -159,20 +142,36 @@ export default function ContactForm() {
             </form>
 
             <AnimatePresence>
-                {sendStatus === "success" ||
-                    (sendStatus === "failure" && (
-                        <motion.div
-                            variants={resultVariants}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit">
-                            <p className="pt-4">
-                                Vyskytla sa chyba :/ Kontaktujte ma prosím
-                                priamo cez e-mail.
-                            </p>
-                        </motion.div>
-                    ))}
+                {sendStatus === "success" && (
+                    <motion.div
+                        variants={resultVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit">
+                        <p className="pt-4">Správa úspešne odoslaná!</p>
+                    </motion.div>
+                )}
             </AnimatePresence>
+        </div>
+    );
+}
+
+function ResetConfirm() {
+    return (
+        <div
+            className="my-border speech-bubble absolute left-1/2 -top-16 flex -translate-x-1/2
+            gap-3 rounded-md bg-bg-light py-3 px-4 dark:bg-bg-dark">
+            <button type="button" onClick={() => setShowResetConfirm(false)}>
+                No
+            </button>
+            <button
+                type="reset"
+                onClick={() => {
+                    setShowResetConfirm(false);
+                    resetFields();
+                }}>
+                Yes
+            </button>
         </div>
     );
 }

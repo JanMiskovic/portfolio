@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .logo span {
+                padding-top: 2px;
+                font-size: 1.4rem;
+            }
+
+            .logo h1 {
+                padding-left: 7px;
+                text-decoration: underline !important;
+                font-weight: 400;
+            }
+
+            .main-panel {
+                margin-bottom: 1.5rem;
+                background-color: rgb(250, 250, 250);
+                border: 2px solid rgb(182, 182, 182);
+                border-radius: 0.5rem;
+            }
+
+            .main-panel > div > h4 {
+                font-weight: 400;
+            }
+
+            .main-panel > div > h4:first-child {
+                margin-bottom: 0.35rem;
+            }
+
+            .main-panel > div > h4:last-child {
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+
+            .main-panel > div {
+                padding: 1rem;
+            }
+
+            .main-panel > div:last-child {
+                min-height: 140px;
+            }
+
+            .main-panel > div:last-child > p {
+                white-space: pre-line;
+            }
+
+            .main-panel > div:first-child {
+                border-bottom: 2px solid rgb(229, 229, 229);
+            }
+
+            .footer img {
+                display: block;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 100%;
+                border: 2px solid rgb(182, 182, 182);
+            }
+
+            .footer div {
+                background-color: rgb(250, 250, 250);
+                border: 2px solid rgb(182, 182, 182);
+                border-radius: 0.5rem;
+                padding: 0.7rem 1rem;
+                margin-left: 0.5rem;
+            }
+
+            .footer div h4 {
+                font-weight: 400;
+                width: 100%;
+            }
+        </style>
+        <title>${req.body.subject}</title>
+    </head>
+
+    <body style="font-family: Arial, Helvetica, sans-serif; max-width: 700px">
+        <table class="logo">
+            <tr>
+                <td>
+                    <span>⭐</span>
+                </td>
+                <td>
+                    <a href="https://janmiskovic.com">
+                        <h1 style="text-decoration: underline; color: black">
+                            janmiskovic.com
+                        </h1>
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        <div class="main-panel">
+            <div>
+                <h4>
+                    <strong>Od:</strong> ${req.body.name} (${req.body.email})
+                </h4>
+                <h4>${req.body.subject}</h4>
+            </div>
+            <div>
+                <p>${req.body.message}</p>
+            </div>
+        </div>
+
+        <table class="footer">
+            <tr>
+                <td>
+                    <img src="https://janmiskovic.com/profile_pic.webp" />
+                </td>
+                <td>
+                    <div>
+                        <h4>Ozvem sa Vám čo najskôr&nbsp;:)</h4>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

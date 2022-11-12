@@ -10,7 +10,7 @@
     }
 
     ::selection {
-        @apply bg-[#0c69ff] dark:bg-[#00a3e4] text-white;
+        @apply bg-[#0c69ff] text-white dark:bg-[#00a3e4];
     }
 
     ::-webkit-scrollbar {
@@ -38,9 +38,7 @@
     .transition-hover {
         @apply hover:transition-colors active:transition-colors;
     }
-}
 
-@layer components {
     .focus-ring {
         @apply focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-[-2px]
             focus-visible:outline-[#0c69ff] dark:focus-visible:outline-[#66d4ff];
@@ -51,11 +49,40 @@
     }
 
     .link {
-        @apply hover:text-[#0c69ff] hover:dark:text-[#66d4ff]
-            active:text-[#0c69ff] active:dark:text-[#66d4ff];
+        @apply hover:text-[#0c69ff] active:text-[#0c69ff]
+            hover:dark:text-[#66d4ff] active:dark:text-[#66d4ff];
     }
 
     .active-link {
         @apply text-[#0c69ff] dark:text-[#66d4ff];
+    }
+}
+
+@layer components {
+    .speech-bubble:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        z-index: 1;
+        border-style: solid;
+        @apply border-y-bg-light border-x-transparent dark:border-y-bg-dark;
+        border-width: 21px 13px 0;
+        bottom: -21px;
+        left: 50%;
+        margin-left: -13px;
+    }
+    .speech-bubble:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        z-index: 0;
+        border-style: solid;
+        @apply border-y-border-light border-x-transparent dark:border-y-border-dark;
+        border-width: 23px 15px 0;
+        bottom: -24px;
+        left: 50%;
+        margin-left: -15px;
+        display: block;
     }
 }

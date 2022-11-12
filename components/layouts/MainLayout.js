@@ -3,6 +3,8 @@ import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { hasCookie } from "cookies-next";
+import Image from "next/future/image";
+import BgImage from "../../public/bg.svg";
 import SmoothResize from "../SmoothResize";
 import AnalyticsScripts from "../AnalyticsScripts";
 import MetaTags from "../MetaTags";
@@ -47,6 +49,13 @@ export default function MainLayout({ children }) {
             <AnalyticsScripts />
             <MetaTags />
             <Favicon />
+
+            {/* <Image
+                src={BgImage}
+                layout="fill"
+                alt=""
+                className="fixed -z-50 h-screen w-screen object-cover"
+            /> */}
 
             <AnimatePresence>
                 {showCookieBanner && (
