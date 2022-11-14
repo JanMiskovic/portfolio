@@ -4,12 +4,14 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function sendEmail(req, res) {
     try {
+        const { locale, name, email, subject, message } = req.body;
+
         await sendgrid.send({
-            to: req.body.email,
+            to: email,
             from: { email: "formular@janmiskovic.com", name: "Ján Miškovič" },
             replyTo: { email: "jan@janmiskovic.com", name: "Ján Miškovič" },
             cc: "jan@janmiskovic.com",
-            subject: `Formulár: ${req.body.subject}`,
+            subject: `${locale === "sk" ? "Formulár" : "Form"}: ${subject}`,
             html: `
             <!DOCTYPE html>
             <html lang="sk" style="box-sizing: border-box; margin: 0; padding: 0">
@@ -19,7 +21,7 @@ export default async function sendEmail(req, res) {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-                    <title>${req.body.subject}</title>
+                    <title>${subject}</title>
                 </head>
 
                 <body
@@ -45,7 +47,9 @@ export default async function sendEmail(req, res) {
                             </td>
                             <td style="box-sizing: border-box; margin: 0; padding: 0">
                                 <a
-                                    href="https://janmiskovic.com"
+                                    href="https://janmiskovic.com${
+                                        locale === "sk" ? "/sk" : ""
+                                    }"
                                     style="box-sizing: border-box; margin: 0; padding: 0">
                                     <h1
                                         style="
@@ -90,9 +94,9 @@ export default async function sendEmail(req, res) {
                                 ">
                                 <strong
                                     style="box-sizing: border-box; margin: 0; padding: 0"
-                                    >Od:</strong
+                                    >${locale === "sk" ? "Od" : "From"}:</strong
                                 >
-                                ${req.body.name} (${req.body.email})
+                                ${name} (${email})
                             </h4>
                             <h4
                                 style="
@@ -102,7 +106,7 @@ export default async function sendEmail(req, res) {
                                     margin: 0;
                                     padding: 0;
                                 ">
-                                ${req.body.subject}
+                                ${subject}
                             </h4>
                         </div>
                         <div
@@ -118,7 +122,7 @@ export default async function sendEmail(req, res) {
                                     box-sizing: border-box;
                                     margin: 0;
                                     padding: 0;
-                                ">${req.body.message}</p>
+                                ">${message}</p>
                         </div>
                     </div>
 
@@ -156,7 +160,11 @@ export default async function sendEmail(req, res) {
                                             margin: 0;
                                             padding: 0;
                                         ">
-                                        Ozvem sa Vám čo najskôr&nbsp;:)
+                                        ${
+                                            locale === "sk"
+                                                ? "Ozvem sa Vám čo najskôr&nbsp;:)"
+                                                : "I will get in touch as soon as possible&nbsp;:)"
+                                        }
                                     </h4>
                                 </div>
                             </td>

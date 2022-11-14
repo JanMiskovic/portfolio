@@ -1,12 +1,11 @@
-import ContactForm from "../components/ContactForm";
-import Head from "next/head";
+import { useRef, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 import { FaDiscord, FaEnvelope, FaEnvelopeOpenText } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { ImFacebook } from "react-icons/im";
-import { useRef } from "react";
+import ContactForm from "../components/ContactForm";
+import Head from "next/head";
 
 export default function Contact() {
     const intl = useIntl();

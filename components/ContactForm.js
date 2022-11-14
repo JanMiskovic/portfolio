@@ -25,36 +25,30 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // setSendStatus("sending");
-
-        // const res = await fetch("/api/sendgrid", {
-        //     body: JSON.stringify({
-        //         locale: intl.locale,
-        //         email: email,
-        //         name: name,
-        //         subject: subject,
-        //         message: message,
-        //     }),
-        //     headers: { "Content-Type": "application/json" },
-        //     method: "POST",
-        // });
-
-        // const { error } = await res.json();
-
-        // if (error) {
-        //     setSendStatus("error");
-        // } else {
-        //     setSendStatus("success");
-        //     resetFields();
-        // }
-
         setSendStatus("sending");
-        setTimeout(() => {
+
+        const res = await fetch("/api/sendgrid", {
+            body: JSON.stringify({
+                locale: intl.locale,
+                email: email,
+                name: name,
+                subject: subject,
+                message: message,
+            }),
+            headers: { "Content-Type": "application/json" },
+            method: "POST",
+        });
+
+        const { error } = await res.json();
+
+        if (error) {
+            setSendStatus("error");
+        } else {
             setSendStatus("success");
             resetFields();
-        }, 2000);
+        }
 
-        // setTimeout(() => setSendStatus(""), 10000);
+        setTimeout(() => setSendStatus(""), 12000);
     };
 
     return (
