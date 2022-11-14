@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { IoSend } from "react-icons/io5";
 import { VscDebugRestart } from "react-icons/vsc";
+import { IoSend } from "react-icons/io5";
+import { RiLoaderLine } from "react-icons/ri";
 import TextareaAutosize from "react-textarea-autosize";
 import useLocalStorage from "../hooks/useLocalStorage";
 
@@ -13,7 +14,6 @@ export default function ContactForm() {
     const [subject, setSubject] = useLocalStorage("subject", "");
     const [message, setMessage] = useLocalStorage("message", "");
     const [sendStatus, setSendStatus] = useState("");
-    const [showResetConfirm, setShowResetConfirm] = useState(false);
 
     const resetFields = () => {
         setName("");
@@ -25,39 +25,51 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // setSendStatus("sending");
+
+        // const res = await fetch("/api/sendgrid", {
+        //     body: JSON.stringify({
+        //         locale: intl.locale,
+        //         email: email,
+        //         name: name,
+        //         subject: subject,
+        //         message: message,
+        //     }),
+        //     headers: { "Content-Type": "application/json" },
+        //     method: "POST",
+        // });
+
+        // const { error } = await res.json();
+
+        // if (error) {
+        //     setSendStatus("error");
+        // } else {
+        //     setSendStatus("success");
+        //     resetFields();
+        // }
+
         setSendStatus("sending");
+        setTimeout(() => {
+            setSendStatus("success");
+            resetFields();
+        }, 2000);
 
-        const res = await fetch("/api/sendgrid", {
-            body: JSON.stringify({
-                locale: intl.locale,
-                email: email,
-                name: name,
-                subject: subject,
-                message: message,
-            }),
-            headers: { "Content-Type": "application/json" },
-            method: "POST",
-        });
-
-        const { error } = await res.json();
-
-        setSendStatus(error ? "failure" : "success");
-        setTimeout(() => setSendStatus(""), 10000);
+        // setTimeout(() => setSendStatus(""), 10000);
     };
 
     return (
         <div>
             <form onSubmit={handleSubmit} className="grid gap-4">
                 <input
+                    name="name"
+                    type="text"
                     required
-                    maxLength={30}
+                    maxLength={40}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder={intl.formatMessage({
                         id: "contact.form.name",
                     })}
-                    type="text"
-                    name="name"
                     className="my-border rounded-md bg-body-light px-3 py-2.5
                     placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
@@ -65,14 +77,15 @@ export default function ContactForm() {
                 />
 
                 <input
-                    maxLength={60}
+                    name="email"
+                    type="email"
+                    required
+                    maxLength={70}
                     value={email}
                     onChange={(e) => setEmail(() => e.target.value)}
                     placeholder={intl.formatMessage({
                         id: "contact.form.email",
                     })}
-                    type="email"
-                    name="email"
                     className="my-border rounded-md bg-body-light px-3 py-2.5
                     placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
@@ -80,6 +93,8 @@ export default function ContactForm() {
                 />
 
                 <input
+                    name="subject"
+                    type="text"
                     required
                     maxLength={100}
                     value={subject}
@@ -87,8 +102,6 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.subject",
                     })}
-                    type="text"
-                    name="subject"
                     className="my-border rounded-md bg-body-light px-3 py-2.5
                     placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
@@ -97,6 +110,7 @@ export default function ContactForm() {
 
                 <div className="relative flex lg:col-span-2">
                     <TextareaAutosize
+                        name="message"
                         required
                         maxLength={2000}
                         value={message}
@@ -104,27 +118,16 @@ export default function ContactForm() {
                         placeholder={intl.formatMessage({
                             id: "contact.form.text",
                         })}
-                        name="message"
                         className="my-border min-h-[10.625rem] w-full
                         resize-none overflow-hidden rounded-md bg-body-light px-3 pt-2.5 pb-14
                         placeholder-neutral-700 focus:outline-none
                         dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                         xs:pt-3 xs:pb-16"
                     />
+
                     <div className="absolute bottom-4 right-4 flex gap-2 xs:gap-2.5">
-                        <div className="relative">
-                            <button
-                                type="button"
-                                onClick={() => setShowResetConfirm(true)}
-                                className="focus-ring my-border transition-hover h-full rounded-md
-                                bg-[#E9F7FF] py-1.5 px-2 text-center text-base
-                                hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                                dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
-                                xs:text-xl sm:py-2 sm:px-2.5">
-                                <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
-                            </button>
-                            {showResetConfirm && <ResetConfirm />}
-                        </div>
+                        <ResetButton resetFields={resetFields} />
+
                         <button
                             type="submit"
                             disabled={sendStatus === "sending" ? true : false}
@@ -141,14 +144,59 @@ export default function ContactForm() {
                 </div>
             </form>
 
+            <FormSending sendStatus={sendStatus} />
+            <FormResult sendStatus={sendStatus} />
+        </div>
+    );
+}
+
+function ResetButton({ resetFields }) {
+    const [showResetConfirm, setShowResetConfirm] = useState(false);
+
+    return (
+        <div className="relative">
+            <button
+                type="button"
+                onClick={() => setShowResetConfirm((prev) => !prev)}
+                className="focus-ring my-border transition-hover h-full rounded-md
+                bg-[#E9F7FF] py-1.5 px-2 text-center text-base
+                hover:bg-[#dbf2ff] active:bg-[#ccecff]
+                dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
+                xs:text-xl sm:py-2 sm:px-2.5">
+                <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
+            </button>
+
             <AnimatePresence>
-                {sendStatus === "success" && (
+                {showResetConfirm && (
                     <motion.div
-                        variants={resultVariants}
+                        variants={resetVariants}
                         initial="initial"
                         animate="animate"
-                        exit="exit">
-                        <p className="pt-4">Správa úspešne odoslaná!</p>
+                        exit="exit"
+                        transition={{ duration: 0.15 }}
+                        className="my-border speech-bubble absolute left-1/2 -top-24 
+                        -translate-x-1/2 gap-3 rounded-md bg-bg-light p-3 dark:bg-bg-dark">
+                        <FormattedMessage id="contact.form.reset.title" />
+                        <div className="flex gap-5 sm:gap-3.5">
+                            <button
+                                type="button"
+                                className="focus-ring focus-ring-loose rounded-lg underline 
+                                decoration-red-400 decoration-2 underline-offset-1"
+                                onClick={() => setShowResetConfirm(false)}>
+                                <FormattedMessage id="contact.form.reset.no" />
+                            </button>
+
+                            <button
+                                type="reset"
+                                className="focus-ring focus-ring-loose rounded-lg underline
+                                decoration-green-400 decoration-2 underline-offset-1"
+                                onClick={() => {
+                                    setShowResetConfirm(false);
+                                    resetFields();
+                                }}>
+                                <FormattedMessage id="contact.form.reset.yes" />
+                            </button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -156,23 +204,82 @@ export default function ContactForm() {
     );
 }
 
-function ResetConfirm() {
+const resetVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+};
+
+function FormSending({ sendStatus }) {
     return (
-        <div
-            className="my-border speech-bubble absolute left-1/2 -top-16 flex -translate-x-1/2
-            gap-3 rounded-md bg-bg-light py-3 px-4 dark:bg-bg-dark">
-            <button type="button" onClick={() => setShowResetConfirm(false)}>
-                No
-            </button>
-            <button
-                type="reset"
-                onClick={() => {
-                    setShowResetConfirm(false);
-                    resetFields();
-                }}>
-                Yes
-            </button>
-        </div>
+        <AnimatePresence>
+            {sendStatus === "sending" && (
+                <motion.div
+                    variants={sendingVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.15 }}
+                    className="absolute inset-0 flex items-center justify-center
+                    rounded-md bg-neutral-50 bg-opacity-60
+                    dark:bg-neutral-800 dark:bg-opacity-60">
+                    <motion.div
+                        variants={sendingSpinnerVariants}
+                        animate="animate">
+                        <RiLoaderLine
+                            className="h-12 w-12 fill-neutral-700 dark:fill-white
+                            xs:h-16 xs:w-16"
+                        />
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+    );
+}
+
+const sendingVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+};
+
+const sendingSpinnerVariants = {
+    animate: {
+        rotate: 180,
+        transition: {
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: "",
+            repeatDelay: 0.3,
+        },
+    },
+};
+
+function FormResult({ sendStatus }) {
+    return (
+        <AnimatePresence>
+            {(sendStatus === "success" || sendStatus === "failure") && (
+                <motion.div
+                    variants={resultVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit">
+                    {sendStatus === "success" ? (
+                        <span
+                            className="block whitespace-pre-line pt-4 underline
+                            decoration-green-400 decoration-2 underline-offset-4">
+                            <FormattedMessage id="contact.form.result.success" />
+                        </span>
+                    ) : (
+                        <span
+                            className="block whitespace-pre-line pt-4 underline
+                            decoration-red-400 decoration-2 underline-offset-4">
+                            <FormattedMessage id="contact.form.result.failure" />
+                        </span>
+                    )}
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 }
 

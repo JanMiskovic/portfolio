@@ -83,6 +83,11 @@
     "contact.form.subject": "Subject*",
     "contact.form.text": "Your message*",
     "contact.form.send": "Send",
+    "contact.form.reset.title": "Reset\u00a0form?",
+    "contact.form.reset.yes": "Yes",
+    "contact.form.reset.no": "No",
+    "contact.form.result.failure": "An error occured while sending your\u00a0message\u00a0:(\nPlease contact me on my e-mail.",
+    "contact.form.result.success": "Your message was successfully sent and\u00a0also\u00a0forwarded\u00a0to\u00a0your\u00a0e\u2011mail.\nI will reply as soon as possible!",
 
     "404.meta.title": "Page not found",
     "404.text": "This page was removed or doesn't exist.{br}Navigate to an existing page using the menu above!",

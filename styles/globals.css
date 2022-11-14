@@ -31,10 +31,6 @@
 }
 
 @layer utilities {
-    .focus-ring-loose {
-        @apply focus-visible:outline-offset-8;
-    }
-
     .transition-hover {
         @apply hover:transition-colors active:transition-colors;
     }
@@ -42,6 +38,10 @@
     .focus-ring {
         @apply focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-[-2px]
             focus-visible:outline-[#0c69ff] dark:focus-visible:outline-[#66d4ff];
+    }
+
+    .focus-ring-loose {
+        @apply focus-visible:outline-offset-8;
     }
 
     .my-border {
@@ -60,30 +60,16 @@
 
 @layer components {
     .speech-bubble:after {
+        @apply absolute bottom-[-12px] left-1/2 z-[1] ml-[-12px] block w-0 
+        border-x-[12px] border-t-[12px] border-solid border-y-bg-light
+        border-x-transparent dark:border-y-bg-dark;
         content: "";
-        position: absolute;
-        display: block;
-        width: 0;
-        z-index: 1;
-        border-style: solid;
-        @apply border-y-bg-light border-x-transparent dark:border-y-bg-dark;
-        border-width: 21px 13px 0;
-        bottom: -21px;
-        left: 50%;
-        margin-left: -13px;
     }
-    
+
     .speech-bubble:before {
+        @apply absolute bottom-[-15px] left-1/2 z-[0] ml-[-14px] block w-0 
+        border-x-[14px] border-t-[14px] border-solid border-y-border-light
+        border-x-transparent dark:border-y-border-dark;
         content: "";
-        position: absolute;
-        width: 0;
-        z-index: 0;
-        border-style: solid;
-        @apply border-y-border-light border-x-transparent dark:border-y-border-dark;
-        border-width: 23px 15px 0;
-        bottom: -24px;
-        left: 50%;
-        margin-left: -15px;
-        display: block;
     }
 }
