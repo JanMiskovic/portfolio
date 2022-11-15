@@ -17,7 +17,8 @@
         "react-icons": "^4.4.0",
         "react-intl": "^6.1.1",
         "react-textarea-autosize": "^8.3.4",
-        "react-use-measure": "^2.1.1"
+        "react-use-measure": "^2.1.1",
+        "validator": "^13.7.0"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.8",

@@ -1,4 +1,5 @@
 import sendgrid from "@sendgrid/mail";
+import v from "validator";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -6,12 +7,32 @@ export default async function sendEmail(req, res) {
     try {
         const { locale, name, email, subject, message } = req.body;
 
+        if (
+            v.isEmpty(name) ||
+            v.isEmpty(email) ||
+            v.isEmpty(subject) ||
+            v.isEmpty(message) ||
+            !v.isLength(name, { max: 40 }) ||
+            !v.isLength(email, { max: 70 }) ||
+            !v.isLength(subject, { max: 100 }) ||
+            !v.isLength(message, { max: 2000 }) ||
+            !v.isEmail(email)
+        ) {
+            throw new Error("Form validation failed");
+        }
+
+        const { safeName, safeEmail, safeSubject, safeMessage } = {
+            safeName: v.escape(name),
+            safeEmail: v.escape(email),
+            safeSubject: v.escape(subject),
+            safeMessage: v.escape(message),
+        };
+
         await sendgrid.send({
-            to: email,
-            from: { email: "formular@janmiskovic.com", name: "Ján Miškovič" },
-            replyTo: { email: "jan@janmiskovic.com", name: "Ján Miškovič" },
-            cc: "jan@janmiskovic.com",
-            subject: `${locale === "sk" ? "Formulár" : "Form"}: ${subject}`,
+            to: "jan@janmiskovic.com",
+            from: { email: "formular@janmiskovic.com", name: safeName },
+            replyTo: { email: safeEmail, name: safeName },
+            subject: `${locale === "sk" ? "Formulár" : "Form"}: ${safeSubject}`,
             html: `
             <!DOCTYPE html>
             <html lang="sk" style="box-sizing: border-box; margin: 0; padding: 0">
@@ -21,7 +42,7 @@ export default async function sendEmail(req, res) {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-                    <title>${subject}</title>
+                    <title>${safeSubject}</title>
                 </head>
 
                 <body
@@ -96,7 +117,7 @@ export default async function sendEmail(req, res) {
                                     style="box-sizing: border-box; margin: 0; padding: 0"
                                     >${locale === "sk" ? "Od" : "From"}:</strong
                                 >
-                                ${name} (${email})
+                                ${safeName} (${safeEmail})
                             </h4>
                             <h4
                                 style="
@@ -106,7 +127,7 @@ export default async function sendEmail(req, res) {
                                     margin: 0;
                                     padding: 0;
                                 ">
-                                ${subject}
+                                ${safeSubject}
                             </h4>
                         </div>
                         <div
@@ -122,7 +143,7 @@ export default async function sendEmail(req, res) {
                                     box-sizing: border-box;
                                     margin: 0;
                                     padding: 0;
-                                ">${message}</p>
+                                ">${safeMessage}</p>
                         </div>
                     </div>
 
@@ -130,6 +151,7 @@ export default async function sendEmail(req, res) {
                         <tr style="box-sizing: border-box; margin: 0; padding: 0">
                             <td style="box-sizing: border-box; margin: 0; padding: 0">
                                 <img
+                                    alt="Profile picture"
                                     src="https://janmiskovic.com/profile_pic.webp"
                                     style="
                                         box-sizing: border-box;

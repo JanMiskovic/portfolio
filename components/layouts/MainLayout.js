@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { hasCookie } from "cookies-next";
 import Image from "next/future/image";
-import BgImage from "../../public/BG.svg";
+import BgImage from "../../public/bg.svg";
 import SmoothResize from "../SmoothResize";
 import AnalyticsScripts from "../AnalyticsScripts";
 import MetaTags from "../MetaTags";

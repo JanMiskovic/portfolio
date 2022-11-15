@@ -87,7 +87,7 @@
     "contact.form.reset.yes": "Áno",
     "contact.form.reset.no": "Nie",
     "contact.form.result.failure": "Pri odosielaní správy nastala chyba\u00a0:(\nKontaktuje ma prosím cez e-mail.",
-    "contact.form.result.success": "Správa bola úspešne odoslaná a\u00a0preposlaná\u00a0aj\u00a0na\u00a0váš\u00a0e\u2011mail.\nOzvem sa vám čo najskôr!",
+    "contact.form.result.success": "Správa bola úspešne odoslaná. Ozvem\u00a0sa\u00a0vám\u00a0čo\u00a0najskôr!",
 
     "404.meta.title": "Stránka neexistuje",
     "404.text": "Táto stránka bola odstránená, alebo neexistuje.{br}Vráťte sa na existujúcu stránku pomocou menu!",
