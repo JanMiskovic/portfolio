@@ -18,7 +18,7 @@ export default function Socials() {
             </a>
 
             <a
-                href="https://www.linkedin.com/in/j%C3%A1n-mi%C5%A1kovi%C4%8D-72290b257/"
+                href="https://www.linkedin.com/in/jan-miskovic/"
                 target="_blank"
                 rel="noreferrer"
                 className="focus-ring my-border transition-hover rounded-full bg-[#EBFBFF]
