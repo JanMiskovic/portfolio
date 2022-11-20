@@ -4,7 +4,7 @@ import Image from "next/future/image";
 import Link from "next/link";
 import Dbr from "./Dbr";
 import Socials from "./Socials";
-import ProfileImg from "../public/profile_pic.webp";
+import ProfileImg from "../public/images/profile_pic.webp";
 import SkFlagImg from "../public/icons/skflag.webp";
 
 export default function Bio() {

@@ -2,12 +2,12 @@ import Head from "next/head";
 import PortfolioItem from "../components/PortfolioItem";
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
-import StavbyTrnkaImg from "../public/website_images/stavbytrnka.webp";
-import ErvaarImg from "../public/website_images/ervaar.webp";
-import ADDetailingImg from "../public/website_images/addetailing.webp";
-import SlezocoachingImg from "../public/website_images/slezocoaching.webp";
-import LinkvisticaImg from "../public/website_images/linkvistica.webp";
-import MajdovanImg from "../public/website_images/majdovan.webp";
+import StavbyTrnkaImg from "../public/images/websites/stavbytrnka.webp";
+import ErvaarImg from "../public/images/websites/ervaar.webp";
+import ADDetailingImg from "../public/images/websites/addetailing.webp";
+import SlezocoachingImg from "../public/images/websites/slezocoaching.webp";
+import LinkvisticaImg from "../public/images/websites/linkvistica.webp";
+import MajdovanImg from "../public/images/websites/majdovan.webp";
 
 export default function Index() {
     const intl = useIntl();

@@ -254,7 +254,7 @@ export default function Resume({ isSm, isMd }) {
                             <li>
                                 <span className="font-medium">WordPress</span>
                                 {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
+                                <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li>
                                 <span className="font-medium">Laravel</span>
