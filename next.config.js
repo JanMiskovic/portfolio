@@ -21,6 +21,21 @@ const nextConfig = {
         }
         return headers;
     },
+
+    async redirects() {
+        return [
+            {
+                source: "/cv-en",
+                destination: "/cv-en.pdf",
+                permanent: true,
+            },
+            {
+                source: "/cv-sk",
+                destination: "/cv-sk.pdf",
+                permanent: true,
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;

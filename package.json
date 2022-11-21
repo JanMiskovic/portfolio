@@ -12,6 +12,7 @@
         "framer-motion": "^7.3.5",
         "next": "^12.3.0",
         "next-themes": "^0.2.0",
+        "print-js": "^1.6.0",
         "react": "18.0.0",
         "react-dom": "18.0.0",
         "react-icons": "^4.4.0",

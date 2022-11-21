@@ -45,7 +45,7 @@
     "resume.stack.basic": "Základy",
     "resume.stack.intermediate": "Mier. pokročilý",
     "resume.stack.advanced": "Pokročilý",
-    "resume.stack.regular": "Ktoré používam pravidelne:",
+    "resume.stack.regular": "Ktoré používam bežne:",
     "resume.stack.before": "Ktoré poznám:",
 
     "resume.personal.title": "Osobné údaje",
@@ -65,7 +65,7 @@
 
     "resume.other.title": "Iné",
     "resume.other.driving": "Vodičský preukaz",
-    "resume.download.btn": "Stiahnúť životopis",
+    "resume.download.btn": "Stiahnúť ako PDF",
 
     "hobbies.meta.title": "Hobby",
 
