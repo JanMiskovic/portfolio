@@ -40,7 +40,10 @@ export default function DarkToggle() {
                         initial={{ y: "200%" }}
                         animate={{ y: 0 }}
                         exit={{ y: "200%" }}>
-                        <BsSunFill className="h-4 w-4 fill-[#FFE766] xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
+                        <BsSunFill
+                            className="h-4 w-4 fill-[#FFE766] 
+                            xs:h-5 xs:w-5 sm:h-6 sm:w-6"
+                        />
                     </motion.div>
                 ) : (
                     <motion.div
@@ -54,7 +57,10 @@ export default function DarkToggle() {
                         initial={{ y: "-200%" }}
                         animate={{ y: 0 }}
                         exit={{ y: "-200%" }}>
-                        <BsMoonFill className="h-4 w-4 fill-icon-light xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
+                        <BsMoonFill
+                            className="h-4 w-4 fill-icon-light 
+                            xs:h-5 xs:w-5 sm:h-6 sm:w-6"
+                        />
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -65,7 +71,10 @@ export default function DarkToggle() {
                 bg-[#F1EBFF] p-2 hover:bg-[#e7dbff]
                 active:bg-[#ddccff] dark:bg-bg-dark
                 dark:hover:bg-[#585858] dark:active:bg-[#696969]">
-            <BsMoonFill className="h-4 w-4 fill-icon-light xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
+            <BsMoonFill
+                className="h-4 w-4 fill-icon-light
+                xs:h-5 xs:w-5 sm:h-6 sm:w-6"
+            />
         </button>
     );
 }

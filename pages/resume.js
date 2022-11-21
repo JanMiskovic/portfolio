@@ -13,13 +13,6 @@ import Link from "next/link";
 export default function Resume({ isSm, isMd }) {
     const intl = useIntl();
 
-    const resumeItems = {
-        initial: { opacity: 0, scale: 0.9, y: -20 },
-        animate: { opacity: 1, scale: 1, y: 0 },
-    };
-
-    const stagger = 0.07;
-
     return (
         <>
             <Head>
@@ -41,7 +34,7 @@ export default function Resume({ isSm, isMd }) {
                 sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]">
                 {/* Work experience section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -84,7 +77,7 @@ export default function Resume({ isSm, isMd }) {
 
                 {/* Education section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -138,7 +131,7 @@ export default function Resume({ isSm, isMd }) {
 
                 {/* Stack section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -272,7 +265,7 @@ export default function Resume({ isSm, isMd }) {
 
                 {/* Personal details -> Others section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -431,3 +424,10 @@ export default function Resume({ isSm, isMd }) {
         </>
     );
 }
+
+const resumeItemVariants = {
+    initial: { opacity: 0, scale: 0.9, y: -20 },
+    animate: { opacity: 1, scale: 1, y: 0 },
+};
+
+const stagger = 0.07;

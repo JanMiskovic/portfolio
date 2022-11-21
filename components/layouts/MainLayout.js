@@ -19,22 +19,6 @@ export default function MainLayout({ children }) {
     const isSm = useIsSm();
     const isMd = useIsMd();
 
-    const initialLoadVariants = {
-        initial: { opacity: 0 },
-        animate: { opacity: 1, transition: { delay: 0.15 } },
-    };
-
-    const pageTransitionVariants = {
-        exit: {
-            opacity: 0,
-            y: 10,
-            transition: {
-                duration: 0.2,
-                ease: "easeInOut",
-            },
-        },
-    };
-
     useEffect(() => {
         setTimeout(
             () => setShowCookieBanner(!hasCookie("localCookieConsent")),
@@ -84,3 +68,19 @@ export default function MainLayout({ children }) {
         </>
     );
 }
+
+const initialLoadVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { delay: 0.15 } },
+};
+
+const pageTransitionVariants = {
+    exit: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 0.2,
+            ease: "easeInOut",
+        },
+    },
+};

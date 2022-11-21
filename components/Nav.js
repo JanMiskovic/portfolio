@@ -50,6 +50,5 @@ export default function Nav() {
 
 function isActiveLink(href, currentPathname) {
     if (href === "/") return href === currentPathname;
-
     return currentPathname.startsWith(href);
 }

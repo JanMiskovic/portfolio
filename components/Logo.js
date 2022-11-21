@@ -3,12 +3,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Logo() {
-    const iconVariants = {
-        hover: {
-            rotate: -72,
-        },
-    };
-
     return (
         <motion.div whileHover="hover" whileTap="hover" className="group">
             <Link href="/">
@@ -37,3 +31,9 @@ export default function Logo() {
         </motion.div>
     );
 }
+
+const iconVariants = {
+    hover: {
+        rotate: -72,
+    },
+};
