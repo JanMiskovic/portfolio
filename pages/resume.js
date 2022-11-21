@@ -403,10 +403,8 @@ export default function Resume({ isSm, isMd }) {
                     {/* Resume download */}
                     <div className="flex gap-2">
                         <a
-                            href={`/cv-${intl.locale}.pdf`}
-                            download={`Ján Miškovič - ${
-                                intl.locale === "sk" ? "Životopis" : "Resume"
-                            }`}
+                            href={`/cv-${intl.locale}`}
+                            download
                             className="focus-ring my-border transition-hover w-[10.5rem]
                             rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm text-black hover:bg-[#dbf2ff]
                             active:bg-[#ccecff] dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
@@ -416,7 +414,10 @@ export default function Resume({ isSm, isMd }) {
                         <button
                             onClick={async () => {
                                 await import("print-js");
-                                printJS(`/cv-${intl.locale}.pdf`);
+                                printJS({
+                                    printable: `/cv-${intl.locale}`,
+                                    type: "pdf",
+                                });
                             }}
                             className="focus-ring my-border transition-hover flex 
                             items-center rounded-md bg-[#E9F7FF] p-1.5

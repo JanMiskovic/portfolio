@@ -26,12 +26,12 @@ const nextConfig = {
         return [
             {
                 source: "/cv-en",
-                destination: "/cv-en.pdf",
+                destination: "/Ján%20Miškovič%20-%20Resume.pdf",
                 permanent: true,
             },
             {
                 source: "/cv-sk",
-                destination: "/cv-sk.pdf",
+                destination: "/Ján%20Miškovič%20-%20Životopis.pdf",
                 permanent: true,
             },
         ];
