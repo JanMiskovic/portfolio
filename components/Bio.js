@@ -13,14 +13,18 @@ export default function Bio() {
             className="mb-4 grid grid-cols-[auto_minmax(0,_1fr)] items-center
             gap-x-5 gap-y-5 md:mb-10 md:grid-cols-3 md:gap-y-4 lg:mb-16">
             {/* Profile pic */}
-            <Image
-                priority={true}
-                src={ProfileImg}
-                alt="Profile picture of Ján"
-                className="my-border h-16 w-16 self-center rounded-full bg-bg-light
-                dark:bg-bg-dark xs:h-20 xs:w-20 sm:h-32 sm:w-32
-                md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
-            />
+            <div
+                className="h-16 w-16 self-center rounded-full bg-gradient-to-br
+                from-grad-border-purple to-border-light dark:from-grad-border-purple-dark dark:to-border-dark
+                xs:h-20 xs:w-20 sm:h-32 sm:w-32 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72">
+                <Image
+                    priority={true}
+                    src={ProfileImg}
+                    alt="Profile picture of Ján"
+                    className="transparent-border rounded-full bg-gradient-to-br
+                    from-grad-bg-purple to-bg-light dark:from-grad-bg-purple-dark dark:to-bg-dark"
+                />
+            </div>
 
             {/* Name and location */}
             <div className="col-span-full col-start-2 md:self-end">
