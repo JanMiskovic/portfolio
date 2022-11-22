@@ -19,7 +19,7 @@ export default function Bio() {
                 alt="Profile picture of Ján"
                 className="my-border h-16 w-16 self-center rounded-full
                 bg-gradient-to-br from-grad-bg-purple to-bg-light
-                dark:from-grad-bg-purple-dark dark:to-bg-dark
+                dark:from-[#373243] dark:to-bg-dark
                 xs:h-20 xs:w-20 sm:h-32 sm:w-32
                 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
             />

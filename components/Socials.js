@@ -7,6 +7,7 @@ export default function Socials() {
                 href="https://github.com/JanMiskovic"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="GitHub profile"
                 className="focus-ring my-border transition-hover rounded-full bg-[#F6EBFF]
                 p-2 hover:bg-[#efdbff] active:bg-[#e8ccff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
@@ -21,6 +22,7 @@ export default function Socials() {
                 href="https://www.linkedin.com/in/jan-miskovic/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn profile"
                 className="focus-ring my-border transition-hover rounded-full bg-[#EBFBFF]
                 p-2 hover:bg-[#dbf8ff] active:bg-[#ccf5ff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
@@ -35,6 +37,7 @@ export default function Socials() {
                 href="https://www.facebook.com/mutualslump/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Facebook profile"
                 className="focus-ring my-border transition-hover rounded-full bg-[#EAEEFF]
                 p-2 hover:bg-[#dbe2ff] active:bg-[#ccd6ff]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
@@ -49,6 +52,7 @@ export default function Socials() {
                 href="https://www.instagram.com/janiiscript/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Instagram profile"
                 className="focus-ring my-border transition-hover rounded-full bg-[#FFEBFD]
                 p-2 hover:bg-[#ffdbfb] active:bg-[#ffccf9]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">
@@ -67,6 +71,7 @@ export default function Socials() {
                 href="https://open.spotify.com/user/kthen1337"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Spotify profile"
                 className="focus-ring my-border transition-hover rounded-full bg-[#EBFFED]
                 p-2 hover:bg-[#dbffdf] active:bg-[#ccffd2]
                 dark:bg-bg-dark dark:hover:bg-[#585858] dark:active:bg-[#696969]">

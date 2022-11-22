@@ -37,8 +37,8 @@ export default function Nav() {
                                         : "underline"
                                 }
                                 className="absolute bottom-1.5 left-0 h-0.5
-                                    w-full bg-[#0c69ff] will-change-transform dark:bg-[#66d4ff]
-                                    lg:bottom-1 lg:h-[3px]"
+                                w-full bg-[#0c69ff] will-change-transform dark:bg-[#66d4ff]
+                                lg:bottom-1 lg:h-[3px]"
                             />
                         )}
                     </a>

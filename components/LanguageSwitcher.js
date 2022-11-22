@@ -13,6 +13,7 @@ export default function LanguageSwitcher() {
             px-2.5 dark:bg-bg-dark xs:gap-3 xs:px-3.5">
             <Link href={pathname} locale="sk">
                 <a
+                    aria-label="Switch to Slovak language"
                     onClick={() => {
                         if (locale !== "sk")
                             window.gtag("event", "language_switched", {
@@ -31,6 +32,7 @@ export default function LanguageSwitcher() {
 
             <Link href={pathname} locale="en">
                 <a
+                    aria-label="Switch to English language"
                     onClick={() => {
                         if (locale !== "en")
                             window.gtag("event", "language_switched", {
