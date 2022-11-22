@@ -152,7 +152,7 @@ export default async function sendEmail(req, res) {
                             <td style="box-sizing: border-box; margin: 0; padding: 0">
                                 <img
                                     alt="Profile picture"
-                                    src="https://janmiskovic.com/profile_pic.webp"
+                                    src="https://janmiskovic.com/images/profile_pic.webp"
                                     style="
                                         box-sizing: border-box;
                                         display: block;
