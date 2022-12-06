@@ -6,6 +6,7 @@ import { IoSend } from "react-icons/io5";
 import { RiLoaderLine } from "react-icons/ri";
 import TextareaAutosize from "react-textarea-autosize";
 import useLocalStorage from "../hooks/useLocalStorage";
+import Button3D from "./Button3D";
 
 export default function ContactForm() {
     const intl = useIntl();
@@ -64,7 +65,7 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.name",
                     })}
-                    className="my-border rounded-md bg-body-light px-3 py-2.5
+                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5
                     placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     lg:col-start-1 lg:py-3"
@@ -80,7 +81,7 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.email",
                     })}
-                    className="my-border rounded-md bg-body-light px-3 py-2.5
+                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5
                     placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     lg:col-start-2 lg:py-3"
@@ -96,7 +97,7 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.subject",
                     })}
-                    className="my-border rounded-md bg-body-light px-3 py-2.5
+                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5
                     placeholder-neutral-700 focus:outline-none
                     dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                     lg:col-span-2 lg:py-3"
@@ -112,28 +113,28 @@ export default function ContactForm() {
                         placeholder={intl.formatMessage({
                             id: "contact.form.text",
                         })}
-                        className="my-border min-h-[10.625rem] w-full
+                        className="border-thick-bottom min-h-[10.625rem] w-full
                         resize-none overflow-hidden rounded-md bg-body-light px-3 pt-2.5 pb-14
                         placeholder-neutral-700 focus:outline-none
                         dark:bg-[#1f1f1f] dark:placeholder-neutral-300
                         xs:pt-3 xs:pb-16"
                     />
 
-                    <div className="absolute bottom-4 right-4 flex gap-2 xs:gap-2.5">
+                    <div className="absolute bottom-4 right-4 flex h-9 gap-2 xs:h-10 xs:gap-2.5 sm:h-11">
                         <ResetButton resetFields={resetFields} />
 
-                        <button
+                        <Button3D
                             type="submit"
                             disabled={sendStatus === "sending" ? true : false}
-                            className="focus-ring my-border transition-hover
-                            flex w-[6.5rem] items-center justify-center gap-2 rounded-md
-                            bg-[#E9F7FF] py-1.5 text-center text-sm
-                            text-black hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
-                            xs:w-32 xs:text-base sm:w-36 sm:py-2">
+                            className="w-[6.5rem] rounded-md text-black
+                            text-sm xs:w-32 xs:text-base sm:w-36"
+                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover
+                            active:bg-btn-blue-active dark:bg-btn-blue-d
+                            dark:hover:bg-btn-blue-d-hover
+                            dark:active:bg-btn-blue-d-active gap-2">
                             <FormattedMessage id="contact.form.send" />{" "}
                             <IoSend className="fill-icon-light dark:fill-icon-dark" />
-                        </button>
+                        </Button3D>
                     </div>
                 </div>
             </form>
@@ -149,16 +150,16 @@ function ResetButton({ resetFields }) {
 
     return (
         <div className="relative">
-            <button
+            <Button3D
                 type="button"
                 onClick={() => setShowResetConfirm((prev) => !prev)}
-                className="focus-ring my-border transition-hover h-full rounded-md
-                bg-[#E9F7FF] py-1.5 px-2 text-center text-base
-                hover:bg-[#dbf2ff] active:bg-[#ccecff]
-                dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
-                xs:text-xl sm:py-2 sm:px-2.5">
+                className="h-full w-9 rounded-md xs:w-10 xs:text-xl sm:w-11"
+                innerClassName="bg-btn-blue hover:bg-btn-blue-hover
+                active:bg-btn-blue-active dark:bg-btn-blue-d
+                dark:hover:bg-btn-blue-d-hover
+                dark:active:bg-btn-blue-d-active">
                 <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
-            </button>
+            </Button3D>
 
             <AnimatePresence>
                 {showResetConfirm && (
@@ -168,7 +169,7 @@ function ResetButton({ resetFields }) {
                         animate="animate"
                         exit="exit"
                         transition={{ duration: 0.15 }}
-                        className="my-border speech-bubble absolute left-1/2 -top-24 
+                        className="border-thick-bottom speech-bubble absolute left-1/2 -top-24 
                         -translate-x-1/2 gap-3 rounded-md bg-bg-light p-3 dark:bg-bg-dark">
                         <FormattedMessage id="contact.form.reset.title" />
                         <div className="flex gap-5 sm:gap-3.5">

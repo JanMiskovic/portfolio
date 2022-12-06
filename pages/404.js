@@ -25,7 +25,7 @@ export default function Custom404() {
                 variants={custom404Variants}
                 initial="initial"
                 animate="animate"
-                className="my-border flex h-32
+                className="border-thick-bottom flex h-32
                 items-center justify-center rounded-lg bg-bg-light p-4
                 text-center leading-relaxed dark:bg-bg-dark
                 sm:text-lg md:h-44 md:text-xl lg:h-64">

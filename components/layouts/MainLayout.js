@@ -6,7 +6,7 @@ import SmoothResize from "../SmoothResize";
 import AnalyticsScripts from "../AnalyticsScripts";
 import MetaTags from "../MetaTags";
 import Favicon from "../Favicon";
-import Header from "../Header";
+import Header from "../header/Header";
 import Nav from "../Nav";
 import Bio from "../Bio";
 import Footer from "../Footer";

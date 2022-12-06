@@ -31,6 +31,9 @@
 }
 
 @layer utilities {
+    .focus-ring-loose {
+        @apply focus-visible:outline-offset-8;
+    }
 }
 
 @layer components {
@@ -43,16 +46,12 @@
             focus-visible:outline-[#0c69ff] dark:focus-visible:outline-[#66d4ff];
     }
 
-    .focus-ring-loose {
-        @apply focus-visible:outline-offset-8;
+    .border-thick-bottom {
+        @apply border-2 border-b-4 border-border-light dark:border-border-dark;
     }
 
-    .my-border {
+    .border-uniform {
         @apply border-2 border-border-light dark:border-border-dark;
-    }
-
-    .transparent-border {
-        @apply border-2 border-transparent bg-clip-padding;
     }
 
     .link {

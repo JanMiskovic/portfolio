@@ -2,6 +2,7 @@ import { setCookie, getCookies, deleteCookie, getCookie } from "cookies-next";
 import { FormattedMessage } from "react-intl";
 import { CgClose } from "react-icons/cg";
 import { motion } from "framer-motion";
+import Button3D from "./Button3D";
 
 export default function CookieConsent({ setShowCookieBanner }) {
     const currentConsent = getCookie("localCookieConsent");
@@ -46,13 +47,13 @@ export default function CookieConsent({ setShowCookieBanner }) {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="my-border fixed inset-x-5 bottom-5 
+            className="border-thick-bottom fixed inset-x-5 bottom-5 
             z-20 flex flex-col justify-between rounded-lg bg-bg-light
             text-black dark:bg-bg-dark dark:text-white 
             sm:bottom-7 sm:right-7 sm:left-auto sm:w-96 xl:bottom-6 xl:right-6">
             <div
                 className="mb-2 flex items-center justify-between
-                border-b-2 border-neutral-200 
+                border-b-2 border-border-light
                 px-4 pt-4 pb-2 dark:border-border-dark
                 xs:mb-3 xs:text-xl sm:px-5 sm:pb-3">
                 <h3>
@@ -72,26 +73,30 @@ export default function CookieConsent({ setShowCookieBanner }) {
                 </p>
 
                 <div className="flex w-full gap-3 xs:gap-4 sm:gap-3.5">
-                    <button
+                    <Button3D
                         onClick={acceptCookies}
-                        className="focus-ring my-border transition-hover
-                        basis-1/2 rounded-md bg-[#e9ffee] py-1.5
-                        text-center text-sm text-black
-                        hover:bg-[#dbffe4] active:bg-[#ccffd9] 
-                        dark:bg-[#66ff6b] dark:hover:bg-[#85ff89]
-                        dark:active:bg-[#a3ffa6] xs:text-base sm:py-2">
+                        className="h-9 basis-1/2 rounded-md text-sm
+                        text-black xs:h-10 xs:text-base sm:h-11"
+                        innerClassName="bg-[hsl(127,_100%,_96%)]
+                        hover:bg-[hsl(127,_100%,_94%)]
+                        active:bg-[hsl(127,_100%,_93%)]
+                        dark:bg-[hsl(127,_100%,_70%)]
+                        dark:hover:bg-[hsl(127,_100%,_73%)]
+                        dark:active:bg-[hsl(127,_100%,76%)]">
                         <FormattedMessage id="cookies.accept" />
-                    </button>
-                    <button
+                    </Button3D>
+                    <Button3D
                         onClick={denyCookies}
-                        className="focus-ring my-border transition-hover
-                        basis-1/2 rounded-md bg-[#ffe9f3] py-1.5
-                        text-center text-sm text-black
-                        hover:bg-[#ffdbeb] active:bg-[#ffcce3]
-                        dark:bg-[#ff6666] dark:hover:bg-[#ff8585]
-                        dark:active:bg-[#ffa3a3] xs:text-base sm:py-2">
+                        className="h-9 basis-1/2 rounded-md text-sm
+                        text-black xs:h-10 xs:text-base sm:h-11"
+                        innerClassName="bg-[hsl(340,_100%,_96%)]
+                        hover:bg-[hsl(340,_100%,_94%)]
+                        active:bg-[hsl(340,_100%,_93%)]
+                        dark:bg-[hsl(0,_100%,_70%)]
+                        dark:hover:bg-[hsl(0,_100%,_73%)]
+                        dark:active:bg-[hsl(0,_100%,76%)]">
                         <FormattedMessage id="cookies.deny" />
-                    </button>
+                    </Button3D>
                 </div>
             </div>
         </motion.div>

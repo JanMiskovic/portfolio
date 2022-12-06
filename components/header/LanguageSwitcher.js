@@ -1,16 +1,17 @@
 import { useRouter } from "next/router";
 import Image from "next/future/image";
 import Link from "next/link";
-import SkFlagImg from "../public/icons/skflag.webp";
-import GbFlagImg from "../public/icons/gbflag.webp";
+import SkFlagImg from "../../public/icons/skflag.webp";
+import GbFlagImg from "../../public/icons/gbflag.webp";
 
 export default function LanguageSwitcher() {
     const { pathname, locale } = useRouter();
 
     return (
         <div
-            className="my-border flex gap-2 rounded-md bg-bg-light py-2
-            px-2.5 dark:bg-bg-dark xs:gap-3 xs:px-3.5">
+            className="border-thick-bottom flex h-9 items-center gap-2 
+            rounded-md bg-bg-light px-2.5 dark:bg-bg-dark
+            xs:h-10 xs:gap-3 xs:px-3.5 sm:h-11">
             <Link href={pathname} locale="sk">
                 <a
                     aria-label="Switch to Slovak language"
@@ -25,7 +26,7 @@ export default function LanguageSwitcher() {
                     <Image
                         src={SkFlagImg}
                         alt="Flag icon of the Slovak Republic"
-                        className="!h-4 !w-4 xs:!h-5 xs:!w-5 sm:!h-6 sm:!w-6"
+                        className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                     />
                 </a>
             </Link>
@@ -44,7 +45,7 @@ export default function LanguageSwitcher() {
                     <Image
                         src={GbFlagImg}
                         alt="Flag icon of Great Britain"
-                        className="!h-4 !w-4 xs:!h-5 xs:!w-5 sm:!h-6 sm:!w-6"
+                        className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                     />
                 </a>
             </Link>

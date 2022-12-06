@@ -11,7 +11,7 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
             rel="noreferrer"
             className="focus-ring focus-ring-loose flex flex-col rounded-lg">
             <div
-                className={`my-border mb-1.5 rounded-lg p-[10%] md:mb-2.5 ${className}`}>
+                className={`border-thick-bottom mb-1.5 rounded-lg p-[10%] md:mb-2.5 ${className}`}>
                 <motion.div
                     variants={imageVariants}
                     className="will-change-transform">

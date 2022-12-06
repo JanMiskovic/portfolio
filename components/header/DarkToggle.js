@@ -1,7 +1,8 @@
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import Button3D from "../Button3D";
 
 export default function DarkToggle() {
     const [mounted, setMounted] = useState(false);
@@ -21,13 +22,12 @@ export default function DarkToggle() {
     }
 
     return mounted ? (
-        <button
+        <Button3D
             onClick={toggleTheme}
             aria-label="Toggle Dark Mode"
-            className="focus-ring my-border transition-hover relative
-            overflow-hidden rounded-md bg-[#F1EBFF] p-2 hover:bg-[#e7dbff]
-            active:bg-[#ddccff] dark:bg-bg-dark
-            dark:hover:bg-[#585858] dark:active:bg-[#696969]">
+            className="w-9 rounded-md xs:w-10 sm:w-11"
+            innerClassName="bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]
+            active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark overflow-hidden">
             <AnimatePresence mode="popLayout" initial={false}>
                 {currentTheme === "dark" ? (
                     <motion.div
@@ -42,7 +42,9 @@ export default function DarkToggle() {
                         animate={{ y: 0 }}
                         exit={{ y: "200%" }}>
                         <BsSunFill
-                            className="h-4 w-4 fill-[#FFE766] 
+                            className="h-4 w-4 fill-[hsl(51,_100%,_70%)] 
+                            group-hover:fill-[hsl(51,_100%,_73%)] 
+                            group-active:fill-[hsl(51,_100%,_76%)]  
                             xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                         />
                     </motion.div>
@@ -65,13 +67,12 @@ export default function DarkToggle() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </button>
+        </Button3D>
     ) : (
         <button
-            className="focus-ring my-border transition-hover rounded-md
-            bg-[#F1EBFF] p-2 hover:bg-[#e7dbff]
-            active:bg-[#ddccff] dark:bg-bg-dark
-            dark:hover:bg-[#585858] dark:active:bg-[#696969]">
+            className="focus-ring border-thick-bottom transition-hover rounded-md
+            bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]
+            active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark overflow-hidden">
             <BsMoonFill
                 className="h-4 w-4 fill-icon-light
                 xs:h-5 xs:w-5 sm:h-6 sm:w-6"

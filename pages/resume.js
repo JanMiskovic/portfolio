@@ -7,6 +7,7 @@ import { HiPrinter } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 import { FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Button3D from "../components/Button3D";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -40,7 +41,7 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? stagger : 0,
                     }}
-                    className="my-border flex flex-col gap-5 rounded-lg bg-bg-light 
+                    className="border-thick-bottom flex flex-col gap-5 rounded-lg bg-bg-light 
                     p-4 dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
@@ -83,10 +84,12 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? stagger * 2 : stagger,
                     }}
-                    className="my-border flex flex-col gap-4 rounded-lg bg-bg-light
+                    className="border-thick-bottom flex flex-col gap-4 rounded-lg bg-bg-light
                     p-4 dark:bg-bg-dark sm:px-5 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        <h2
+                            className="flex items-center gap-2 text-base
+                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <MdSchool
                                 className="fill-[#339DFF] text-xl
                                 dark:fill-[#66C8FF] xs:text-2xl"
@@ -137,10 +140,12 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isSm ? stagger * 3 : stagger * 2,
                     }}
-                    className="my-border flex flex-col gap-1.5 rounded-lg bg-bg-light
+                    className="border-thick-bottom flex flex-col gap-1.5 rounded-lg bg-bg-light
                     p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5
                     md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
-                    <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                    <h2
+                        className="flex items-center gap-2 text-base
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <BsTerminalFill
                             className="fill-[#339DFF] dark:fill-[#66C8FF]
                             xs:text-lg"
@@ -271,13 +276,15 @@ export default function Resume({ isSm, isMd }) {
                         duration: 0.3,
                         delay: isMd ? 0 : isSm ? stagger * 2 : stagger * 3,
                     }}
-                    className="my-border flex flex-col gap-4 rounded-lg bg-bg-light
+                    className="border-thick-bottom flex flex-col gap-4 rounded-lg bg-bg-light
                     p-4 dark:bg-bg-dark sm:row-start-2 sm:justify-between sm:px-5 
                     md:row-start-1 md:row-end-3 lg:col-start-1
                     lg:row-start-1 lg:row-end-3 lg:justify-start">
                     {/* Personal details */}
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
-                        <h2 className="flex items-center gap-2 text-base xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        <h2
+                            className="flex items-center gap-2 text-base
+                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoPerson
                                 className="fill-[#339DFF] text-lg
                                 dark:fill-[#66C8FF] xs:text-xl"
@@ -395,16 +402,19 @@ export default function Resume({ isSm, isMd }) {
 
                     {/* Resume download */}
                     <div className="flex gap-2">
-                        <a
+                        <Button3D
                             href={`/cv-${intl.locale}`}
                             download
-                            className="focus-ring my-border transition-hover w-[10.5rem]
-                            rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm text-black hover:bg-[#dbf2ff]
-                            active:bg-[#ccecff] dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
-                            xs:text-base sm:py-2 lg:flex-grow">
+                            isLink={true}
+                            className="h-9 w-[10.5rem] rounded-md text-sm text-black 
+                            xs:h-10 xs:w-40 xs:text-base sm:h-11 lg:flex-grow"
+                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover
+                            active:bg-btn-blue-active dark:bg-btn-blue-d
+                            dark:hover:bg-btn-blue-d-hover
+                            dark:active:bg-btn-blue-d-active">
                             <FormattedMessage id="resume.download.btn" />
-                        </a>
-                        <button
+                        </Button3D>
+                        <Button3D
                             onClick={async () => {
                                 await import("print-js");
                                 printJS({
@@ -412,12 +422,16 @@ export default function Resume({ isSm, isMd }) {
                                     type: "pdf",
                                 });
                             }}
-                            className="focus-ring my-border transition-hover flex 
-                            items-center rounded-md bg-[#E9F7FF] p-1.5
-                            hover:bg-[#dbf2ff] active:bg-[#ccecff] dark:bg-[#66C8FF]
-                            dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:p-2">
-                            <HiPrinter className="h-5 w-5 fill-icon-light dark:fill-[#3e3e3e] sm:h-6 sm:w-6" />
-                        </button>
+                            className="w-9 rounded-md xs:w-10 sm:w-11"
+                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover
+                            active:bg-btn-blue-active dark:bg-btn-blue-d
+                            dark:hover:bg-btn-blue-d-hover
+                            dark:active:bg-btn-blue-d-active">
+                            <HiPrinter
+                                className="h-5 w-5 fill-icon-light 
+                                dark:fill-[#3e3e3e] sm:h-6 sm:w-6"
+                            />
+                        </Button3D>
                     </div>
                 </motion.div>
             </div>
