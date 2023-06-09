@@ -57,17 +57,16 @@ export default function Index() {
 
                 <motion.div variants={portfolioItems}>
                     <PortfolioItem
-                        href="https://addetailing.sk"
-                        img={ADDetailingImg}
-                        name="AD Detailing"
+                        href="https://majdovan.com"
+                        img={MajdovanImg}
+                        name="Majdovan"
                         stack="WordPress (Elementor)"
-                        className="bg-[#FFDEDE] dark:bg-[#2a2222]"
+                        className="bg-[#E0EDFF] dark:bg-[#22252A]"
                     />
                 </motion.div>
 
                 <motion.div variants={portfolioItems}>
                     <PortfolioItem
-                        href="https://slezocoaching.sk"
                         img={SlezocoachingImg}
                         name="Slezocoaching"
                         stack="WordPress (Elementor)"
@@ -77,21 +76,19 @@ export default function Index() {
 
                 <motion.div variants={portfolioItems}>
                     <PortfolioItem
-                        href="https://linkvistica.com"
                         img={LinkvisticaImg}
                         name="Linkvistica"
                         stack="WordPress (Elementor)"
                         className="bg-[#FFEFE0] dark:bg-[#2A2622]"
                     />
                 </motion.div>
-
+                
                 <motion.div variants={portfolioItems}>
                     <PortfolioItem
-                        href="https://majdovan.com"
-                        img={MajdovanImg}
-                        name="Majdovan"
+                        img={ADDetailingImg}
+                        name="AD Detailing"
                         stack="WordPress (Elementor)"
-                        className="bg-[#E0EDFF] dark:bg-[#22252A]"
+                        className="bg-[#FFDEDE] dark:bg-[#2a2222]"
                     />
                 </motion.div>
             </motion.div>
