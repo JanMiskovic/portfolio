@@ -6,7 +6,7 @@
     html {
         -webkit-tap-highlight-color: transparent;
         font-family: Space Grotesk, sans-serif;
-        overflow: overlay;
+        scrollbar-gutter: stable both-edges;
     }
 
     ::selection {
