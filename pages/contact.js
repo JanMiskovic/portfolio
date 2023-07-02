@@ -12,20 +12,6 @@ export default function Contact() {
     const [copiedDiscord, setCopiedDiscord] = useState(false);
     const copiedTimeoutId = useRef(null);
 
-    const contactVariants = {
-        initial: { opacity: 0, scale: 0.9, y: -20 },
-        animate: {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            transition: {
-                staggerChildren: 0.07,
-                ease: "easeInOut",
-                duration: 0.3,
-            },
-        },
-    };
-
     return (
         <>
             <Head>
@@ -160,3 +146,17 @@ export default function Contact() {
         </>
     );
 }
+
+const contactVariants = {
+    initial: { opacity: 0, scale: 0.9, y: -20 },
+    animate: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+            staggerChildren: 0.07,
+            ease: "easeInOut",
+            duration: 0.3,
+        },
+    },
+};

@@ -7,9 +7,9 @@
     "cookies.deny": "Odmietnuť",
 
     "bio.location": "Hlohovec, Slovensko",
-    "bio.text.line.1": "Bakalár aplikovanej informatiky; v\u00a0súčasnosti freelancujem ako web developer\u00a0/ dizajnér. ",
-    "bio.text.line.2": "Začal som s\u00a0WordPressom v\u00a0roku 2020, neskôr som prešiel na\u00a0Next.js, React a\u00a0Tailwind. ",
-    "bio.text.line.3": "Zaujímam sa o funkcionálne programovanie a\u00a0prehľadný kód. Rád sa učím nové veci. ",
+    "bio.text.line.1": "Bakalár aplikovanej informatiky; v\u00a0súčasnosti freelancujem ako web developer. ",
+    "bio.text.line.2": "Začal som s\u00a0WordPressom v roku 2020, neskôr som prešiel na\u00a0Next.js a\u00a0React. ",
+    "bio.text.line.3": "Zaujímam sa o všetky druhy programovania. Rád sa učím nové veci. ",
     "bio.text.line.4": "Mám rád filmy, videohry a\u00a0výzvy\u00a0- aktuálne sa\u00a0učím Japončinu\u00a0(*^▽^*)",
     "bio.btn": "Napíšte mi",
 
@@ -45,7 +45,7 @@
     "resume.stack.basic": "Základy",
     "resume.stack.intermediate": "Mier. pokročilý",
     "resume.stack.advanced": "Pokročilý",
-    "resume.stack.regular": "Ktoré používam pravidelne:",
+    "resume.stack.regular": "Ktoré používam bežne:",
     "resume.stack.before": "Ktoré poznám:",
 
     "resume.personal.title": "Osobné údaje",
@@ -65,7 +65,7 @@
 
     "resume.other.title": "Iné",
     "resume.other.driving": "Vodičský preukaz",
-    "resume.download.btn": "Stiahnúť životopis",
+    "resume.download.btn": "Stiahnúť ako PDF",
 
     "hobbies.meta.title": "Hobby",
 
@@ -95,5 +95,6 @@
     "wip.text.line.1": "Stránka sa pripravuje,\u00a0",
     "wip.text.line.2": "vráťte sa neskôr! 🔧🚨",
 
-    "footer.manage.cookies": "Správa cookies"
+    "footer.source": "Zdroj",
+    "footer.cookies": "Správa cookies"
 }

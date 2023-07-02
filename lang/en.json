@@ -7,9 +7,9 @@
     "cookies.deny": "Decline",
 
     "bio.location": "Hlohovec, Slovakia",
-    "bio.text.line.1": "Bachelor of\u00a0Applied Informatics, currently freelancing in\u00a0web development\u00a0/ design. ",
+    "bio.text.line.1": "Bachelor of\u00a0Applied Informatics, currently freelancing in\u00a0web development. ",
     "bio.text.line.2": "Started with WordPress in\u00a02020, then moved onto Next.js, React and\u00a0Tailwind. ",
-    "bio.text.line.3": "Fan\u00a0of functional programming and clean code. Always looking to\u00a0learn new things. ",
+    "bio.text.line.3": "Interested in all kinds of coding. Always looking to\u00a0learn new things. ",
     "bio.text.line.4": "I\u00a0love movies, video games, and\u00a0challenges\u00a0- currently\u00a0learning Japanese\u00a0(*^▽^*)",
     "bio.btn": "Message me",
 
@@ -65,7 +65,7 @@
 
     "resume.other.title": "Other",
     "resume.other.driving": "Driving license",
-    "resume.download.btn": "Download resume",
+    "resume.download.btn": "Download as PDF",
 
     "hobbies.meta.title": "Hobbies",
 
@@ -95,5 +95,6 @@
     "wip.text.line.1": "Work in progress,\u00a0",
     "wip.text.line.2": "come back later! 🔧🚨",
 
-    "footer.manage.cookies": "Manage cookies"
+    "footer.source": "Source",
+    "footer.cookies": "Manage cookies"
 }

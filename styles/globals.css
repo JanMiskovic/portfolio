@@ -31,6 +31,9 @@
 }
 
 @layer utilities {
+}
+
+@layer components {
     .transition-hover {
         @apply hover:transition-colors active:transition-colors;
     }
@@ -48,6 +51,10 @@
         @apply border-2 border-border-light dark:border-border-dark;
     }
 
+    .transparent-border {
+        @apply border-2 border-transparent bg-clip-padding;
+    }
+
     .link {
         @apply hover:text-[#0c69ff] active:text-[#0c69ff]
             hover:dark:text-[#66d4ff] active:dark:text-[#66d4ff];
@@ -56,9 +63,7 @@
     .active-link {
         @apply text-[#0c69ff] dark:text-[#66d4ff];
     }
-}
 
-@layer components {
     .speech-bubble:after {
         @apply absolute bottom-[-12px] left-1/2 z-[1] ml-[-12px] block w-0 
         border-x-[12px] border-t-[12px] border-solid border-y-bg-light

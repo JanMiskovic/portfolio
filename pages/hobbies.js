@@ -1,21 +1,9 @@
-import Head from "next/head";
-import { motion } from "framer-motion";
 import { FormattedMessage, useIntl } from "react-intl";
+import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function Hobbies() {
     const intl = useIntl();
-
-    const hobbiesVariants = {
-        initial: { opacity: 0, y: -20 },
-        animate: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.3,
-                ease: "easeInOut",
-            },
-        },
-    };
 
     return (
         <>
@@ -51,3 +39,15 @@ export default function Hobbies() {
         </>
     );
 }
+
+const hobbiesVariants = {
+    initial: { opacity: 0, y: -20 },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.3,
+            ease: "easeInOut",
+        },
+    },
+};

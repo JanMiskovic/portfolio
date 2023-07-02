@@ -1,67 +1,26 @@
-import React, { useEffect, useState } from "react";
 import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { hasCookie } from "cookies-next";
-import Image from "next/future/image";
-import BgImage from "../../public/bg.svg";
+import React from "react";
 import SmoothResize from "../SmoothResize";
 import AnalyticsScripts from "../AnalyticsScripts";
 import MetaTags from "../MetaTags";
 import Favicon from "../Favicon";
-import CookieConsent from "../CookieConsent";
 import Header from "../Header";
 import Nav from "../Nav";
 import Bio from "../Bio";
 import Footer from "../Footer";
 
 export default function MainLayout({ children }) {
-    const [showCookieBanner, setShowCookieBanner] = useState(false);
     const { asPath } = useRouter();
     const isSm = useIsSm();
     const isMd = useIsMd();
-
-    const initialLoadVariants = {
-        initial: { opacity: 0 },
-        animate: { opacity: 1, transition: { delay: 0.15 } },
-    };
-
-    const pageTransitionVariants = {
-        exit: {
-            opacity: 0,
-            y: 10,
-            transition: {
-                duration: 0.2,
-                ease: "easeInOut",
-            },
-        },
-    };
-
-    useEffect(() => {
-        setTimeout(
-            () => setShowCookieBanner(!hasCookie("localCookieConsent")),
-            650
-        );
-    }, []);
 
     return (
         <>
             <AnalyticsScripts />
             <MetaTags />
             <Favicon />
-
-            {/* <Image
-                src={BgImage}
-                layout="fill"
-                alt=""
-                className="fixed -z-50 h-screen w-screen object-cover"
-            /> */}
-
-            <AnimatePresence>
-                {showCookieBanner && (
-                    <CookieConsent setShowCookieBanner={setShowCookieBanner} />
-                )}
-            </AnimatePresence>
 
             <motion.div
                 variants={initialLoadVariants}
@@ -88,8 +47,24 @@ export default function MainLayout({ children }) {
                     </AnimatePresence>
                 </SmoothResize>
 
-                <Footer setShowCookieBanner={setShowCookieBanner} />
+                <Footer />
             </motion.div>
         </>
     );
 }
+
+const initialLoadVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { delay: 0.15 } },
+};
+
+const pageTransitionVariants = {
+    exit: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 0.2,
+            ease: "easeInOut",
+        },
+    },
+};

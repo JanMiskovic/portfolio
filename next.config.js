@@ -21,6 +21,21 @@ const nextConfig = {
         }
         return headers;
     },
+
+    async redirects() {
+        return [
+            {
+                source: "/cv-en",
+                destination: "/Ján%20Miškovič%20-%20Resume.pdf",
+                permanent: true,
+            },
+            {
+                source: "/cv-sk",
+                destination: "/Ján%20Miškovič%20-%20Životopis.pdf",
+                permanent: true,
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;

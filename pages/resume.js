@@ -13,13 +13,6 @@ import Link from "next/link";
 export default function Resume({ isSm, isMd }) {
     const intl = useIntl();
 
-    const resumeItems = {
-        initial: { opacity: 0, scale: 0.9, y: -20 },
-        animate: { opacity: 1, scale: 1, y: 0 },
-    };
-
-    const stagger = 0.07;
-
     return (
         <>
             <Head>
@@ -41,7 +34,7 @@ export default function Resume({ isSm, isMd }) {
                 sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]">
                 {/* Work experience section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -84,7 +77,7 @@ export default function Resume({ isSm, isMd }) {
 
                 {/* Education section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -138,7 +131,7 @@ export default function Resume({ isSm, isMd }) {
 
                 {/* Stack section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -254,7 +247,7 @@ export default function Resume({ isSm, isMd }) {
                             <li>
                                 <span className="font-medium">WordPress</span>
                                 {" - "}
-                                <FormattedMessage id="resume.stack.intermediate" />
+                                <FormattedMessage id="resume.stack.advanced" />
                             </li>
                             <li>
                                 <span className="font-medium">Laravel</span>
@@ -272,7 +265,7 @@ export default function Resume({ isSm, isMd }) {
 
                 {/* Personal details -> Others section */}
                 <motion.div
-                    variants={resumeItems}
+                    variants={resumeItemVariants}
                     transition={{
                         ease: "easeInOut",
                         duration: 0.3,
@@ -403,22 +396,38 @@ export default function Resume({ isSm, isMd }) {
                     {/* Resume download */}
                     <div className="flex gap-2">
                         <a
+                            href={`/cv-${intl.locale}`}
+                            download
                             className="focus-ring my-border transition-hover w-[10.5rem]
                             rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm text-black hover:bg-[#dbf2ff]
                             active:bg-[#ccecff] dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff]
                             xs:text-base sm:py-2 lg:flex-grow">
                             <FormattedMessage id="resume.download.btn" />
                         </a>
-                        <a
+                        <button
+                            onClick={async () => {
+                                await import("print-js");
+                                printJS({
+                                    printable: `/cv-${intl.locale}`,
+                                    type: "pdf",
+                                });
+                            }}
                             className="focus-ring my-border transition-hover flex 
                             items-center rounded-md bg-[#E9F7FF] p-1.5
                             hover:bg-[#dbf2ff] active:bg-[#ccecff] dark:bg-[#66C8FF]
                             dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:p-2">
                             <HiPrinter className="h-5 w-5 fill-icon-light dark:fill-[#3e3e3e] sm:h-6 sm:w-6" />
-                        </a>
+                        </button>
                     </div>
                 </motion.div>
             </div>
         </>
     );
 }
+
+const resumeItemVariants = {
+    initial: { opacity: 0, scale: 0.9, y: -20 },
+    animate: { opacity: 1, scale: 1, y: 0 },
+};
+
+const stagger = 0.07;

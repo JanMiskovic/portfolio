@@ -1,11 +1,7 @@
-import Image from "next/future/image";
 import { motion } from "framer-motion";
+import Image from "next/future/image";
 
 export default function PortfolioItem({ href, img, name, stack, className }) {
-    const image = {
-        active: { rotate: -1.5, scale: 1.05 }
-    };
-
     return (
         <motion.a
             whileHover="active"
@@ -16,7 +12,9 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
             className="focus-ring focus-ring-loose flex flex-col rounded-lg">
             <div
                 className={`my-border mb-1.5 rounded-lg p-[10%] md:mb-2.5 ${className}`}>
-                <motion.div variants={image} className="will-change-transform">
+                <motion.div
+                    variants={imageVariants}
+                    className="will-change-transform">
                     <Image
                         src={img}
                         placeholder="blur"
@@ -33,3 +31,7 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
         </motion.a>
     );
 }
+
+const imageVariants = {
+    active: { rotate: -1.5, scale: 1.05 },
+};

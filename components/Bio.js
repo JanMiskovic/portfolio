@@ -4,7 +4,7 @@ import Image from "next/future/image";
 import Link from "next/link";
 import Dbr from "./Dbr";
 import Socials from "./Socials";
-import ProfileImg from "../public/profile_pic.webp";
+import ProfileImg from "../public/images/profile_pic.webp";
 import SkFlagImg from "../public/icons/skflag.webp";
 
 export default function Bio() {
@@ -17,8 +17,11 @@ export default function Bio() {
                 priority={true}
                 src={ProfileImg}
                 alt="Profile picture of Ján"
-                className="my-border h-16 w-16 self-center rounded-full bg-bg-light
-                    dark:bg-bg-dark xs:h-20 xs:w-20 sm:h-32 sm:w-32 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
+                className="my-border h-16 w-16 self-center rounded-full
+                bg-gradient-to-br from-grad-bg-purple to-bg-light
+                dark:from-[#373243] dark:to-bg-dark
+                xs:h-20 xs:w-20 sm:h-32 sm:w-32
+                md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
             />
 
             {/* Name and location */}
@@ -49,7 +52,9 @@ export default function Bio() {
             </div>
 
             {/* Bio text */}
-            <div className="col-span-full flex flex-col gap-5 text-sm xs:text-base md:col-start-2 md:self-start">
+            <div
+                className="col-span-full flex flex-col gap-5 text-sm
+                xs:text-base md:col-start-2 md:self-start">
                 <p className="leading-relaxed">
                     <FormattedMessage id="bio.text.line.1" />
                     <Dbr />
@@ -67,8 +72,8 @@ export default function Bio() {
                             className="focus-ring my-border transition-hover 
                             w-[6.5rem] shrink-0 rounded-md bg-[#E9F7FF] py-1.5 text-center text-sm
                             text-black hover:bg-[#dbf2ff] active:bg-[#ccecff] 
-                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] xs:w-32
-                            xs:text-base sm:w-40 sm:py-2">
+                            dark:bg-[#66C8FF] dark:hover:bg-[#85d2ff] dark:active:bg-[#a3ddff] 
+                            xs:w-32 xs:text-base sm:w-40 sm:py-2">
                             <FormattedMessage id="bio.btn" />
                         </a>
                     </Link>

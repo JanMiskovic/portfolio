@@ -40,27 +40,6 @@ export default function CookieConsent({ setShowCookieBanner }) {
         }
     }
 
-    const cookieVariants = {
-        initial: { y: 50, opacity: 0 },
-        animate: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                y: { type: "spring", duration: 0.5, bounce: 0.4 },
-                opacity: { type: "tween", duration: 0.2 },
-            },
-        },
-        exit: {
-            y: 50,
-            opacity: 0,
-            transition: {
-                type: "tween",
-                duration: 0.2,
-                ease: "easeInOut",
-            },
-        },
-    };
-
     return (
         <motion.div
             variants={cookieVariants}
@@ -69,8 +48,8 @@ export default function CookieConsent({ setShowCookieBanner }) {
             exit="exit"
             className="my-border fixed inset-x-5 bottom-5 
             z-20 flex flex-col justify-between rounded-lg bg-bg-light
-        dark:bg-bg-dark sm:bottom-7 sm:right-7
-            sm:left-auto sm:w-96 xl:bottom-6 xl:right-6">
+            text-black dark:bg-bg-dark dark:text-white 
+            sm:bottom-7 sm:right-7 sm:left-auto sm:w-96 xl:bottom-6 xl:right-6">
             <div
                 className="mb-2 flex items-center justify-between
                 border-b-2 border-neutral-200 
@@ -118,3 +97,24 @@ export default function CookieConsent({ setShowCookieBanner }) {
         </motion.div>
     );
 }
+
+const cookieVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            y: { type: "spring", duration: 0.5, bounce: 0.4 },
+            opacity: { type: "tween", duration: 0.2 },
+        },
+    },
+    exit: {
+        y: 50,
+        opacity: 0,
+        transition: {
+            type: "tween",
+            duration: 0.2,
+            ease: "easeInOut",
+        },
+    },
+};

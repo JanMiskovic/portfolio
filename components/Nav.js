@@ -36,9 +36,9 @@ export default function Nav() {
                                         ? ""
                                         : "underline"
                                 }
-                                className="absolute bottom-1.5 left-0 h-px
-                                    w-full bg-[#0c69ff] will-change-transform dark:bg-[#66d4ff]
-                                    sm:h-0.5 lg:bottom-1 lg:h-[3px]"
+                                className="absolute bottom-1.5 left-0 h-0.5
+                                w-full bg-[#0c69ff] will-change-transform dark:bg-[#66d4ff]
+                                lg:bottom-1 lg:h-[3px]"
                             />
                         )}
                     </a>
@@ -50,6 +50,5 @@ export default function Nav() {
 
 function isActiveLink(href, currentPathname) {
     if (href === "/") return href === currentPathname;
-
     return currentPathname.startsWith(href);
 }

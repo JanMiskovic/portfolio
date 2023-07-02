@@ -1,6 +1,6 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
+import Head from "next/head";
 
 export default function MetaTags() {
     const { asPath, locale } = useRouter();
