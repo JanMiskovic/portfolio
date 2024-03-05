@@ -12,7 +12,7 @@ export default function MetaTags() {
                 property="og:description"
                 content={intl.formatMessage({ id: "general.meta.desc" })}
             />
-            <meta property="og:image" content="" />
+            <meta property="og:image" content="https://janmiskovic.com/images/embed.png" />
             <meta
                 property="og:url"
                 content={`https://janmiskovic.com${
@@ -22,10 +22,6 @@ export default function MetaTags() {
             <meta property="og:type" content="article" />
             <meta property="og:site_name" content="janmiskovic.com" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta
-                name="twitter:image:alt"
-                content="Logo of the website janmiskovic.com"
-            />
         </Head>
     );
 }

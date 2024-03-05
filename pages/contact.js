@@ -37,7 +37,7 @@ export default function Contact() {
                 lg:grid-cols-[1fr_2fr]">
                 <motion.div
                     variants={contactVariants}
-                    className="border-thick-bottom flex h-[394px] flex-col gap-1.5 rounded-lg
+                    className="border-thick-bottom flex lg:min-h-[394px] flex-col gap-1.5 rounded-lg
                     bg-bg-light p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
                     <h2
                         className="flex items-center gap-2 text-base
