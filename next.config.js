@@ -5,6 +5,9 @@ const nextConfig = {
         locales: ["en", "sk"],
         defaultLocale: "en",
     },
+    experimental: {
+        reactCompiler: true,
+    },
 
     async headers() {
         const headers = [];
