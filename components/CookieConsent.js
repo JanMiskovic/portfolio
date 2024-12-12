@@ -1,7 +1,7 @@
-import { setCookie, getCookies, deleteCookie, getCookie } from "cookies-next";
-import { FormattedMessage } from "react-intl";
+import { deleteCookie, getCookie, getCookies, setCookie } from "cookies-next";
+import { motion } from "motion/react";
 import { CgClose } from "react-icons/cg";
-import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 import Button3D from "./Button3D";
 
 export default function CookieConsent({ setShowCookieBanner }) {

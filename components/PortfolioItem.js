@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import Image from "next/future/image";
+import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function PortfolioItem({ href, img, name, stack, className }) {
     return (

@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { hasCookie } from "cookies-next";
+import { AnimatePresence } from "motion/react";
+import { useEffect, useState } from "react";
 import { BsGithub } from "react-icons/bs";
 import { FaCookieBite } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
-import { hasCookie } from "cookies-next";
 import CookieConsent from "./CookieConsent";
 
 export default function Footer() {

@@ -1,6 +1,6 @@
-import { FormattedMessage, useIntl } from "react-intl";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Head from "next/head";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function Media() {
     const intl = useIntl();
@@ -9,8 +9,9 @@ export default function Media() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič{" - "}
-                    {intl.formatMessage({ id: "media.meta.title" })}
+                    {`Ján Miškovič - ${intl.formatMessage({
+                        id: "media.meta.title",
+                    })}`}
                 </title>
                 <meta
                     property="og:title"

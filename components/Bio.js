@@ -1,12 +1,12 @@
-import { FormattedMessage } from "react-intl";
-import { motion } from "framer-motion";
-import Image from "next/future/image";
+import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
+import { FormattedMessage } from "react-intl";
+import SkFlagImg from "../public/icons/skflag.webp";
+import ProfileImg from "../public/images/profile_pic.webp";
+import Button3D from "./Button3D";
 import Dbr from "./Dbr";
 import Socials from "./Socials";
-import ProfileImg from "../public/images/profile_pic.webp";
-import SkFlagImg from "../public/icons/skflag.webp";
-import Button3D from "./Button3D";
 
 export default function Bio() {
     return (
@@ -24,7 +24,6 @@ export default function Bio() {
                 xs:h-20 xs:w-20 sm:h-32 sm:w-32
                 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72"
             />
-
             {/* Name and location */}
             <div className="col-span-full col-start-2 md:self-end">
                 <div className="overflow-hidden">
@@ -51,7 +50,6 @@ export default function Bio() {
                     </motion.span>
                 </div>
             </div>
-
             {/* Bio text */}
             <div
                 className="col-span-full flex flex-col gap-5 text-sm
@@ -68,7 +66,11 @@ export default function Bio() {
 
                 {/* Contact button and socials */}
                 <div className="flex gap-3 sm:gap-5">
-                    <Link href="/contact" scroll={false} passHref>
+                    <Link
+                        href="/contact"
+                        scroll={false}
+                        passHref
+                        legacyBehavior>
                         <Button3D
                             isLink={true}
                             className="h-9 w-[6.5rem] shrink-0 rounded-md

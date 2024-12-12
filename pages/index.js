@@ -1,13 +1,13 @@
-import { motion } from "framer-motion";
-import { useIntl } from "react-intl";
+import { motion } from "motion/react";
 import Head from "next/head";
+import { useIntl } from "react-intl";
 import PortfolioItem from "../components/PortfolioItem";
-import StavbyTrnkaImg from "../public/images/websites/stavbytrnka.webp";
-import ErvaarImg from "../public/images/websites/ervaar.webp";
 import ADDetailingImg from "../public/images/websites/addetailing.webp";
-import SlezocoachingImg from "../public/images/websites/slezocoaching.webp";
+import ErvaarImg from "../public/images/websites/ervaar.webp";
 import LinkvisticaImg from "../public/images/websites/linkvistica.webp";
 import MajdovanImg from "../public/images/websites/majdovan.webp";
+import SlezocoachingImg from "../public/images/websites/slezocoaching.webp";
+import StavbyTrnkaImg from "../public/images/websites/stavbytrnka.webp";
 
 export default function Index() {
     const intl = useIntl();
@@ -16,8 +16,9 @@ export default function Index() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič{" - "}
-                    {intl.formatMessage({ id: "portfolio.meta.title" })}
+                    {`Ján Miškovič - ${intl.formatMessage({
+                        id: "portfolio.meta.title",
+                    })}`}
                 </title>
                 <meta
                     property="og:title"
@@ -82,7 +83,7 @@ export default function Index() {
                         className="bg-[#FFEFE0] dark:bg-[#2A2622]"
                     />
                 </motion.div>
-                
+
                 <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         img={ADDetailingImg}

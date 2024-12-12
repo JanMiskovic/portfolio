@@ -1,7 +1,7 @@
-import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import Button3D from "../Button3D";
 
 export default function DarkToggle() {
@@ -70,9 +70,9 @@ export default function DarkToggle() {
         </Button3D>
     ) : (
         <button
-            className="focus-ring border-thick-bottom transition-hover rounded-md
-            bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]
-            active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark overflow-hidden">
+            className="focus-ring border-thick-bottom transition-hover overflow-hidden
+            rounded-md bg-[hsl(273,_100%,_96%)]
+            hover:bg-[hsl(273,_100%,_94%)] active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark">
             <BsMoonFill
                 className="h-4 w-4 fill-icon-light
                 xs:h-5 xs:w-5 sm:h-6 sm:w-6"

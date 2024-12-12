@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import useMeasure from "react-use-measure";
 
 export default function SmoothResize({ children, className }) {

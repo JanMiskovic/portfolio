@@ -1,15 +1,15 @@
-import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/router";
 import React from "react";
-import SmoothResize from "../SmoothResize";
+import { useIsMd, useIsSm } from "../../hooks/useMediaQuery";
 import AnalyticsScripts from "../AnalyticsScripts";
-import MetaTags from "../MetaTags";
-import Favicon from "../Favicon";
-import Header from "../header/Header";
-import Nav from "../Nav";
 import Bio from "../Bio";
+import Favicon from "../Favicon";
 import Footer from "../Footer";
+import Header from "../header/Header";
+import MetaTags from "../MetaTags";
+import Nav from "../Nav";
+import SmoothResize from "../SmoothResize";
 
 export default function MainLayout({ children }) {
     const { asPath } = useRouter();

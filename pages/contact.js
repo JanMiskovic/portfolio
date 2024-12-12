@@ -1,11 +1,11 @@
-import { useRef, useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-import { AnimatePresence, motion } from "framer-motion";
-import { FaDiscord, FaEnvelope, FaEnvelopeOpenText } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { ImFacebook } from "react-icons/im";
-import ContactForm from "../components/ContactForm";
+import { AnimatePresence, motion } from "motion/react";
 import Head from "next/head";
+import { useRef, useState } from "react";
+import { FaDiscord, FaEnvelope, FaEnvelopeOpenText } from "react-icons/fa";
+import { ImFacebook } from "react-icons/im";
+import { RiInstagramFill } from "react-icons/ri";
+import { FormattedMessage, useIntl } from "react-intl";
+import ContactForm from "../components/ContactForm";
 
 export default function Contact() {
     const intl = useIntl();
@@ -16,8 +16,9 @@ export default function Contact() {
         <>
             <Head>
                 <title>
-                    Ján Miškovič{" - "}
-                    {intl.formatMessage({ id: "contact.meta.title" })}
+                    {`Ján Miškovič - ${intl.formatMessage({
+                        id: "contact.meta.title",
+                    })}`}
                 </title>
                 <meta
                     property="og:title"
@@ -37,8 +38,8 @@ export default function Contact() {
                 lg:grid-cols-[1fr_2fr]">
                 <motion.div
                     variants={contactVariants}
-                    className="border-thick-bottom flex lg:min-h-[394px] flex-col gap-1.5 rounded-lg
-                    bg-bg-light p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5">
+                    className="border-thick-bottom flex flex-col gap-1.5 rounded-lg bg-bg-light
+                    p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5 lg:min-h-[394px]">
                     <h2
                         className="flex items-center gap-2 text-base
                         xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">

@@ -1,9 +1,9 @@
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-import { AnimatePresence, motion } from "framer-motion";
-import { VscDebugRestart } from "react-icons/vsc";
 import { IoSend } from "react-icons/io5";
 import { RiLoaderLine } from "react-icons/ri";
+import { VscDebugRestart } from "react-icons/vsc";
+import { FormattedMessage, useIntl } from "react-intl";
 import TextareaAutosize from "react-textarea-autosize";
 import useLocalStorage from "../hooks/useLocalStorage";
 import Button3D from "./Button3D";
@@ -126,8 +126,8 @@ export default function ContactForm() {
                         <Button3D
                             type="submit"
                             disabled={sendStatus === "sending" ? true : false}
-                            className="w-[6.5rem] rounded-md text-black
-                            text-sm xs:w-32 xs:text-base sm:w-36"
+                            className="w-[6.5rem] rounded-md text-sm
+                            text-black xs:w-32 xs:text-base sm:w-36"
                             innerClassName="bg-btn-blue hover:bg-btn-blue-hover
                             active:bg-btn-blue-active dark:bg-btn-blue-d
                             dark:hover:bg-btn-blue-d-hover

@@ -1,15 +1,15 @@
-import { BsChatFill, BsInfoCircleFill, BsTerminalFill } from "react-icons/bs";
-import { FormattedMessage, useIntl } from "react-intl";
-import { IoMdBriefcase } from "react-icons/io";
-import { IoPerson } from "react-icons/io5";
-import { TbArrowNarrowRight } from "react-icons/tb";
-import { HiPrinter } from "react-icons/hi";
-import { MdSchool } from "react-icons/md";
-import { FaEnvelope } from "react-icons/fa";
-import { motion } from "framer-motion";
-import Button3D from "../components/Button3D";
+import { motion } from "motion/react";
 import Head from "next/head";
 import Link from "next/link";
+import { BsChatFill, BsInfoCircleFill, BsTerminalFill } from "react-icons/bs";
+import { FaEnvelope } from "react-icons/fa";
+import { HiPrinter } from "react-icons/hi";
+import { IoMdBriefcase } from "react-icons/io";
+import { IoPerson } from "react-icons/io5";
+import { MdSchool } from "react-icons/md";
+import { TbArrowNarrowRight } from "react-icons/tb";
+import { FormattedMessage, useIntl } from "react-intl";
+import Button3D from "../components/Button3D";
 
 export default function Resume({ isSm, isMd }) {
     const intl = useIntl();
@@ -18,8 +18,9 @@ export default function Resume({ isSm, isMd }) {
         <>
             <Head>
                 <title>
-                    Ján Miškovič{" - "}
-                    {intl.formatMessage({ id: "resume.meta.title" })}
+                    {`Ján Miškovič - ${intl.formatMessage({
+                        id: "resume.meta.title",
+                    })}`}
                 </title>
                 <meta
                     property="og:title"
@@ -29,10 +30,9 @@ export default function Resume({ isSm, isMd }) {
                 />
                 <meta name="robots" content="nosnippet" />
             </Head>
-
             <div
                 className="grid gap-5 text-sm leading-relaxed xs:text-base
-                sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]">
+            sm:grid-cols-2 md:grid-cols-[2fr_3fr] lg:grid-cols-[3fr_5fr_3fr]">
                 {/* Work experience section */}
                 <motion.div
                     variants={resumeItemVariants}
@@ -42,14 +42,14 @@ export default function Resume({ isSm, isMd }) {
                         delay: isMd ? stagger : 0,
                     }}
                     className="border-thick-bottom flex flex-col gap-5 rounded-lg bg-bg-light 
-                    p-4 dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
+                p-4 dark:bg-bg-dark sm:px-5 md:col-start-2 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
                             className="flex items-center gap-2 text-base xs:text-lg
-                            sm:text-xl lg:gap-3 lg:text-2xl">
+                        sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoMdBriefcase
                                 className="fill-[#339DFF] text-lg
-                                dark:fill-[#66C8FF] xs:text-xl"
+                            dark:fill-[#66C8FF] xs:text-xl"
                             />
                             <FormattedMessage id="resume.work.title" />
                         </h2>
@@ -63,14 +63,14 @@ export default function Resume({ isSm, isMd }) {
                             <p className="max-w-[25rem]">
                                 <FormattedMessage id="resume.work.desc.1" />
                             </p>
-                            <Link href="/" scroll={false}>
-                                <a
-                                    className="link focus-ring focus-ring-loose
-                                    transition-hover flex w-fit items-center
-                                    gap-1 rounded-md font-medium">
-                                    <FormattedMessage id="resume.work.portfolio" />
-                                    <TbArrowNarrowRight size={18} />
-                                </a>
+                            <Link
+                                href="/"
+                                scroll={false}
+                                className="link focus-ring focus-ring-loose
+                            transition-hover flex w-fit items-center
+                            gap-1 rounded-md font-medium">
+                                <FormattedMessage id="resume.work.portfolio" />
+                                <TbArrowNarrowRight size={18} />
                             </Link>
                         </div>
                     </div>
@@ -85,14 +85,14 @@ export default function Resume({ isSm, isMd }) {
                         delay: isMd ? stagger * 2 : stagger,
                     }}
                     className="border-thick-bottom flex flex-col gap-4 rounded-lg bg-bg-light
-                    p-4 dark:bg-bg-dark sm:px-5 lg:col-start-2">
+                p-4 dark:bg-bg-dark sm:px-5 lg:col-start-2">
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
                             className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <MdSchool
                                 className="fill-[#339DFF] text-xl
-                                dark:fill-[#66C8FF] xs:text-2xl"
+                            dark:fill-[#66C8FF] xs:text-2xl"
                             />
                             <FormattedMessage id="resume.education.title" />
                         </h2>
@@ -141,21 +141,21 @@ export default function Resume({ isSm, isMd }) {
                         delay: isSm ? stagger * 3 : stagger * 2,
                     }}
                     className="border-thick-bottom flex flex-col gap-1.5 rounded-lg bg-bg-light
-                    p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5
-                    md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
+                p-4 dark:bg-bg-dark xs:gap-2 sm:gap-2.5 sm:px-5
+                md:col-span-full lg:col-start-3 lg:row-start-1 lg:row-end-3">
                     <h2
                         className="flex items-center gap-2 text-base
-                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                    xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                         <BsTerminalFill
                             className="fill-[#339DFF] dark:fill-[#66C8FF]
-                            xs:text-lg"
+                        xs:text-lg"
                         />
                         <FormattedMessage id="resume.stack.title" />
                     </h2>
                     <div className="grid gap-2">
                         <h3
                             className="underline underline-offset-2 
-                            md:max-lg:col-start-1 md:max-lg:row-start-1">
+                        md:max-lg:col-start-1 md:max-lg:row-start-1">
                             <FormattedMessage id="resume.stack.regular" />
                         </h3>
                         <ul className="md:max-lg:col-start-1">
@@ -233,7 +233,7 @@ export default function Resume({ isSm, isMd }) {
                         </ul>
                         <h3
                             className="underline underline-offset-2
-                            md:max-lg:col-start-3 md:max-lg:row-start-1">
+                        md:max-lg:col-start-3 md:max-lg:row-start-1">
                             <FormattedMessage id="resume.stack.before" />
                         </h3>
                         <ul className="md:max-lg:col-start-3 md:max-lg:row-start-2">
@@ -277,17 +277,17 @@ export default function Resume({ isSm, isMd }) {
                         delay: isMd ? 0 : isSm ? stagger * 2 : stagger * 3,
                     }}
                     className="border-thick-bottom flex flex-col gap-4 rounded-lg bg-bg-light
-                    p-4 dark:bg-bg-dark sm:row-start-2 sm:justify-between sm:px-5 
-                    md:row-start-1 md:row-end-3 lg:col-start-1
-                    lg:row-start-1 lg:row-end-3 lg:justify-start">
+                p-4 dark:bg-bg-dark sm:row-start-2 sm:justify-between sm:px-5 
+                md:row-start-1 md:row-end-3 lg:col-start-1
+                lg:row-start-1 lg:row-end-3 lg:justify-start">
                     {/* Personal details */}
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
                             className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <IoPerson
                                 className="fill-[#339DFF] text-lg
-                                dark:fill-[#66C8FF] xs:text-xl"
+                            dark:fill-[#66C8FF] xs:text-xl"
                             />
                             <FormattedMessage id="resume.personal.title" />
                         </h2>
@@ -320,10 +320,10 @@ export default function Resume({ isSm, isMd }) {
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
                             className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <FaEnvelope
                                 className="fill-[#339DFF] dark:fill-[#66C8FF]
-                                xs:text-lg"
+                            xs:text-lg"
                             />
                             <FormattedMessage id="resume.contact.title" />
                         </h2>
@@ -332,7 +332,7 @@ export default function Resume({ isSm, isMd }) {
                                 <a
                                     href="mailto:jan@janmiskovic.com"
                                     className="link focus-ring focus-ring-loose 
-                                    transition-hover rounded-md font-medium">
+                                transition-hover rounded-md font-medium">
                                     jan@janmiskovic.com
                                 </a>
                             </li>
@@ -340,7 +340,7 @@ export default function Resume({ isSm, isMd }) {
                                 <a
                                     href="tel:+421950594845"
                                     className="link focus-ring focus-ring-loose
-                                    transition-hover rounded-md font-medium">
+                                transition-hover rounded-md font-medium">
                                     +421 950 594 845
                                 </a>
                             </li>
@@ -354,10 +354,10 @@ export default function Resume({ isSm, isMd }) {
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
                             className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsChatFill
                                 className="fill-[#339DFF] dark:fill-[#66C8FF]
-                                xs:text-lg"
+                            xs:text-lg"
                             />
                             <FormattedMessage id="resume.languages.title" />
                         </h2>
@@ -383,10 +383,10 @@ export default function Resume({ isSm, isMd }) {
                     <div className="flex flex-col gap-1.5 xs:gap-2 sm:gap-2.5">
                         <h2
                             className="flex items-center gap-2 text-base
-                            xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
+                        xs:text-lg sm:text-xl lg:gap-3 lg:text-2xl">
                             <BsInfoCircleFill
                                 className="fill-[#339DFF] dark:fill-[#66C8FF] 
-                                xs:text-lg"
+                            xs:text-lg"
                             />
                             <FormattedMessage id="resume.other.title" />
                         </h2>
@@ -407,11 +407,11 @@ export default function Resume({ isSm, isMd }) {
                             download
                             isLink={true}
                             className="h-9 w-[10.5rem] rounded-md text-sm text-black 
-                            xs:h-10 xs:w-40 xs:text-base sm:h-11 lg:flex-grow"
+                        xs:h-10 xs:w-40 xs:text-base sm:h-11 lg:flex-grow"
                             innerClassName="bg-btn-blue hover:bg-btn-blue-hover
-                            active:bg-btn-blue-active dark:bg-btn-blue-d
-                            dark:hover:bg-btn-blue-d-hover
-                            dark:active:bg-btn-blue-d-active">
+                        active:bg-btn-blue-active dark:bg-btn-blue-d
+                        dark:hover:bg-btn-blue-d-hover
+                        dark:active:bg-btn-blue-d-active">
                             <FormattedMessage id="resume.download.btn" />
                         </Button3D>
                         <Button3D
@@ -424,12 +424,12 @@ export default function Resume({ isSm, isMd }) {
                             }}
                             className="w-9 rounded-md xs:w-10 sm:w-11"
                             innerClassName="bg-btn-blue hover:bg-btn-blue-hover
-                            active:bg-btn-blue-active dark:bg-btn-blue-d
-                            dark:hover:bg-btn-blue-d-hover
-                            dark:active:bg-btn-blue-d-active">
+                        active:bg-btn-blue-active dark:bg-btn-blue-d
+                        dark:hover:bg-btn-blue-d-hover
+                        dark:active:bg-btn-blue-d-active">
                             <HiPrinter
                                 className="h-5 w-5 fill-icon-light 
-                                dark:fill-[#3e3e3e] sm:h-6 sm:w-6"
+                            dark:fill-[#3e3e3e] sm:h-6 sm:w-6"
                             />
                         </Button3D>
                     </div>
