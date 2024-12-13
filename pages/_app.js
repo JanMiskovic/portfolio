@@ -1,6 +1,6 @@
 import { ThemeProvider } from "next-themes";
-import { IntlProvider } from "react-intl";
 import { useRouter } from "next/router";
+import { IntlProvider } from "react-intl";
 import MainLayout from "../components/layouts/MainLayout";
 import en from "../lang/en.json";
 import sk from "../lang/sk.json";
@@ -12,7 +12,11 @@ export default function MyApp({ Component, pageProps }) {
 
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
-            <ThemeProvider defaultTheme="system" attribute="class">
+            <ThemeProvider
+                enableSystem={true}
+                defaultTheme="system"
+                attribute="class"
+                themes={["light", "dark", "disco"]}>
                 <MainLayout>
                     <Component {...pageProps} />
                 </MainLayout>

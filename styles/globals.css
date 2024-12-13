@@ -29,6 +29,24 @@
     ::-webkit-scrollbar-thumb:hover {
         @apply bg-[#70737577] dark:bg-[#a4a8a877];
     }
+
+    html.disco body {
+        animation: disco-mode 10s infinite alternate;
+    }
+
+    @keyframes disco-mode {
+        0% { @apply bg-body-dark; }
+        10% { @apply bg-[hsl(0,37%,8%)]; }
+        20% { @apply bg-[hsl(320,37%,8%)]; }
+        30% { @apply bg-[hsl(296,37%,8%)]; }
+        40% { @apply bg-[hsl(68,37%,8%)]; }
+        50% { @apply bg-[hsl(92,37%,8%)]; }
+        60% { @apply bg-[hsl(0,35%,8%)]; }
+        70% { @apply bg-[hsl(240,37%,8%)]; }
+        80% { @apply bg-[hsl(116,37%,8%)]; }
+        90% { @apply bg-[hsl(204,37%,8%)]; }
+        100% { @apply bg-[hsl(176,37%,8%)]; }
+    }
 }
 
 @layer utilities {

@@ -14,7 +14,7 @@ export default function Socials() {
                 aria-label="GitHub profile"
                 className="h-9 w-9 rounded-full xs:h-10 xs:w-10 sm:h-11 sm:w-11"
                 innerClassName="bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]
-                active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark">
+                active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark dark:hover:bg-bg-dark dark:active:bg-bg-dark">
                 <BsGithub
                     className="transition-hover h-4 w-4 
                     fill-icon-light dark:fill-[hsl(273,_100%,_70%)] 
@@ -32,7 +32,7 @@ export default function Socials() {
                 aria-label="LinkedIn profile"
                 className="h-9 w-9 rounded-full xs:h-10 xs:w-10 sm:h-11 sm:w-11"
                 innerClassName="bg-[hsl(192,_100%,_96%)] hover:bg-[hsl(192,_100%,_94%)]
-                active:bg-[hsl(192,_100%,_93%)] dark:bg-bg-dark">
+                active:bg-[hsl(192,_100%,_93%)] dark:bg-bg-dark dark:hover:bg-bg-dark dark:active:bg-bg-dark">
                 <BsLinkedin
                     className="transition-hover h-4 w-4 rounded-full 
                     fill-icon-light dark:fill-[hsl(192,_100%,_70%)] 
@@ -50,7 +50,7 @@ export default function Socials() {
                 aria-label="Facebook profile"
                 className="h-9 w-9 rounded-full xs:h-10 xs:w-10 sm:h-11 sm:w-11"
                 innerClassName="bg-[hsl(229,_100%,_96%)] hover:bg-[hsl(229,_100%,_94%)]
-                active:bg-[hsl(229,_100%,_93%)] dark:bg-bg-dark">
+                active:bg-[hsl(229,_100%,_93%)] dark:bg-bg-dark dark:hover:bg-bg-dark dark:active:bg-bg-dark">
                 <BsFacebook
                     className="transition-hover h-4 w-4 
                     fill-icon-light dark:fill-[hsl(229,_100%,_70%)] 
@@ -68,7 +68,7 @@ export default function Socials() {
                 aria-label="Instagram profile"
                 className="h-9 w-9 rounded-full xs:h-10 xs:w-10 sm:h-11 sm:w-11"
                 innerClassName="bg-[hsl(309,_100%,_96%)] hover:bg-[hsl(309,_100%,_94%)]
-                active:bg-[hsl(309,_100%,_93%)] dark:bg-bg-dark">
+                active:bg-[hsl(309,_100%,_93%)] dark:bg-bg-dark dark:hover:bg-bg-dark dark:active:bg-bg-dark">
                 {/* Instagram icon */}
                 <svg
                     viewBox="0 0 16 16"
@@ -91,7 +91,7 @@ export default function Socials() {
                 aria-label="Spotify profile"
                 className="h-9 w-9 rounded-full xs:h-10 xs:w-10 sm:h-11 sm:w-11"
                 innerClassName="bg-[hsl(127,_100%,_96%)] hover:bg-[hsl(127,_100%,_94%)]
-                active:bg-[hsl(127,_100%,_93%)] dark:bg-bg-dark">
+                active:bg-[hsl(127,_100%,_93%)] dark:bg-bg-dark dark:hover:bg-bg-dark dark:active:bg-bg-dark">
                 <BsSpotify
                     className="transition-hover h-4 w-4
                     fill-icon-light dark:fill-[hsl(127,_100%,_70%)] 
