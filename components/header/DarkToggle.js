@@ -16,6 +16,7 @@ export default function DarkToggle() {
     // Avoid hydration error
     useEffect(() => {
         setMounted(true);
+        return () => stopDiscoCounter();
     }, []);
 
     function onMouseDown() {

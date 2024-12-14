@@ -8,9 +8,15 @@ import Button3D from "./Button3D";
 import Dbr from "./Dbr";
 import Socials from "./Socials";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Bio() {
+    const [mounted, setMounted] = useState(false);
     const { resolvedTheme } = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <div
@@ -23,7 +29,7 @@ export default function Bio() {
                     sm:w-32 md:row-span-2 md:h-fit md:w-5/6 lg:h-72 lg:w-72
                     dark:from-[hsl(237,_13%,_17%)] dark:to-bg-dark">
                 <AnimatePresence mode="popLayout" initial={false}>
-                    {resolvedTheme === "disco" ? (
+                    {mounted && resolvedTheme === "disco" ? (
                         <motion.div
                             className="flex h-full w-full items-center justify-center overflow-hidden text-9xl"
                             key="disco"
@@ -111,9 +117,8 @@ export default function Bio() {
                             isLink={true}
                             className="h-9 w-[6.5rem] shrink-0 rounded-md text-sm text-black xs:h-10 xs:w-32
                                 xs:text-base sm:h-11 sm:w-40"
-                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover active:bg-btn-blue-active
-                                dark:bg-btn-blue-ddark:hover:bg-btn-blue-d-hover
-                                dark:active:bg-btn-blue-d-active">
+                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover active:bg-btn-blue-active dark:bg-btn-blue-d
+                                dark:hover:bg-btn-blue-d-hover dark:active:bg-btn-blue-d-active">
                             <FormattedMessage id="bio.btn" />
                         </Button3D>
                     </Link>

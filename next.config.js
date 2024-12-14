@@ -6,7 +6,7 @@ const nextConfig = {
         defaultLocale: "en",
     },
     experimental: {
-        reactCompiler: true,
+        // reactCompiler: true,
     },
 
     async headers() {
