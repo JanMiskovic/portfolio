@@ -12,7 +12,10 @@ export default function MetaTags() {
                 property="og:description"
                 content={intl.formatMessage({ id: "general.meta.desc" })}
             />
-            <meta property="og:image" content="https://janmiskovic.com/images/embed.png" />
+            <meta
+                property="og:image"
+                content="https://janmiskovic.com/images/embed.png"
+            />
             <meta
                 property="og:url"
                 content={`https://janmiskovic.com${

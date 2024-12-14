@@ -65,10 +65,9 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.name",
                     })}
-                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5
-                    placeholder-neutral-700 focus:outline-none
-                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300
-                    lg:col-start-1 lg:py-3"
+                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700
+                        focus:outline-none lg:col-start-1 lg:py-3 dark:bg-[#1f1f1f]
+                        dark:placeholder-neutral-300"
                 />
 
                 <input
@@ -81,10 +80,9 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.email",
                     })}
-                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5
-                    placeholder-neutral-700 focus:outline-none
-                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300
-                    lg:col-start-2 lg:py-3"
+                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700
+                        focus:outline-none lg:col-start-2 lg:py-3 dark:bg-[#1f1f1f]
+                        dark:placeholder-neutral-300"
                 />
 
                 <input
@@ -97,10 +95,9 @@ export default function ContactForm() {
                     placeholder={intl.formatMessage({
                         id: "contact.form.subject",
                     })}
-                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5
-                    placeholder-neutral-700 focus:outline-none
-                    dark:bg-[#1f1f1f] dark:placeholder-neutral-300
-                    lg:col-span-2 lg:py-3"
+                    className="border-thick-bottom rounded-md bg-body-light px-3 py-2.5 placeholder-neutral-700
+                        focus:outline-none lg:col-span-2 lg:py-3 dark:bg-[#1f1f1f]
+                        dark:placeholder-neutral-300"
                 />
 
                 <div className="relative flex lg:col-span-2">
@@ -113,11 +110,10 @@ export default function ContactForm() {
                         placeholder={intl.formatMessage({
                             id: "contact.form.text",
                         })}
-                        className="border-thick-bottom min-h-[10.625rem] w-full
-                        resize-none overflow-hidden rounded-md bg-body-light px-3 pt-2.5 pb-14
-                        placeholder-neutral-700 focus:outline-none
-                        dark:bg-[#1f1f1f] dark:placeholder-neutral-300
-                        xs:pt-3 xs:pb-16"
+                        className="border-thick-bottom min-h-[10.625rem] w-full resize-none overflow-hidden
+                            rounded-md bg-body-light px-3 pb-14 pt-2.5 placeholder-neutral-700
+                            focus:outline-none xs:pb-16 xs:pt-3 dark:bg-[#1f1f1f]
+                            dark:placeholder-neutral-300"
                     />
 
                     <div className="absolute bottom-4 right-4 flex h-9 gap-2 xs:h-10 xs:gap-2.5 sm:h-11">
@@ -126,12 +122,9 @@ export default function ContactForm() {
                         <Button3D
                             type="submit"
                             disabled={sendStatus === "sending" ? true : false}
-                            className="w-[6.5rem] rounded-md text-sm
-                            text-black xs:w-32 xs:text-base sm:w-36"
-                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover
-                            active:bg-btn-blue-active dark:bg-btn-blue-d
-                            dark:hover:bg-btn-blue-d-hover
-                            dark:active:bg-btn-blue-d-active gap-2">
+                            className="w-[6.5rem] rounded-md text-sm text-black xs:w-32 xs:text-base sm:w-36"
+                            innerClassName="bg-btn-blue hover:bg-btn-blue-hover active:bg-btn-blue-active dark:bg-btn-blue-d
+                                dark:hover:bg-btn-blue-d-hover dark:active:bg-btn-blue-d-active gap-2">
                             <FormattedMessage id="contact.form.send" />{" "}
                             <IoSend className="fill-icon-light dark:fill-icon-dark" />
                         </Button3D>
@@ -154,10 +147,8 @@ function ResetButton({ resetFields }) {
                 type="button"
                 onClick={() => setShowResetConfirm((prev) => !prev)}
                 className="h-full w-9 rounded-md xs:w-10 xs:text-xl sm:w-11"
-                innerClassName="bg-btn-blue hover:bg-btn-blue-hover
-                active:bg-btn-blue-active dark:bg-btn-blue-d
-                dark:hover:bg-btn-blue-d-hover
-                dark:active:bg-btn-blue-d-active">
+                innerClassName="bg-btn-blue hover:bg-btn-blue-hover active:bg-btn-blue-active dark:bg-btn-blue-d
+                    dark:hover:bg-btn-blue-d-hover dark:active:bg-btn-blue-d-active">
                 <VscDebugRestart className="fill-icon-light dark:fill-icon-dark" />
             </Button3D>
 
@@ -169,22 +160,22 @@ function ResetButton({ resetFields }) {
                         animate="animate"
                         exit="exit"
                         transition={{ duration: 0.15 }}
-                        className="border-thick-bottom speech-bubble absolute left-1/2 -top-24 
-                        -translate-x-1/2 gap-3 rounded-md bg-bg-light p-3 dark:bg-bg-dark">
+                        className="border-thick-bottom speech-bubble absolute -top-24 left-1/2 -translate-x-1/2
+                            gap-3 rounded-md bg-bg-light p-3 dark:bg-bg-dark">
                         <FormattedMessage id="contact.form.reset.title" />
                         <div className="flex gap-5 sm:gap-3.5">
                             <button
                                 type="button"
-                                className="focus-ring focus-ring-loose rounded-lg underline 
-                                decoration-red-400 decoration-2 underline-offset-1"
+                                className="focus-ring focus-ring-loose rounded-lg underline decoration-red-400 decoration-2
+                                    underline-offset-1"
                                 onClick={() => setShowResetConfirm(false)}>
                                 <FormattedMessage id="contact.form.reset.no" />
                             </button>
 
                             <button
                                 type="reset"
-                                className="focus-ring focus-ring-loose rounded-lg underline
-                                decoration-green-400 decoration-2 underline-offset-1"
+                                className="focus-ring focus-ring-loose rounded-lg underline decoration-green-400
+                                    decoration-2 underline-offset-1"
                                 onClick={() => {
                                     setShowResetConfirm(false);
                                     resetFields();
@@ -215,16 +206,12 @@ function FormSending({ sendStatus }) {
                     animate="animate"
                     exit="exit"
                     transition={{ duration: 0.15 }}
-                    className="absolute inset-0 flex items-center justify-center
-                    rounded-md bg-neutral-50 bg-opacity-60
-                    dark:bg-neutral-800 dark:bg-opacity-60">
+                    className="absolute inset-0 flex items-center justify-center rounded-md bg-neutral-50
+                        bg-opacity-60 dark:bg-neutral-800 dark:bg-opacity-60">
                     <motion.div
                         variants={sendingSpinnerVariants}
                         animate="animate">
-                        <RiLoaderLine
-                            className="h-12 w-12 fill-neutral-700 dark:fill-white
-                            xs:h-16 xs:w-16"
-                        />
+                        <RiLoaderLine className="h-12 w-12 fill-neutral-700 xs:h-16 xs:w-16 dark:fill-white" />
                     </motion.div>
                 </motion.div>
             )}
@@ -261,14 +248,14 @@ function FormResult({ sendStatus }) {
                     exit="exit">
                     {sendStatus === "success" ? (
                         <span
-                            className="block whitespace-pre-line pt-4 underline
-                            decoration-green-400 decoration-2 underline-offset-4">
+                            className="block whitespace-pre-line pt-4 underline decoration-green-400 decoration-2
+                                underline-offset-4">
                             <FormattedMessage id="contact.form.result.success" />
                         </span>
                     ) : (
                         <span
-                            className="block whitespace-pre-line pt-4 underline
-                            decoration-red-400 decoration-2 underline-offset-4">
+                            className="block whitespace-pre-line pt-4 underline decoration-red-400 decoration-2
+                                underline-offset-4">
                             <FormattedMessage id="contact.form.result.failure" />
                         </span>
                     )}

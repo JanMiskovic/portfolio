@@ -31,21 +31,43 @@
     }
 
     html.disco body {
-        animation: disco-mode 10s infinite alternate;
+        animation: disco-mode 10s infinite;
     }
 
     @keyframes disco-mode {
-        0% { @apply bg-body-dark; }
-        10% { @apply bg-[hsl(0,37%,8%)]; }
-        20% { @apply bg-[hsl(320,37%,8%)]; }
-        30% { @apply bg-[hsl(296,37%,8%)]; }
-        40% { @apply bg-[hsl(68,37%,8%)]; }
-        50% { @apply bg-[hsl(92,37%,8%)]; }
-        60% { @apply bg-[hsl(0,35%,8%)]; }
-        70% { @apply bg-[hsl(240,37%,8%)]; }
-        80% { @apply bg-[hsl(116,37%,8%)]; }
-        90% { @apply bg-[hsl(204,37%,8%)]; }
-        100% { @apply bg-[hsl(176,37%,8%)]; }
+        0% {
+            @apply bg-body-dark;
+        }
+        10% {
+            @apply bg-[hsl(0,40%,10%)];
+        }
+        20% {
+            @apply bg-[hsl(40,41%,10%)];
+        }
+        30% {
+            @apply bg-[hsl(80,40%,10%)];
+        }
+        40% {
+            @apply bg-[hsl(120,40%,10%)];
+        }
+        50% {
+            @apply bg-[hsl(160,40%,10%)];
+        }
+        60% {
+            @apply bg-[hsl(200,40%,10%)];
+        }
+        70% {
+            @apply bg-[hsl(240,40%,10%)];
+        }
+        80% {
+            @apply bg-[hsl(280,40%,10%)];
+        }
+        90% {
+            @apply bg-[hsl(320,40%,10%)];
+        }
+        100% {
+            @apply bg-body-dark;
+        }
     }
 }
 
@@ -84,15 +106,15 @@
 
     .speech-bubble:after {
         @apply absolute bottom-[-12px] left-1/2 z-[1] ml-[-12px] block w-0 
-        border-x-[12px] border-t-[12px] border-solid border-y-bg-light
-        border-x-transparent dark:border-y-bg-dark;
+        border-x-[12px] border-t-[12px] border-solid border-x-transparent
+        border-y-bg-light dark:border-y-bg-dark;
         content: "";
     }
 
     .speech-bubble:before {
         @apply absolute bottom-[-15px] left-1/2 z-[0] ml-[-14px] block w-0 
-        border-x-[14px] border-t-[14px] border-solid border-y-border-light
-        border-x-transparent dark:border-y-border-dark;
+        border-x-[14px] border-t-[14px] border-solid border-x-transparent
+        border-y-border-light dark:border-y-border-dark;
         content: "";
     }
 }

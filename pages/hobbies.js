@@ -26,10 +26,9 @@ export default function Hobbies() {
                 variants={hobbiesVariants}
                 initial="initial"
                 animate="animate"
-                className="border-thick-bottom flex h-32 flex-wrap content-center
-                items-center justify-center rounded-lg bg-bg-light p-4
-                text-center leading-relaxed will-change-transform dark:bg-bg-dark
-                sm:text-lg md:h-44 md:text-xl lg:h-64">
+                className="border-thick-bottom flex h-32 flex-wrap content-center items-center
+                    justify-center rounded-lg bg-bg-light p-4 text-center leading-relaxed
+                    will-change-transform sm:text-lg md:h-44 md:text-xl lg:h-64 dark:bg-bg-dark">
                 <span>
                     <FormattedMessage id="wip.text.line.1" />
                 </span>

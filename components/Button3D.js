@@ -18,9 +18,8 @@ export default function Button3D({
     const frontSide = () => (
         <motion.span
             variants={buttonVariants}
-            className={`border-thick-bottom transition-hover absolute
-            inset-0 flex select-none items-center justify-center
-            rounded-[inherit] ${innerClassName}`}>
+            className={`border-thick-bottom transition-hover absolute inset-0 flex select-none
+                items-center justify-center rounded-[inherit] ${innerClassName}`}>
             {children}
         </motion.span>
     );

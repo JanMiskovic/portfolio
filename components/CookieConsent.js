@@ -47,22 +47,18 @@ export default function CookieConsent({ setShowCookieBanner }) {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="border-thick-bottom fixed inset-x-5 bottom-5 
-            z-20 flex flex-col justify-between rounded-lg bg-bg-light
-            text-black dark:bg-bg-dark dark:text-white 
-            sm:bottom-7 sm:right-7 sm:left-auto sm:w-96 xl:bottom-6 xl:right-6">
+            className="border-thick-bottom fixed inset-x-5 bottom-5 z-20 flex flex-col justify-between
+                rounded-lg bg-bg-light text-black sm:bottom-7 sm:left-auto sm:right-7 sm:w-96
+                xl:bottom-6 xl:right-6 dark:bg-bg-dark dark:text-white">
             <div
-                className="mb-2 flex items-center justify-between
-                border-b-2 border-border-light
-                px-4 pt-4 pb-2 dark:border-border-dark
-                xs:mb-3 xs:text-xl sm:px-5 sm:pb-3">
+                className="mb-2 flex items-center justify-between border-b-2 border-border-light px-4 pb-2
+                    pt-4 xs:mb-3 xs:text-xl sm:px-5 sm:pb-3 dark:border-border-dark">
                 <h3>
                     <FormattedMessage id="cookies.title" />
                 </h3>
                 <button
                     onClick={closeCookies}
-                    className="focus-ring focus-ring-loose 
-                    rounded-lg transition-transform active:scale-90">
+                    className="focus-ring focus-ring-loose rounded-lg transition-transform active:scale-90">
                     <CgClose />
                 </button>
             </div>
@@ -75,26 +71,18 @@ export default function CookieConsent({ setShowCookieBanner }) {
                 <div className="flex w-full gap-3 xs:gap-4 sm:gap-3.5">
                     <Button3D
                         onClick={acceptCookies}
-                        className="h-9 basis-1/2 rounded-md text-sm
-                        text-black xs:h-10 xs:text-base sm:h-11"
-                        innerClassName="bg-[hsl(127,_100%,_96%)]
-                        hover:bg-[hsl(127,_100%,_94%)]
-                        active:bg-[hsl(127,_100%,_93%)]
-                        dark:bg-[hsl(127,_100%,_70%)]
-                        dark:hover:bg-[hsl(127,_100%,_73%)]
-                        dark:active:bg-[hsl(127,_100%,76%)]">
+                        className="h-9 basis-1/2 rounded-md text-sm text-black xs:h-10 xs:text-base sm:h-11"
+                        innerClassName="bg-[hsl(127,_100%,_96%)] hover:bg-[hsl(127,_100%,_94%)]
+                            active:bg-[hsl(127,_100%,_93%)] dark:bg-[hsl(127,_100%,_70%)]
+                            dark:hover:bg-[hsl(127,_100%,_73%)] dark:active:bg-[hsl(127,_100%,76%)]">
                         <FormattedMessage id="cookies.accept" />
                     </Button3D>
                     <Button3D
                         onClick={denyCookies}
-                        className="h-9 basis-1/2 rounded-md text-sm
-                        text-black xs:h-10 xs:text-base sm:h-11"
-                        innerClassName="bg-[hsl(340,_100%,_96%)]
-                        hover:bg-[hsl(340,_100%,_94%)]
-                        active:bg-[hsl(340,_100%,_93%)]
-                        dark:bg-[hsl(0,_100%,_70%)]
-                        dark:hover:bg-[hsl(0,_100%,_73%)]
-                        dark:active:bg-[hsl(0,_100%,76%)]">
+                        className="h-9 basis-1/2 rounded-md text-sm text-black xs:h-10 xs:text-base sm:h-11"
+                        innerClassName="bg-[hsl(340,_100%,_96%)] hover:bg-[hsl(340,_100%,_94%)]
+                            active:bg-[hsl(340,_100%,_93%)] dark:bg-[hsl(0,_100%,_70%)]
+                            dark:hover:bg-[hsl(0,_100%,_73%)] dark:active:bg-[hsl(0,_100%,76%)]">
                         <FormattedMessage id="cookies.deny" />
                     </Button3D>
                 </div>

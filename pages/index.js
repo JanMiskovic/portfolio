@@ -34,8 +34,8 @@ export default function Index() {
 
             <motion.div
                 variants={portfolioVariants}
-                className="grid grid-cols-2 gap-x-4 gap-y-3.5 xs:gap-x-5
-                xs:gap-y-4 sm:gap-y-5 md:grid-cols-3">
+                className="grid grid-cols-2 gap-x-4 gap-y-3.5 xs:gap-x-5 xs:gap-y-4 sm:gap-y-5
+                    md:grid-cols-3">
                 <motion.div variants={portfolioItems}>
                     <PortfolioItem
                         href="https://stavbytrnka.sk"

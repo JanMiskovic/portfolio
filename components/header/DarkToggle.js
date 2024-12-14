@@ -6,7 +6,10 @@ import { PiDiscoBall } from "react-icons/pi";
 import Button3D from "../Button3D";
 
 export default function DarkToggle() {
-    // Dark toggle
+    const DISCO_MODE_HOLD_DELAY = 1000;
+    const discoHoldStartTime = useRef(null);
+    const discoHoldIntervalRef = useRef(null);
+
     const [mounted, setMounted] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
 
@@ -15,27 +18,13 @@ export default function DarkToggle() {
         setMounted(true);
     }, []);
 
-    function toggleTheme() {
-        setTheme(resolvedTheme === "dark" ? "light" : "dark");
-        window.gtag("event", "theme_toggle", { switched_to: resolvedTheme });
-    }
-
-    // Disco mode
-    const HOLD_DELAY = 3000;
-    const startTime = useRef(null);
-    const holdIntervalRef = useRef(null);
-
-    function startDiscoCounter() {
-        startTime.current = Date.now();
-
-        // We will check if the timer is finished in the interval
-        holdIntervalRef.current = setInterval(() => {
-            // Check if enough time has elapsed
+    function onMouseDown() {
+        discoHoldStartTime.current = Date.now();
+        discoHoldIntervalRef.current = setInterval(() => {
             if (
-                startTime.current &&
-                Date.now() - startTime.current > HOLD_DELAY
+                discoHoldStartTime.current &&
+                Date.now() - discoHoldStartTime.current > DISCO_MODE_HOLD_DELAY
             ) {
-                // When time elapsed clear interval and trigger callback
                 stopDiscoCounter();
                 if (resolvedTheme !== "disco") {
                     setTheme("disco");
@@ -44,27 +33,37 @@ export default function DarkToggle() {
         }, 10);
     }
 
+    function onMouseUp() {
+        if (discoHoldStartTime.current) {
+            setTheme(resolvedTheme === "dark" ? "light" : "dark");
+            window.gtag("event", "theme_toggle", {
+                switched_to: resolvedTheme,
+            });
+        }
+        stopDiscoCounter();
+    }
+
     function stopDiscoCounter() {
-        startTime.current = null;
-        if (holdIntervalRef.current) {
-            clearInterval(holdIntervalRef.current);
-            holdIntervalRef.current = null;
+        discoHoldStartTime.current = null;
+        if (discoHoldIntervalRef.current) {
+            clearInterval(discoHoldIntervalRef.current);
+            discoHoldIntervalRef.current = null;
         }
     }
 
     return mounted ? (
         <Button3D
-            onClick={toggleTheme}
-            onMouseDown={startDiscoCounter}
-            onTouchStart={startDiscoCounter}
+            onMouseDown={onMouseDown}
+            onTouchStart={onMouseDown}
             onTouchCancel={stopDiscoCounter}
-            onTouchEnd={stopDiscoCounter}
-            onMouseUp={stopDiscoCounter}
             onMouseLeave={stopDiscoCounter}
+            onTouchEnd={onMouseUp}
+            onMouseUp={onMouseUp}
             aria-label="Toggle Dark Mode"
             className="w-9 rounded-md xs:w-10 sm:w-11"
-            innerClassName="bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)] active:bg-[hsl(273,_100%,_93%)]
-            dark:bg-bg-dark dark:hover:bg-bg-dark dark:active:bg-bg-dark overflow-hidden">
+            innerClassName="bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]
+                active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark dark:hover:bg-bg-dark
+                dark:active:bg-bg-dark overflow-hidden">
             <AnimatePresence mode="popLayout" initial={false}>
                 {resolvedTheme === "disco" ? (
                     <motion.div
@@ -79,10 +78,9 @@ export default function DarkToggle() {
                         animate={{ x: 0 }}
                         exit={{ x: "-200%" }}>
                         <PiDiscoBall
-                            className="h-4 w-4 fill-[hsl(290,100%,70%)] 
-                            group-hover:fill-[hsl(290,100%,73%)]
-                            group-active:fill-[hsl(290,100%,76%)] 
-                            xs:h-5 xs:w-5 sm:h-6 sm:w-6"
+                            className="h-4 w-4 animate-pulse fill-[hsl(290,100%,78%)]
+                                group-hover:fill-[hsl(290,100%,81%)] group-active:fill-[hsl(290,100%,84%)]
+                                xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                         />
                     </motion.div>
                 ) : resolvedTheme === "dark" ? (
@@ -98,10 +96,8 @@ export default function DarkToggle() {
                         animate={{ y: 0 }}
                         exit={{ y: "200%" }}>
                         <BsSunFill
-                            className="h-4 w-4 fill-[hsl(51,_100%,_70%)] 
-                                group-hover:fill-[hsl(51,_100%,_73%)] 
-                                group-active:fill-[hsl(51,_100%,_76%)]  
-                                xs:h-5 xs:w-5 sm:h-6 sm:w-6"
+                            className="h-4 w-4 fill-[hsl(51,_100%,_70%)] group-hover:fill-[hsl(51,_100%,_73%)]
+                                group-active:fill-[hsl(51,_100%,_76%)] xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                         />
                     </motion.div>
                 ) : (
@@ -116,23 +112,17 @@ export default function DarkToggle() {
                         initial={{ y: "-200%" }}
                         animate={{ y: 0 }}
                         exit={{ y: "-200%" }}>
-                        <BsMoonFill
-                            className="h-4 w-4 fill-icon-light 
-                                xs:h-5 xs:w-5 sm:h-6 sm:w-6"
-                        />
+                        <BsMoonFill className="h-4 w-4 fill-icon-light xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
                     </motion.div>
                 )}
             </AnimatePresence>
         </Button3D>
     ) : (
         <button
-            className="focus-ring border-thick-bottom transition-hover dark:bg-bg-dark
-            overflow-hidden rounded-md
-            bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)] active:bg-[hsl(273,_100%,_93%)]">
-            <BsMoonFill
-                className="h-4 w-4 fill-icon-light
-                xs:h-5 xs:w-5 sm:h-6 sm:w-6"
-            />
+            className="focus-ring border-thick-bottom transition-hover overflow-hidden rounded-md
+                bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]
+                active:bg-[hsl(273,_100%,_93%)] dark:bg-bg-dark">
+            <BsMoonFill className="h-4 w-4 fill-icon-light xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
         </button>
     );
 }

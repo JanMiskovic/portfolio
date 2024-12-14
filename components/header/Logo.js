@@ -7,9 +7,8 @@ export default function Logo() {
         <motion.div whileHover="hover" whileTap="hover" className="group">
             <Link
                 href="/"
-                className="focus-ring focus-ring-loose link transition-hover
-                flex items-center gap-1.5 rounded-md underline
-                underline-offset-4 xs:gap-2 xs:text-xl sm:text-2xl">
+                className="focus-ring focus-ring-loose link transition-hover flex items-center gap-1.5
+                    rounded-md underline underline-offset-4 xs:gap-2 xs:text-xl sm:text-2xl">
                 <motion.div
                     variants={iconVariants}
                     transition={{
@@ -20,9 +19,8 @@ export default function Logo() {
                     }}
                     className="mt-0.5 origin-center xs:mt-1.5">
                     <FiStar
-                        className="h-4 w-4 fill-transparent
-                        group-hover:fill-current group-active:fill-current 
-                        xs:h-5 xs:w-5 sm:h-6 sm:w-6"
+                        className="h-4 w-4 fill-transparent group-hover:fill-current group-active:fill-current
+                            xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                     />
                 </motion.div>
                 janmiskovic.com

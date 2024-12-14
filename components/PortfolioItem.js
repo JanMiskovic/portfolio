@@ -19,8 +19,8 @@ export default function PortfolioItem({ href, img, name, stack, className }) {
                         src={img}
                         placeholder="blur"
                         alt={`Preview image of website ${name}`}
-                        className="rounded-sm bg-neutral-200 shadow-sharp
-                        dark:bg-neutral-500 dark:shadow-sharp-dark"
+                        className="rounded-sm bg-neutral-200 shadow-sharp dark:bg-neutral-500
+                            dark:shadow-sharp-dark"
                     />
                 </motion.div>
             </div>
