@@ -19,7 +19,7 @@ export default function DarkToggle() {
         return () => stopDiscoCounter();
     }, []);
 
-    function onMouseDown() {
+    function onPointerDown() {
         discoHoldStartTime.current = Date.now();
         discoHoldIntervalRef.current = setInterval(() => {
             if (
@@ -34,7 +34,7 @@ export default function DarkToggle() {
         }, 10);
     }
 
-    function onMouseUp() {
+    function onPointerUp() {
         if (discoHoldStartTime.current) {
             setTheme(resolvedTheme === "dark" ? "light" : "dark");
             window.gtag("event", "theme_toggle", {
@@ -54,12 +54,9 @@ export default function DarkToggle() {
 
     return mounted ? (
         <Button3D
-            onMouseDown={onMouseDown}
-            onTouchStart={onMouseDown}
-            onTouchCancel={stopDiscoCounter}
-            onMouseLeave={stopDiscoCounter}
-            onTouchEnd={onMouseUp}
-            onMouseUp={onMouseUp}
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            onPointerLeave={stopDiscoCounter}
             aria-label="Toggle Dark Mode"
             className="w-9 rounded-md xs:w-10 sm:w-11"
             innerClassName="bg-[hsl(273,_100%,_96%)] hover:bg-[hsl(273,_100%,_94%)]

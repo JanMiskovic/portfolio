@@ -9,6 +9,7 @@ import Dbr from "./Dbr";
 import Socials from "./Socials";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Bio() {
     const [mounted, setMounted] = useState(false);
@@ -42,7 +43,11 @@ export default function Bio() {
                             initial={{ y: "-100%" }}
                             animate={{ y: 0 }}
                             exit={{ y: "-100%" }}>
-                            🪩
+                            <DotLottieReact
+                                src="/lotties/disco.lottie"
+                                autoplay
+                                loop
+                            />
                         </motion.div>
                     ) : (
                         <motion.div
