@@ -1,9 +1,9 @@
-import sendgrid from "@sendgrid/mail";
 import v from "validator";
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+// sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function sendEmail(req, res) {
+    return res.status(500).json({});
     try {
         const { locale, name, email, subject, message } = req.body;
 

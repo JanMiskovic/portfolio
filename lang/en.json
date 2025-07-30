@@ -86,7 +86,7 @@
     "contact.form.reset.title": "Reset\u00a0form?",
     "contact.form.reset.yes": "Yes",
     "contact.form.reset.no": "No",
-    "contact.form.result.failure": "An error occured while sending your\u00a0message\u00a0:(\nPlease contact me on my e-mail.",
+    "contact.form.result.failure": "An error occured while sending your message\u00a0:( Please\u00a0contact\u00a0me\u00a0on\u00a0my\u00a0e-mail.",
     "contact.form.result.success": "Your message was successfully sent. I\u00a0will\u00a0reply\u00a0as\u00a0soon\u00a0as\u00a0possible!",
 
     "404.meta.title": "Page not found",

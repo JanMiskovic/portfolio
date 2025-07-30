@@ -28,7 +28,7 @@ export default function ContactForm() {
 
         setSendStatus("sending");
 
-        const res = await fetch("/api/sendgrid", {
+        const res = await fetch("/api/email", {
             body: JSON.stringify({
                 locale: intl.locale,
                 email: email,
@@ -40,9 +40,7 @@ export default function ContactForm() {
             method: "POST",
         });
 
-        const { error } = await res.json();
-
-        if (error) {
+        if (!res.ok) {
             setSendStatus("error");
         } else {
             setSendStatus("success");
@@ -240,7 +238,7 @@ const sendingSpinnerVariants = {
 function FormResult({ sendStatus }) {
     return (
         <AnimatePresence>
-            {(sendStatus === "success" || sendStatus === "failure") && (
+            {(sendStatus === "success" || sendStatus === "error") && (
                 <motion.div
                     variants={resultVariants}
                     initial="initial"
@@ -248,13 +246,13 @@ function FormResult({ sendStatus }) {
                     exit="exit">
                     {sendStatus === "success" ? (
                         <span
-                            className="block whitespace-pre-line pt-4 underline decoration-green-400 decoration-2
+                            className="block pt-4 underline decoration-green-400 decoration-2
                                 underline-offset-4">
                             <FormattedMessage id="contact.form.result.success" />
                         </span>
                     ) : (
                         <span
-                            className="block whitespace-pre-line pt-4 underline decoration-red-400 decoration-2
+                            className="block pt-4 underline decoration-red-400 decoration-2
                                 underline-offset-4">
                             <FormattedMessage id="contact.form.result.failure" />
                         </span>
