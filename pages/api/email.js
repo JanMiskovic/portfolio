@@ -1,9 +1,9 @@
 import v from "validator";
+import postmark from 'postmark';
 
-// sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+const postmarkClient = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
 
 export default async function sendEmail(req, res) {
-    return res.status(500).json({});
     try {
         const { locale, name, email, subject, message } = req.body;
 
@@ -28,12 +28,12 @@ export default async function sendEmail(req, res) {
             safeMessage: v.escape(message),
         };
 
-        await sendgrid.send({
-            to: "jan@janmiskovic.com",
-            from: { email: "formular@janmiskovic.com", name: safeName },
-            replyTo: { email: safeEmail, name: safeName },
-            subject: `${locale === "sk" ? "Formulár" : "Form"}: ${safeSubject}`,
-            html: `
+        const result = await postmarkClient.sendEmail({
+            To: "jan@janmiskovic.com",
+            From: `${safeName} <formular@janmiskovic.com>`,
+            ReplyTo: safeEmail,
+            Subject: `${locale === "sk" ? "Formulár" : "Form"}: ${safeSubject}`,
+            HtmlBody: `
             <!DOCTYPE html>
             <html lang="sk" style="box-sizing: border-box; margin: 0; padding: 0">
                 <head>
@@ -196,10 +196,12 @@ export default async function sendEmail(req, res) {
             </html>
             `,
         });
+
+        if (result.ErrorCode) {
+            return res.status(500).json({ error: `Email sending failed on postmark. ErrorCode: ${result.ErrorCode}` });
+        }
     } catch (error) {
-        return res
-            .status(error.statusCode || 500)
-            .json({ error: error.message });
+        return res.status(500).json({ error: `Email sending failed before postmark. Error: ${error.message}` });
     }
 
     return res.status(200).json({ error: "" });

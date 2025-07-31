@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { RiLoaderLine } from "react-icons/ri";
 import { VscDebugRestart } from "react-icons/vsc";
@@ -15,6 +15,7 @@ export default function ContactForm() {
     const [subject, setSubject] = useLocalStorage("subject", "");
     const [message, setMessage] = useLocalStorage("message", "");
     const [sendStatus, setSendStatus] = useState("");
+    const formResultTimeoutId = useRef(null);
 
     const resetFields = () => {
         setName("");
@@ -47,7 +48,11 @@ export default function ContactForm() {
             resetFields();
         }
 
-        setTimeout(() => setSendStatus(""), 12000);
+        clearTimeout(formResultTimeoutId.current);
+        formResultTimeoutId.current = setTimeout(
+            () => setSendStatus(""),
+            12000
+        );
     };
 
     return (
@@ -245,15 +250,11 @@ function FormResult({ sendStatus }) {
                     animate="animate"
                     exit="exit">
                     {sendStatus === "success" ? (
-                        <span
-                            className="block pt-4 underline decoration-green-400 decoration-2
-                                underline-offset-4">
+                        <span className="block pt-4 underline decoration-green-400 decoration-2 underline-offset-4">
                             <FormattedMessage id="contact.form.result.success" />
                         </span>
                     ) : (
-                        <span
-                            className="block pt-4 underline decoration-red-400 decoration-2
-                                underline-offset-4">
+                        <span className="block pt-4 underline decoration-red-400 decoration-2 underline-offset-4">
                             <FormattedMessage id="contact.form.result.failure" />
                         </span>
                     )}

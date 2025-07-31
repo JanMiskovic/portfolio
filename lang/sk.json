@@ -90,7 +90,8 @@
     "contact.form.result.success": "Správa bola úspešne odoslaná. Ozvem\u00a0sa\u00a0vám\u00a0čo\u00a0najskôr!",
 
     "404.meta.title": "Stránka neexistuje",
-    "404.text": "Táto stránka bola odstránená, alebo neexistuje.{br}Vráťte sa na existujúcu stránku pomocou menu!",
+    "404.text.line.1": "Táto stránka bola odstránená, alebo neexistuje.",
+    "404.text.line.2": "Vráťte sa na existujúcu stránku pomocou menu!",
 
     "wip.text.line.1": "Stránka sa pripravuje,\u00a0",
     "wip.text.line.2": "vráťte sa neskôr! 🔧🚨",

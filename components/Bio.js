@@ -1,15 +1,15 @@
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { AnimatePresence, motion } from "motion/react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import SkFlagImg from "../public/icons/skflag.webp";
 import ProfileImg from "../public/images/profile_pic.webp";
 import Button3D from "./Button3D";
 import Dbr from "./Dbr";
 import Socials from "./Socials";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Bio() {
     const [mounted, setMounted] = useState(false);

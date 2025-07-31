@@ -90,7 +90,8 @@
     "contact.form.result.success": "Your message was successfully sent. I\u00a0will\u00a0reply\u00a0as\u00a0soon\u00a0as\u00a0possible!",
 
     "404.meta.title": "Page not found",
-    "404.text": "This page was removed or doesn't exist.{br}Navigate to an existing page using the menu above!",
+    "404.text.line.1": "This page was removed or doesn't exist.",
+    "404.text.line.2": "Navigate to an existing page using the menu above!",
 
     "wip.text.line.1": "Work in progress,\u00a0",
     "wip.text.line.2": "come back later! 🔧🚨",

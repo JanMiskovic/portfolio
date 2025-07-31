@@ -29,7 +29,9 @@ export default function Custom404() {
                 className="border-thick-bottom flex h-32 items-center justify-center rounded-lg bg-bg-light
                     p-4 text-center leading-relaxed sm:text-lg md:h-44 md:text-xl lg:h-64
                     dark:bg-bg-dark">
-                <FormattedMessage id="404.text" values={{ br: <br /> }} />
+                <FormattedMessage id="404.text.line.1" />
+                <br />
+                <FormattedMessage id="404.text.line.2" />
             </motion.div>
         </>
     );
