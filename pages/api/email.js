@@ -1,7 +1,7 @@
+import { ServerClient } from "postmark";
 import v from "validator";
-import postmark from 'postmark';
 
-const postmarkClient = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
+const postmarkClient = new ServerClient(process.env.POSTMARK_SERVER_TOKEN);
 
 export default async function sendEmail(req, res) {
     try {
